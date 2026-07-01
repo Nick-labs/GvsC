@@ -1,4 +1,7 @@
+class_name Pigeon
 extends Area2D
+
+signal clicked(pigeon: Pigeon)
 
 @export var data: PigeonData
 
@@ -8,12 +11,13 @@ extends Area2D
 func _ready() -> void:
 	update_view()
 
-	input_event.connect(_on_input_event)
-	mouse_entered.connect(_on_mouse_entered)
-	mouse_exited.connect(_on_mouse_exited)
+	# Это и так сделано через инспектор сигналов. Может, стоит заменить на это:
+	#input_event.connect(_on_input_event)
+	#mouse_entered.connect(_on_mouse_entered)
+	#mouse_exited.connect(_on_mouse_exited)
 
 func update_view():
-	pass# will be added later
+	pass # will be added later
 
 
 func _on_mouse_entered() -> void:
@@ -28,4 +32,4 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.pressed:
-		print("Выбран голубь")
+		clicked.emit(self)

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://chbuoxug8iyej"]
+
+[ext_resource type="Script" uid="uid://c8148ubg5lw28" path="res://scripts/farm/cell.gd" id="1_gxb75"]
+[ext_resource type="Texture2D" uid="uid://ppw08opm77r3" path="res://assets/sprites/cell.png" id="2_ujoei"]
+
+[node name="Cell" type="Node2D" unique_id=1182128186]
+script = ExtResource("1_gxb75")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2066731230]
+texture = ExtResource("2_ujoei")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=799329861]

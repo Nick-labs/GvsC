@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://c6go4j3hutskp"]
 
+[ext_resource type="Script" uid="uid://bj3tejodjtglo" path="res://scripts/farm/farm.gd" id="1_a4t06"]
+[ext_resource type="PackedScene" uid="uid://bmejj6a5xgtxu" path="res://scenes/farm/loft.tscn" id="2_wgrn4"]
+
 [node name="Farm" type="Node2D" unique_id=1015373910]
+script = ExtResource("1_a4t06")
+
+[node name="Loft" parent="." unique_id=1552193297 instance=ExtResource("2_wgrn4")]
