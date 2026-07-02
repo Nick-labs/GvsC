@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7mo6rdd4ar85"
-path="res://.godot/imported/pigeon-emo.png-eaf6ff8ad678a8cf259e8cf88f341991.ctex"
+path.s3tc="res://.godot/imported/pigeon-emo.png-eaf6ff8ad678a8cf259e8cf88f341991.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/pigeons/pigeon-emo.png"
-dest_files=["res://.godot/imported/pigeon-emo.png-eaf6ff8ad678a8cf259e8cf88f341991.ctex"]
+dest_files=["res://.godot/imported/pigeon-emo.png-eaf6ff8ad678a8cf259e8cf88f341991.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

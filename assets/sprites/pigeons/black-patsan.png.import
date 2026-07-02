@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdyw1hgwvj34m"
-path="res://.godot/imported/black-patsan.png-5a125cb0aceadcb74924aee78c27898a.ctex"
+path.s3tc="res://.godot/imported/black-patsan.png-5a125cb0aceadcb74924aee78c27898a.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/pigeons/black-patsan.png"
-dest_files=["res://.godot/imported/black-patsan.png-5a125cb0aceadcb74924aee78c27898a.ctex"]
+dest_files=["res://.godot/imported/black-patsan.png-5a125cb0aceadcb74924aee78c27898a.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
