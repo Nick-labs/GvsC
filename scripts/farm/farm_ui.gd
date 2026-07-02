@@ -4,11 +4,11 @@ extends CanvasLayer
 
 signal sell_pressed
 
-@onready var money_label: Label = $MoneyLabel
+@onready var money_label: Label = $MarginContainer/MoneyLabel
 
-@onready var name_label: Label = $BottomPanel/HBoxContainer/NameLabel
-@onready var price_label: Label = $BottomPanel/HBoxContainer/PriceLabel
-@onready var sell_button: Button = $BottomPanel/HBoxContainer/SellButton
+@onready var name_label: Label = $MarginContainer/BottomPanel/HBoxContainer/NameLabel
+@onready var price_label: Label = $MarginContainer/BottomPanel/HBoxContainer/PriceLabel
+@onready var sell_button: Button = $MarginContainer/BottomPanel/HBoxContainer/SellButton
 
 
 func show_pigeon(pigeon: Pigeon) -> void:
@@ -27,3 +27,7 @@ func _on_sell_button_pressed() -> void:
 
 func set_money(amount: int) -> void:
 	money_label.text = "Деньги: %d" % amount
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
