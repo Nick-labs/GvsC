@@ -88,9 +88,21 @@ func collect_eggs() -> int:
 	var sum := 0
 
 	for egg in eggs:
-		sum += egg.value
+		sum += egg.data.value
 		egg.queue_free()
 
 	eggs.clear()
 
 	return sum
+
+
+func hatch_egg(egg: Egg):
+	pass
+	#eggs.erase(egg)
+#
+	#var pigeon := pigeon_scene.instantiate() as Pigeon
+	#pigeon.data = egg.data.pigeon_data
+#
+	#set_pigeon(pigeon)
+#
+	#egg.queue_free()

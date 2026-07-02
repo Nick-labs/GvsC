@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="EggData" format=3 uid="uid://bf8tmd44rj7p3"]
 
 [ext_resource type="Script" uid="uid://bju6ideq3gslp" path="res://scripts/farm/egg_data.gd" id="1_31wc8"]
+[ext_resource type="Resource" uid="uid://bb0lhr528xe2h" path="res://resources/pigeons/common_pigeon.tres" id="1_li5oc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_31wc8"]
 load_path = "res://.godot/imported/egg.png-12522289084fca031fd73ee33a79b7ee.ctex"
@@ -8,4 +9,5 @@ load_path = "res://.godot/imported/egg.png-12522289084fca031fd73ee33a79b7ee.ctex
 [resource]
 script = ExtResource("1_31wc8")
 texture = SubResource("CompressedTexture2D_31wc8")
+pigeon_data = ExtResource("1_li5oc")
 metadata/_custom_type_script = "uid://bju6ideq3gslp"
