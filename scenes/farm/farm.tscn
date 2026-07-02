@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bmejj6a5xgtxu" path="res://scenes/farm/loft.tscn" id="2_wgrn4"]
 [ext_resource type="PackedScene" uid="uid://ba66ct4755evq" path="res://scenes/farm/farmUI.tscn" id="3_fev0l"]
 [ext_resource type="PackedScene" uid="uid://c015lfotxq3w4" path="res://autoload/MusicPlayer.tscn" id="4_36fi7"]
-[ext_resource type="AudioStream" uid="uid://8m3v03m8k8p8" path="res://assets/audio/music/test3.mp3" id="5_fhtoc"]
+[ext_resource type="AudioStream" uid="uid://dkww3qoiamf82" path="res://assets/audio/music/test4_OrganFluit.mp3" id="5_36fi7"]
 
 [node name="Farm" type="Node2D" unique_id=1015373910]
 script = ExtResource("1_a4t06")
@@ -14,5 +14,5 @@ script = ExtResource("1_a4t06")
 [node name="FarmUi" parent="." unique_id=1160712630 instance=ExtResource("3_fev0l")]
 
 [node name="MusicPlayer" parent="." unique_id=1334423811 instance=ExtResource("4_36fi7")]
-stream = ExtResource("5_fhtoc")
+stream = ExtResource("5_36fi7")
 autoplay = true
