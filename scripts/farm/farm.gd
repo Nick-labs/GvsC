@@ -17,6 +17,8 @@ var selected_pigeon: Pigeon = null
 var dragged_pigeon: Pigeon = null
 var source_cell: Cell = null
 
+var music_started := false
+
 
 func _ready() -> void:
 	loft.pigeon_selected.connect(_on_pigeon_selected)
@@ -25,6 +27,15 @@ func _ready() -> void:
 	farm_ui.set_money(money)
 	
 	_fit_loft_to_screen()
+
+
+func _input(event):
+	if music_started:
+		return
+
+	if event is InputEventMouseButton and event.pressed:
+		$MusicPlayer.play()
+		music_started = true
 
 
 func _process(_delta):
