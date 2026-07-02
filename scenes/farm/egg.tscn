@@ -7,6 +7,8 @@
 radius = 20.09975
 
 [node name="Egg" type="Area2D" unique_id=1368375673]
+z_index = -100
+z_as_relative = false
 script = ExtResource("1_koaw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=110212041]

@@ -26,7 +26,7 @@ func _on_sell_button_pressed() -> void:
 
 
 func set_money(amount: int) -> void:
-	money_label.text = "Деньги: %d" % amount
+	money_label.text = "%d грошей" % amount
 
 
 func _on_exit_button_pressed() -> void:

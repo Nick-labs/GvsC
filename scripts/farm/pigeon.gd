@@ -13,7 +13,7 @@ signal clicked(pigeon: Pigeon)
 
 var cell: Cell
 
-@export var egg_interval: float = 3.0
+@export var egg_interval: float = 7.0 + randf_range(-3, 3)
 @export var egg_data: EggData
 var egg_timer: float = 0.0
 var can_lay_egg: bool = true
