@@ -6,7 +6,11 @@ extends Node2D
 
 @export var padding: float = 300.0
 
-var money: int = 100
+var money: int = 100:
+	set(value):
+		money = value
+		if is_node_ready():
+			farm_ui.set_money(money)
 
 var selected_pigeon: Pigeon = null
 
@@ -17,6 +21,9 @@ var source_cell: Cell = null
 func _ready() -> void:
 	loft.pigeon_selected.connect(_on_pigeon_selected)
 	farm_ui.sell_pressed.connect(_on_sell_pressed)
+	
+	farm_ui.set_money(money)
+	
 	_fit_loft_to_screen()
 
 

@@ -24,10 +24,6 @@ func _ready() -> void:
 	generate_cells()
 
 
-#func _draw() -> void:
-	#draw_circle(position, 5, Color.RED)
-
-
 func generate_cells() -> void:
 	cells.clear()
 	
@@ -78,8 +74,10 @@ func create_default_pigeon() -> Pigeon:
 
 	pigeon.data = PigeonData.new()
 	
+	pigeon.apply_random_sprite()
+	
 	var prefixes: Array[String] = ["Уродливый", "Вонючий", "Игривый", 
-								   "Похотливый", "Сильный", "Гордый",
+								   "Шальной", "Сильный", "Гордый",
 								   "Больной", "Жадный", "Никчемный"]
 	
 	pigeon.data.name = prefixes.pick_random() + " голубь"

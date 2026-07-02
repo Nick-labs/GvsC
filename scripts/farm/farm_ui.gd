@@ -4,6 +4,7 @@ extends CanvasLayer
 
 signal sell_pressed
 
+@onready var money_label: Label = $MoneyLabel
 
 @onready var name_label: Label = $BottomPanel/HBoxContainer/NameLabel
 @onready var price_label: Label = $BottomPanel/HBoxContainer/PriceLabel
@@ -22,3 +23,7 @@ func clear_selection() -> void:
 
 func _on_sell_button_pressed() -> void:
 	sell_pressed.emit()
+
+
+func set_money(amount: int) -> void:
+	money_label.text = "Деньги: %d" % amount

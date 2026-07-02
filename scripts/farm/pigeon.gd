@@ -7,6 +7,8 @@ signal clicked(pigeon: Pigeon)
 
 @export var data: PigeonData
 
+@export var sprites: Array[Texture2D]
+
 @onready var sprite: Sprite2D = $Sprite2D
 
 var cell: Cell
@@ -14,6 +16,7 @@ var cell: Cell
 
 func _ready() -> void:
 	update_view()
+	
 
 	# Это и так сделано через инспектор сигналов. Может, стоит заменить на это:
 	#input_event.connect(_on_input_event)
@@ -23,6 +26,29 @@ func _ready() -> void:
 func update_view():
 	pass
 
+func apply_random_sprite():
+	var sprite := $Sprite2D
+
+	sprite.texture = sprites.pick_random()
+	
+	fit_to_size(Vector2(200, 200))
+
+func fit_to_size(target_size: Vector2) -> void:
+	var sprite := $Sprite2D
+	
+	sprite.position += Vector2(15, 10)
+	
+	if sprite.texture == null:
+		return
+
+	var texture_size = sprite.texture.get_size()
+
+	var scale_factor = min(
+		target_size.x / texture_size.x,
+		target_size.y / texture_size.y
+	)
+
+	sprite.scale = Vector2.ONE * scale_factor
 
 func _on_mouse_entered() -> void:
 	pass
