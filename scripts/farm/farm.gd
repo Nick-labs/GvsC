@@ -127,7 +127,7 @@ func _unhandled_input(event):
 
 func finish_drag():
 
-	var target = loft.get_hovered_cell()
+	var target := loft.get_hovered_cell()
 	
 	if target == null:
 
@@ -141,6 +141,10 @@ func finish_drag():
 	else:
 
 		swap(source_cell, target)
+	
+	var egg_value = source_cell.collect_eggs()
+	money += egg_value
+	farm_ui.set_money(money)
 
 	dragged_pigeon = null
 	source_cell = null

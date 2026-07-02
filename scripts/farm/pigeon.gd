@@ -13,6 +13,11 @@ signal clicked(pigeon: Pigeon)
 
 var cell: Cell
 
+@export var egg_interval: float = 3.0
+@export var egg_data: EggData
+var egg_timer: float = 0.0
+var can_lay_egg: bool = true
+
 
 func _ready() -> void:
 	update_view()
@@ -22,6 +27,24 @@ func _ready() -> void:
 	#input_event.connect(_on_input_event)
 	#mouse_entered.connect(_on_mouse_entered)
 	#mouse_exited.connect(_on_mouse_exited)
+
+func _process(delta: float) -> void:
+	if cell == null:
+		return
+
+	egg_timer += delta
+
+	if egg_timer >= egg_interval:
+		egg_timer = 0.0
+		lay_egg()
+
+
+func lay_egg() -> void:
+	if cell == null:
+		return
+
+	cell.receive_egg(egg_data)
+
 
 func update_view():
 	pass

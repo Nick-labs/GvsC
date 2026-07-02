@@ -8,6 +8,40 @@ var index: Vector2i
 
 var hovered := false
 
+@export var egg_scene: PackedScene
+var eggs: Array[Egg] = []
+
+
+func receive_egg(data: EggData) -> void:
+	var egg := egg_scene.instantiate() as Egg
+	add_child(egg)
+
+	egg.position = marker.position + Vector2(randi_range(-10, 10), 60)
+	egg.setup(data)
+
+	eggs.append(egg)
+
+#func spawn_egg_visual() -> void:
+	#var egg = egg_scene.instantiate()
+	#add_child(egg)
+#
+	#egg.position = marker.position + Vector2(0, 60)
+#
+#func collect_eggs() -> int:
+	#var sum := 0
+#
+	#for e in eggs:
+		#sum += e
+#
+	#eggs.clear()
+#
+	## убрать визуал тоже (если есть)
+	#for child in get_children():
+		#if child.name == "Egg":
+			#child.queue_free()
+#
+	#return sum
+
 func _on_mouse_entered():
 	hovered = true
 
@@ -50,5 +84,13 @@ func is_empty() -> bool:
 	return pigeon == null
 	
 
-#func _draw():
-	#draw_circle(Vector2.ZERO, 5, Color.RED)
+func collect_eggs() -> int:
+	var sum := 0
+
+	for egg in eggs:
+		sum += egg.value
+		egg.queue_free()
+
+	eggs.clear()
+
+	return sum
