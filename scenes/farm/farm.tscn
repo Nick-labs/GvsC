@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bj3tejodjtglo" path="res://scripts/farm/farm.gd" id="1_a4t06"]
 [ext_resource type="PackedScene" uid="uid://bmejj6a5xgtxu" path="res://scenes/farm/loft.tscn" id="2_wgrn4"]
+[ext_resource type="PackedScene" uid="uid://ba66ct4755evq" path="res://scenes/farm/farmUI.tscn" id="3_fev0l"]
 
 [node name="Farm" type="Node2D" unique_id=1015373910]
 script = ExtResource("1_a4t06")
 
 [node name="Loft" parent="." unique_id=1552193297 instance=ExtResource("2_wgrn4")]
+
+[node name="FarmUi" parent="." unique_id=1160712630 instance=ExtResource("3_fev0l")]

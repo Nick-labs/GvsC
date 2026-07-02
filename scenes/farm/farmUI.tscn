@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ba66ct4755evq"]
+
+[ext_resource type="Script" uid="uid://c2ueijenddd86" path="res://scripts/farm/farm_ui.gd" id="1_r57qr"]
+
+[node name="FarmUi" type="CanvasLayer" unique_id=1160712630]
+script = ExtResource("1_r57qr")
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=2045811232]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SelectedPanel" type="MarginContainer" parent="." unique_id=603616643]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BottomPanel" type="MarginContainer" parent="." unique_id=1061488947]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -31.0
+offset_right = 136.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel" unique_id=328581268]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NameLabel" type="Label" parent="BottomPanel/HBoxContainer" unique_id=828398547]
+layout_mode = 2
+text = "Голубь не выбран"
+
+[node name="PriceLabel" type="Label" parent="BottomPanel/HBoxContainer" unique_id=1887729842]
+layout_mode = 2
+
+[node name="SellButton" type="Button" parent="BottomPanel/HBoxContainer" unique_id=1829927365]
+layout_mode = 2
+text = "Продать"
+
+[connection signal="pressed" from="BottomPanel/HBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]

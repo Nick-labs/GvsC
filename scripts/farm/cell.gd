@@ -9,6 +9,7 @@ var index: Vector2i
 
 func set_pigeon(new_pigeon: Pigeon) -> void:
 	pigeon = new_pigeon
+	new_pigeon.cell = self
 	
 	if pigeon == null:
 		return
@@ -30,6 +31,7 @@ func remove_pigeon() -> Pigeon:
 
 func is_empty() -> bool:
 	return pigeon == null
+	
 
-func _draw():
-	draw_circle(Vector2.ZERO, 5, Color.RED)
+#func _draw():
+	#draw_circle(Vector2.ZERO, 5, Color.RED)

@@ -3,10 +3,14 @@ extends Node2D
 
 signal pigeon_selected(pigeon: Pigeon)
 
-@export var rows: int = 4
+@export var rows: int = 2
 @export var columns: int = 5
 
-@export var cell_size := Vector2(200, 200)
+@export var cell_size := Vector2i(200, 200)
+@export var cell_space := 80
+
+var loft_size := Vector2i(cell_size.x * columns + cell_space * (columns - 1),
+ 						  cell_size.y * rows + cell_space * (rows - 1))
 
 @export var cell_scene: PackedScene
 @export var pigeon_scene: PackedScene
@@ -20,6 +24,10 @@ func _ready() -> void:
 	generate_cells()
 
 
+#func _draw() -> void:
+	#draw_circle(position, 5, Color.RED)
+
+
 func generate_cells() -> void:
 	cells.clear()
 	
@@ -31,8 +39,8 @@ func generate_cells() -> void:
 			cells_root.add_child(cell)
 			
 			cell.position = Vector2(
-				column * cell_size.x + column * 10,
-				row * cell_size.y + row * 10
+				column * cell_size.x + column * cell_space,
+				row * cell_size.y + row * cell_space
 			)
 			
 			cell.index = Vector2i(column, row)

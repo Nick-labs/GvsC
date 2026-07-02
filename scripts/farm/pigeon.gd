@@ -1,11 +1,15 @@
 class_name Pigeon
 extends Area2D
 
+
 signal clicked(pigeon: Pigeon)
+
 
 @export var data: PigeonData
 
 @onready var sprite: Sprite2D = $Sprite2D
+
+var cell: Cell
 
 
 func _ready() -> void:
@@ -17,15 +21,15 @@ func _ready() -> void:
 	#mouse_exited.connect(_on_mouse_exited)
 
 func update_view():
-	pass # will be added later
+	pass
 
 
 func _on_mouse_entered() -> void:
-	print("Навели")
+	pass
 
 
 func _on_mouse_exited() -> void:
-	print("Отвели")
+	pass
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
