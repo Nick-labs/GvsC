@@ -84,3 +84,12 @@ func create_default_pigeon() -> Pigeon:
 
 func _on_pigeon_clicked(pigeon: Pigeon) -> void:
 	pigeon_selected.emit(pigeon)
+
+
+func get_hovered_cell() -> Cell:
+
+	for cell in cells:
+		if cell.hovered:
+			return cell
+
+	return null

@@ -10,11 +10,22 @@ var money: int = 100
 
 var selected_pigeon: Pigeon = null
 
+var dragged_pigeon: Pigeon = null
+var source_cell: Cell = null
+
 
 func _ready() -> void:
 	loft.pigeon_selected.connect(_on_pigeon_selected)
 	farm_ui.sell_pressed.connect(_on_sell_pressed)
 	_fit_loft_to_screen()
+
+
+func _process(_delta):
+
+	if dragged_pigeon == null:
+		return
+
+	dragged_pigeon.global_position = get_global_mouse_position()
 
 
 #func update_ui():
@@ -44,8 +55,6 @@ func _ready() -> void:
 func _fit_loft_to_screen() -> void:
 
 	var screen := get_viewport_rect().size
-	print(screen)
-	print(loft.loft_size)
 	
 	#loft.position = (screen - Vector2(loft.loft_size)) / 2 + Vector2(100, 100)
 	
@@ -57,6 +66,9 @@ func _on_pigeon_selected(pigeon: Pigeon) -> void:
 		_set_selected(selected_pigeon, false)
 
 	selected_pigeon = pigeon
+	
+	dragged_pigeon = pigeon
+	source_cell = pigeon.cell
 	
 	_set_selected(selected_pigeon, true)
 
@@ -81,3 +93,45 @@ func _on_sell_pressed() -> void:
 	selected_pigeon = null
 
 	farm_ui.clear_selection()
+
+
+func _unhandled_input(event):
+
+	if dragged_pigeon == null:
+		return
+
+	if event is InputEventMouseButton \
+	and event.button_index == MOUSE_BUTTON_LEFT \
+	and not event.pressed:
+
+		finish_drag()
+
+
+func finish_drag():
+
+	var target = loft.get_hovered_cell()
+	
+	if target == null:
+
+		source_cell.set_pigeon(dragged_pigeon)
+
+	elif target.is_empty():
+
+		var pigeon = source_cell.take_pigeon()
+		target.set_pigeon(pigeon)
+
+	else:
+
+		swap(source_cell, target)
+
+	dragged_pigeon = null
+	source_cell = null
+
+
+func swap(a: Cell, b: Cell):
+
+	var first = a.take_pigeon()
+	var second = b.take_pigeon()
+
+	a.set_pigeon(second)
+	b.set_pigeon(first)
