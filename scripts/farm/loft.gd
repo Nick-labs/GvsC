@@ -77,6 +77,15 @@ func create_default_pigeon() -> Pigeon:
 	var pigeon := pigeon_scene.instantiate() as Pigeon
 
 	pigeon.data = PigeonData.new()
+	
+	var prefixes: Array[String] = ["Уродливый", "Вонючий", "Игривый", 
+								   "Похотливый", "Сильный", "Гордый",
+								   "Больной", "Жадный", "Никчемный"]
+	
+	pigeon.data.name = prefixes.pick_random() + " голубь"
+	
+	pigeon.data.price = randi_range(1, 10)
+	
 	pigeon.clicked.connect(_on_pigeon_clicked)
 	
 	return pigeon

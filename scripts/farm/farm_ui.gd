@@ -11,7 +11,7 @@ signal sell_pressed
 
 
 func show_pigeon(pigeon: Pigeon) -> void:
-	name_label.text = "Обычный голубь"
+	name_label.text = pigeon.data.name
 	price_label.text = "Цена: %d" % pigeon.data.price
 
 
