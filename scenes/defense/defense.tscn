@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://lc7anuj87qbf" path="res://scripts/defense/defense.gd" id="1_ugpjw"]
 [ext_resource type="PackedScene" uid="uid://b04ywcao285w6" path="res://scenes/defense/world_farm.tscn" id="2_ugpjw"]
-[ext_resource type="PackedScene" uid="uid://jemg5ahm842o" path="res://scenes/defense/player.tscn" id="3_qk0ly"]
 
 [node name="Defense" type="Node2D" unique_id=2122941706]
 script = ExtResource("1_ugpjw")
@@ -11,7 +10,6 @@ script = ExtResource("1_ugpjw")
 
 [node name="WorldFarm" parent="World" unique_id=1760461849 instance=ExtResource("2_ugpjw")]
 
-[node name="Ground" type="Sprite2D" parent="World" unique_id=1775576284]
+[node name="Camera2D" type="Camera2D" parent="World/WorldFarm" unique_id=1743624226]
 
-[node name="Player" parent="." unique_id=2076835807 instance=ExtResource("3_qk0ly")]
-position = Vector2(60, 51)
+[node name="Ground" type="Sprite2D" parent="World" unique_id=1775576284]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://jemg5ahm842o"]
+[gd_scene format=3 uid="uid://cs12ijlqunrkx"]
 
 [ext_resource type="Script" uid="uid://c53vcfjniqege" path="res://scripts/defense/player.gd" id="1_ubnn4"]
 [ext_resource type="Texture2D" uid="uid://uknk72ttf6e5" path="res://assets/sprites/pigeons/skebob.png" id="2_57et3"]
