@@ -3,10 +3,12 @@ extends Area2D
 
 signal clicked(pigeon: Pigeon)
 
-@export var data: PigeonData
-@export var sprites: Array[Texture2D]
-@export var egg_interval: float = 7.0 + randf_range(-3, 3)
-@export var egg_data: EggData
+@export var data: PigeonData:
+	set(value):
+		data = value
+
+		if is_node_ready():
+			_apply_data()
 
 var cell: Cell
 var egg_timer: float = 0.0
@@ -16,7 +18,7 @@ var can_lay_egg: bool = true
 
 
 func _ready() -> void:
-	pass
+	_apply_data()
 	
 	# Это и так сделано через инспектор сигналов
 	# Может, стоит заменить на это:
@@ -31,24 +33,29 @@ func _process(delta: float) -> void:
 
 	egg_timer += delta
 
-	if egg_timer >= egg_interval:
+	if egg_timer >= data.egg_interval:
 		egg_timer = 0.0
 		lay_egg()
+
+
+func _apply_data():
+	if data == null:
+		return
+
+	sprite.texture = data.sprite
+	fit_to_size(Vector2(200, 200))
 
 
 func lay_egg() -> void:
 	if cell == null:
 		return
-
-	cell.receive_egg(egg_data)
-
-
-func apply_random_sprite():
-	if sprite == null:
-		sprite = $Sprite2D
-		
-	sprite.texture = sprites.pick_random()
-	fit_to_size(Vector2(200, 200))
+	
+	print(data)
+	print(data.egg_data)
+	
+	cell.receive_egg(
+		data.egg_data.duplicate(true)
+	)
 
 
 func fit_to_size(target_size: Vector2) -> void:

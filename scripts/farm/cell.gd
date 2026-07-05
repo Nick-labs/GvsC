@@ -62,7 +62,7 @@ func collect_eggs() -> int:
 	var sum := 0
 
 	for egg in eggs:
-		sum += egg.data.cost
+		sum += egg.data.price
 		egg.queue_free()
 
 	eggs.clear()

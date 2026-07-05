@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://bb0lhr528xe2h"]
 
 [ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="1_vb07q"]
+[ext_resource type="Resource" uid="uid://bf8tmd44rj7p3" path="res://resources/eggs/default_egg.tres" id="1_y5p8r"]
+[ext_resource type="Texture2D" uid="uid://dl41qg7pbdhnl" path="res://assets/sprites/pigeons/pigeon-grey.png" id="2_pmgvi"]
 
 [resource]
 script = ExtResource("1_vb07q")
-hp = 3
+sprite = ExtResource("2_pmgvi")
 price = 3
-age = 1
+egg_data = ExtResource("1_y5p8r")
 metadata/_custom_type_script = "uid://bmosjtxnab5ud"
