@@ -19,6 +19,7 @@ func setup(new_data: EggData):
 
 
 func hatch():
-	if get_parent() is Cell:
-		var cell := get_parent() as Cell
-		cell.hatch_egg(self)
+	pass
+	#if get_parent() is Cell:
+		#var cell := get_parent() as Cell
+		#cell.hatch_egg(self)

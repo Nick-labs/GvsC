@@ -16,6 +16,11 @@ func create_from_template(template: PigeonData) -> Pigeon:
 	return pigeon
 
 
+func create_egg(parent1: PigeonData, parent2: PigeonData = null) -> EggData:
+	var egg := parent1.egg_template.duplicate(true)
+	return egg
+
+
 #func create_from_egg(egg: EggData) -> Pigeon
 #
 #func breed(mother: PigeonData, father: PigeonData) -> Pigeon

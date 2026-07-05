@@ -41,20 +41,14 @@ func _process(delta: float) -> void:
 func _apply_data():
 	if data == null:
 		return
-
+	
 	sprite.texture = data.sprite
 	fit_to_size(Vector2(200, 200))
 
 
-func lay_egg() -> void:
-	if cell == null:
-		return
-	
-	print(data)
-	print(data.egg_data)
-	
+func lay_egg():
 	cell.receive_egg(
-		data.egg_data.duplicate(true)
+		PigeonFactory.create_egg(data)
 	)
 
 

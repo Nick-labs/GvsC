@@ -8,5 +8,5 @@
 script = ExtResource("1_vb07q")
 sprite = ExtResource("2_pmgvi")
 price = 3
-egg_data = ExtResource("1_y5p8r")
+egg_template = ExtResource("1_y5p8r")
 metadata/_custom_type_script = "uid://bmosjtxnab5ud"
