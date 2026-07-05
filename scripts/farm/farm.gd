@@ -26,6 +26,7 @@ func _ready() -> void:
 	
 	farm_ui.set_money(money)
 	
+	
 	_fit_loft_to_screen()
 
 
@@ -73,6 +74,7 @@ func _process(_delta):
 func _fit_loft_to_screen() -> void:
 
 	var screen := get_viewport_rect().size
+	print(screen)
 	
 	#loft.position = (screen - Vector2(loft.loft_size)) / 2 + Vector2(100, 100)
 	
