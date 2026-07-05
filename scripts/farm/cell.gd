@@ -1,52 +1,15 @@
 class_name Cell
 extends Node2D
 
-@onready var marker: Marker2D = $Marker2D
+@export var egg_scene: PackedScene
 
 var pigeon: Pigeon
 var index: Vector2i
-
 var hovered := false
-
-@export var egg_scene: PackedScene
 var eggs: Array[Egg] = []
 
+@onready var marker: Marker2D = $Marker2D
 
-func receive_egg(data: EggData) -> void:
-	var egg := egg_scene.instantiate() as Egg
-	add_child(egg)
-
-	egg.position = marker.position + Vector2(randi_range(-10, 10), 60)
-	egg.setup(data)
-
-	eggs.append(egg)
-
-#func spawn_egg_visual() -> void:
-	#var egg = egg_scene.instantiate()
-	#add_child(egg)
-#
-	#egg.position = marker.position + Vector2(0, 60)
-#
-#func collect_eggs() -> int:
-	#var sum := 0
-#
-	#for e in eggs:
-		#sum += e
-#
-	#eggs.clear()
-#
-	## убрать визуал тоже (если есть)
-	#for child in get_children():
-		#if child.name == "Egg":
-			#child.queue_free()
-#
-	#return sum
-
-func _on_mouse_entered():
-	hovered = true
-
-func _on_mouse_exited():
-	hovered = false
 
 func set_pigeon(new_pigeon: Pigeon) -> void:
 	if new_pigeon == null:
@@ -60,6 +23,7 @@ func set_pigeon(new_pigeon: Pigeon) -> void:
 
 	add_child(pigeon)
 	pigeon.position = marker.position
+
 
 func remove_pigeon() -> void:
 	if pigeon == null:
@@ -82,7 +46,17 @@ func take_pigeon() -> Pigeon:
 
 func is_empty() -> bool:
 	return pigeon == null
-	
+
+
+func receive_egg(data: EggData) -> void:
+	var egg := egg_scene.instantiate() as Egg
+	add_child(egg)
+
+	egg.position = marker.position + Vector2(randi_range(-10, 10), 60)
+	egg.setup(data)
+
+	eggs.append(egg)
+
 
 func collect_eggs() -> int:
 	var sum := 0
@@ -96,13 +70,9 @@ func collect_eggs() -> int:
 	return sum
 
 
-func hatch_egg(egg: Egg):
-	pass
-	#eggs.erase(egg)
-#
-	#var pigeon := pigeon_scene.instantiate() as Pigeon
-	#pigeon.data = egg.data.pigeon_data
-#
-	#set_pigeon(pigeon)
-#
-	#egg.queue_free()
+func _on_mouse_entered():
+	hovered = true
+
+
+func _on_mouse_exited():
+	hovered = false

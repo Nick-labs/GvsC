@@ -5,19 +5,17 @@ signal pigeon_selected(pigeon: Pigeon)
 
 @export var rows: int = 2
 @export var columns: int = 5
-
 @export var cell_size := Vector2i(200, 200)
 @export var cell_space := 80
+@export var cell_scene: PackedScene
+@export var pigeon_scene: PackedScene
 
 var loft_size := Vector2i(cell_size.x * columns + cell_space * (columns - 1),
  						  cell_size.y * rows + cell_space * (rows - 1))
 
-@export var cell_scene: PackedScene
-@export var pigeon_scene: PackedScene
+var cells: Array[Cell] = []
 
 @onready var cells_root: Node2D = $Cells
-
-var cells: Array[Cell] = []
 
 
 func _ready() -> void:
@@ -81,7 +79,6 @@ func create_default_pigeon() -> Pigeon:
 								   "Больной", "Жадный", "Никчемный"]
 	
 	pigeon.data.name = prefixes.pick_random() + " голубь"
-	
 	pigeon.data.price = randi_range(1, 10)
 	
 	pigeon.clicked.connect(_on_pigeon_clicked)
@@ -89,14 +86,13 @@ func create_default_pigeon() -> Pigeon:
 	return pigeon
 
 
-func _on_pigeon_clicked(pigeon: Pigeon) -> void:
-	pigeon_selected.emit(pigeon)
-
-
 func get_hovered_cell() -> Cell:
-
 	for cell in cells:
 		if cell.hovered:
 			return cell
-
+	
 	return null
+
+
+func _on_pigeon_clicked(pigeon: Pigeon) -> void:
+	pigeon_selected.emit(pigeon)
