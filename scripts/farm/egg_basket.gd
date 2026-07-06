@@ -4,6 +4,7 @@ extends Node2D
 @onready var storage_point: Marker2D = $Marker2D
 
 var eggs: Array[Egg] = []
+var reserved_slots := 0
 
 const EGG_SPACING := 20.0
 const MAX_IN_ROW := 11
@@ -31,25 +32,35 @@ func receive_egg(egg: Egg):
 func _finish_receiving(egg: Egg):
 	egg.reparent(self)
 	eggs.append(egg)
+	reserved_slots -= 1
 	_layout()
 
 
 func _layout():
 	for i in eggs.size():
-
+		@warning_ignore("integer_division")
 		var row = i / MAX_IN_ROW
 		var column = i % MAX_IN_ROW
+		
+		var tween := create_tween()
 
-		eggs[i].position = storage_point.position + \
-			Vector2(
-				column * EGG_SPACING,
-				-row * EGG_SPACING
-			)
+		tween.tween_property(
+			eggs[i],
+			"position",
+			storage_point.position + \
+				Vector2(
+					column * EGG_SPACING,
+					-row * EGG_SPACING
+				),
+			0.1
+		)
 
 
 func _get_next_position() -> Vector2:
-	var index := eggs.size()
-
+	var index := eggs.size() + reserved_slots
+	
+	reserved_slots += 1
+	
 	@warning_ignore("integer_division")
 	var row := index / MAX_IN_ROW
 	var column := index % MAX_IN_ROW
