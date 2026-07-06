@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://c6ahqraxmu6xw"]
+
+[ext_resource type="Script" uid="uid://bdmhlmfwai2v8" path="res://scripts/farm/pigeon_inspector.gd" id="1_pjm7s"]
+
+[node name="PigeonInspector" type="PanelContainer" unique_id=1190866342]
+script = ExtResource("1_pjm7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1398509358]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=424622086]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Portrait" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1527842190]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Space" type="Control" parent="MarginContainer/VBoxContainer" unique_id=722328356]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="NicknameEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=358285975]
+layout_mode = 2
+alignment = 1
+
+[node name="BreedLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=13143645]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="AgeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1742934782]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="PriceLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=613884599]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="GenerationLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=412487825]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="EggsCounterLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1398975748]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="IntervalLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2044374666]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="SellButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1844214244]
+layout_mode = 2
+text = "Продать"
+
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/NicknameEdit" to="." method="_on_nickname_edit_text_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]

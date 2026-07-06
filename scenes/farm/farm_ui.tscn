@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ba66ct4755evq"]
+
+[ext_resource type="Script" uid="uid://c2ueijenddd86" path="res://scripts/farm/farm_ui.gd" id="1_r57qr"]
+[ext_resource type="PackedScene" uid="uid://c6ahqraxmu6xw" path="res://scenes/farm/pigeon_inspector.tscn" id="2_47p7y"]
+
+[node name="FarmUi" type="CanvasLayer" unique_id=1160712630]
+script = ExtResource("1_r57qr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=835364906]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="PigeonInspector" parent="MarginContainer" unique_id=1190866342 instance=ExtResource("2_47p7y")]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer" unique_id=2045811232]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 36
+
+[node name="ExitButton" type="Button" parent="MarginContainer" unique_id=1511620067]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Выйти"
+
+[connection signal="pressed" from="MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]

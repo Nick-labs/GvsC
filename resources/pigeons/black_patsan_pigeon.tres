@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://dxh5v1w3ny6yq"]
+
+[ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="1_kasvb"]
+
+[resource]
+script = ExtResource("1_kasvb")
+metadata/_custom_type_script = "uid://bmosjtxnab5ud"

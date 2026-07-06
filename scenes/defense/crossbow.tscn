@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ddnyifkc0o3k4"]
+
+[ext_resource type="Script" uid="uid://bvki1e6kv2i2b" path="res://scripts/defense/crossbow.gd" id="1_2nyu2"]
+[ext_resource type="Texture2D" uid="uid://hka1goa04jli" path="res://assets/sprites/crossbow.png" id="2_yqt5t"]
+
+[node name="Crossbow" type="Node2D" unique_id=1732893570]
+script = ExtResource("1_2nyu2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=965149292]
+texture = ExtResource("2_yqt5t")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://db3hyob6o7jx2"]
+
+[ext_resource type="Resource" uid="uid://bf8tmd44rj7p3" path="res://resources/eggs/default_egg.tres" id="1_rm5g7"]
+[ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="1_xe4vq"]
+[ext_resource type="Texture2D" uid="uid://dl41qg7pbdhnl" path="res://assets/sprites/pigeons/pigeon-grey.png" id="3_qmlva"]
+
+[resource]
+script = ExtResource("1_xe4vq")
+breed_name = "default breed"
+sprite = ExtResource("3_qmlva")
+price = 10
+egg_interval = 7.0
+egg_template = ExtResource("1_rm5g7")
+metadata/_custom_type_script = "uid://bmosjtxnab5ud"

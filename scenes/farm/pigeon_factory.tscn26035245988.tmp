@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cpewe02rkskak"]
+
+[ext_resource type="Script" uid="uid://cyj50pqlynyfj" path="res://scripts/farm/pigeon_factory.gd" id="1_ombfs"]
+[ext_resource type="PackedScene" uid="uid://0vqpv2qnkwkc" path="res://scenes/farm/pigeon.tscn" id="2_slxyh"]
+[ext_resource type="Script" uid="uid://mpfcqvmrc4fx" path="res://scripts/farm/breed_data.gd" id="3_slxyh"]
+[ext_resource type="Resource" uid="uid://bag0et4bkgpri" path="res://resources/pigeons/default_breed.tres" id="4_rn4fw"]
+
+[node name="PigeonFactory" type="Node" unique_id=208138106]
+script = ExtResource("1_ombfs")
+pigeon_scene = ExtResource("2_slxyh")
+breeds = Array[ExtResource("3_slxyh")]([ExtResource("4_rn4fw")])

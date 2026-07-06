@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cs12ijlqunrkx"]
+
+[ext_resource type="Script" uid="uid://c53vcfjniqege" path="res://scripts/defense/player.gd" id="1_ubnn4"]
+[ext_resource type="Texture2D" uid="uid://uknk72ttf6e5" path="res://assets/sprites/pigeons/skebob.png" id="2_57et3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34hsx"]
+radius = 23.09
+
+[node name="Player" type="CharacterBody2D" unique_id=1131257735]
+script = ExtResource("1_ubnn4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=848569742]
+shape = SubResource("CircleShape2D_34hsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1969158890]
+position = Vector2(1.9999999, 0.99999994)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_57et3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1831457459]

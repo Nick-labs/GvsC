@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cpewe02rkskak"]
+
+[ext_resource type="Script" uid="uid://cyj50pqlynyfj" path="res://scripts/farm/pigeon_factory.gd" id="1_ombfs"]
+[ext_resource type="PackedScene" uid="uid://0vqpv2qnkwkc" path="res://scenes/farm/pigeon.tscn" id="2_slxyh"]
+
+[node name="PigeonFactory" type="Node" unique_id=208138106]
+script = ExtResource("1_ombfs")
+pigeon_scene = ExtResource("2_slxyh")
