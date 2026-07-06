@@ -122,28 +122,4 @@ func swap(a: Cell, b: Cell):
 
 func collect_eggs(cell: Cell):
 	for egg in cell.take_eggs():
-		_collect_egg(egg)
-
-
-func _collect_egg(egg: Egg):
-	var target := egg_basket.get_next_position()
-
-	var tween := create_tween()
-	
-	tween.tween_interval(randf_range(0.0, 0.15))
-
-	tween.tween_property(
-		egg,
-		"global_position",
-		target,
-		1
-	)
-
-	tween.finished.connect(
-		func():
-			egg_basket.add_egg(egg)
-	)
-
-
-func _on_egg_collected(egg: Egg):
-	egg_basket.add_egg(egg)
+		egg_basket.receive_egg(egg)
