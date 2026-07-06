@@ -1,12 +1,12 @@
 extends Node
 
 @export var pigeon_scene: PackedScene
-@export var pigeon_datas: Array[PigeonData]
+@export var pigeon_templates: Array[PigeonData]
 
 
 func create_random() -> Pigeon:
 	return create_from_template(
-		pigeon_datas.pick_random()
+		pigeon_templates.pick_random()
 	)
 
 

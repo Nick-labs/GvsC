@@ -14,7 +14,7 @@ func set_money(amount: int) -> void:
 
 
 func show_pigeon(pigeon: Pigeon) -> void:
-	name_label.text = pigeon.data.name
+	name_label.text = pigeon.data.nickname
 	price_label.text = "Цена: %d" % pigeon.data.price
 
 
