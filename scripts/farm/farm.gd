@@ -126,7 +126,7 @@ func collect_eggs(cell: Cell):
 
 
 func _collect_egg(egg: Egg):
-	egg.reparent(self)
+	var target := egg_basket.get_next_position()
 
 	var tween := create_tween()
 	
@@ -135,11 +135,14 @@ func _collect_egg(egg: Egg):
 	tween.tween_property(
 		egg,
 		"global_position",
-		egg_basket.global_position,
+		target,
 		1
 	)
 
-	tween.finished.connect(_on_egg_collected.bind(egg))
+	tween.finished.connect(
+		func():
+			egg_basket.add_egg(egg)
+	)
 
 
 func _on_egg_collected(egg: Egg):
