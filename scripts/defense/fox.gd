@@ -1,6 +1,8 @@
 class_name Fox
 extends CharacterBody2D
 
+signal died
+
 @export var speed := 80.0
 @export var hp := 3
 
@@ -54,4 +56,5 @@ func take_damage(damage: int):
 
 
 func die():
+	died.emit()
 	queue_free()
