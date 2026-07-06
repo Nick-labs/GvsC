@@ -24,6 +24,7 @@ var music_started := false
 func _ready() -> void:
 	loft.pigeon_clicked.connect(_on_pigeon_clicked)
 	loft.pigeon_drag_requested.connect(_on_pigeon_drag_requested)
+	loft.pigeon_egg_laid.connect(_on_pigeon_egg_laid)
 	
 	pigeon_inspector.sell_pressed.connect(_on_sell_pressed)
 	
@@ -89,6 +90,11 @@ func _on_sell_pressed() -> void:
 
 func _on_pigeon_clicked(pigeon: Pigeon):
 	collect_eggs(pigeon.cell)
+
+
+func _on_pigeon_egg_laid(pigeon: Pigeon):
+	if pigeon == selected_pigeon:
+		pigeon_inspector.show_pigeon(pigeon)
 
 
 func select_pigeon(pigeon: Pigeon):

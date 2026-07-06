@@ -3,6 +3,7 @@ extends Area2D
 
 signal clicked(pigeon: Pigeon)
 signal drag_requested(pigeon: Pigeon)
+signal egg_laid(pigeon: Pigeon)
 
 @export var data: PigeonData:
 	set(value):
@@ -48,9 +49,10 @@ func _apply_data():
 
 
 func lay_egg():
-	cell.receive_egg(
-		PigeonFactory.create_egg(data)
-	)
+	var egg: EggData = PigeonFactory.create_egg(data)
+	cell.receive_egg(egg)
+	data.eggs_laid += 1
+	egg_laid.emit(self)
 
 
 func fit_to_size(target_size: Vector2) -> void:

@@ -3,6 +3,7 @@ extends Node2D
 
 signal pigeon_clicked(pigeon: Pigeon)
 signal pigeon_drag_requested(pigeon: Pigeon)
+signal pigeon_egg_laid(pigeon: Pigeon)
 
 @export var rows: int = 2
 @export var columns: int = 5
@@ -72,6 +73,7 @@ func create_default_pigeon() -> Pigeon:
 	var pigeon: Pigeon = PigeonFactory.create_random()
 	pigeon.clicked.connect(_on_pigeon_clicked)
 	pigeon.drag_requested.connect(_on_pigeon_drag_requested)
+	pigeon.egg_laid.connect(_on_pigeon_egg_laid)
 	return pigeon
 
 
@@ -89,3 +91,7 @@ func _on_pigeon_clicked(pigeon: Pigeon) -> void:
 
 func _on_pigeon_drag_requested(pigeon: Pigeon):
 	pigeon_drag_requested.emit(pigeon)
+
+
+func _on_pigeon_egg_laid(pigeon: Pigeon):
+	pigeon_egg_laid.emit(pigeon)
