@@ -71,10 +71,14 @@ func add_pigeon(pigeon: Pigeon) -> bool:
 
 func create_default_pigeon() -> Pigeon:
 	var pigeon: Pigeon = PigeonFactory.create_random()
+	setup_pigeon(pigeon)
+	return pigeon
+
+
+func setup_pigeon(pigeon: Pigeon):
 	pigeon.clicked.connect(_on_pigeon_clicked)
 	pigeon.drag_requested.connect(_on_pigeon_drag_requested)
 	pigeon.egg_laid.connect(_on_pigeon_egg_laid)
-	return pigeon
 
 
 func get_hovered_cell() -> Cell:
