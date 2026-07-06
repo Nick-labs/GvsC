@@ -15,7 +15,8 @@ script = ExtResource("1_a4t06")
 [node name="EggBasket" parent="." unique_id=218532551 instance=ExtResource("6_fhtoc")]
 position = Vector2(161, 848)
 
-[node name="FarmUi" parent="." unique_id=1160712630 instance=ExtResource("3_fev0l")]
+[node name="FarmUI" parent="." unique_id=1160712630 instance=ExtResource("3_fev0l")]
 
 [node name="MusicPlayer" parent="." unique_id=1334423811 instance=ExtResource("4_36fi7")]
 stream = ExtResource("5_36fi7")
+autoplay = true

@@ -6,8 +6,8 @@ extends Node2D
 var eggs: Array[Egg] = []
 var reserved_slots := 0
 
-const EGG_SPACING := 20.0
-const MAX_IN_ROW := 11
+@export var egg_spacing := 20.0
+@export var max_in_row := 11
 
 
 func receive_egg(egg: Egg):
@@ -39,8 +39,8 @@ func _finish_receiving(egg: Egg):
 func _layout():
 	for i in eggs.size():
 		@warning_ignore("integer_division")
-		var row = i / MAX_IN_ROW
-		var column = i % MAX_IN_ROW
+		var row = i / max_in_row
+		var column = i % max_in_row
 		
 		var tween := create_tween()
 
@@ -49,8 +49,8 @@ func _layout():
 			"position",
 			storage_point.position + \
 				Vector2(
-					column * EGG_SPACING,
-					-row * EGG_SPACING
+					column * egg_spacing,
+					-row * egg_spacing
 				),
 			0.1
 		)
@@ -62,10 +62,10 @@ func _get_next_position() -> Vector2:
 	reserved_slots += 1
 	
 	@warning_ignore("integer_division")
-	var row := index / MAX_IN_ROW
-	var column := index % MAX_IN_ROW
+	var row := index / max_in_row
+	var column := index % max_in_row
 
 	return storage_point.global_position + Vector2(
-		column * EGG_SPACING,
-		-row * EGG_SPACING
+		column * egg_spacing,
+		-row * egg_spacing
 	)

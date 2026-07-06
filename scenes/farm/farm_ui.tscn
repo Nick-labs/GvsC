@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ba66ct4755evq"]
 
 [ext_resource type="Script" uid="uid://c2ueijenddd86" path="res://scripts/farm/farm_ui.gd" id="1_r57qr"]
+[ext_resource type="PackedScene" uid="uid://c6ahqraxmu6xw" path="res://scenes/farm/pigeon_inspector.tscn" id="2_47p7y"]
 
 [node name="FarmUi" type="CanvasLayer" unique_id=1160712630]
 script = ExtResource("1_r57qr")
@@ -16,6 +17,12 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
+[node name="PigeonInspector" parent="MarginContainer" unique_id=1190866342 instance=ExtResource("2_47p7y")]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
 [node name="MoneyLabel" type="Label" parent="MarginContainer" unique_id=2045811232]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -24,32 +31,8 @@ theme_override_font_sizes/font_size = 36
 
 [node name="ExitButton" type="Button" parent="MarginContainer" unique_id=1511620067]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Выйти"
 
-[node name="BottomPanel" type="MarginContainer" parent="MarginContainer" unique_id=1061488947]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/BottomPanel" unique_id=328581268]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 20
-
-[node name="NameLabel" type="Label" parent="MarginContainer/BottomPanel/HBoxContainer" unique_id=828398547]
-layout_mode = 2
-text = "Голубь не выбран"
-
-[node name="PriceLabel" type="Label" parent="MarginContainer/BottomPanel/HBoxContainer" unique_id=1887729842]
-layout_mode = 2
-
-[node name="SellButton" type="Button" parent="MarginContainer/BottomPanel/HBoxContainer" unique_id=1829927365]
-layout_mode = 2
-text = "Продать"
-
 [connection signal="pressed" from="MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="MarginContainer/BottomPanel/HBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]

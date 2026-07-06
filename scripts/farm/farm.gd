@@ -5,7 +5,8 @@ extends Node2D
 
 @onready var loft: Loft = $Loft
 @onready var egg_basket: EggBasket = $EggBasket
-@onready var farm_ui: FarmUI = $FarmUi
+@onready var farm_ui: FarmUI = $FarmUI
+@onready var pigeon_inspector: PigeonInspector  = $FarmUI/MarginContainer/PigeonInspector
 
 
 var money: int = 100:
@@ -22,7 +23,7 @@ var music_started := false
 
 func _ready() -> void:
 	loft.pigeon_selected.connect(_on_pigeon_selected)
-	farm_ui.sell_pressed.connect(_on_sell_pressed)
+	pigeon_inspector.sell_pressed.connect(_on_sell_pressed)
 	
 	farm_ui.set_money(money)
 	
@@ -40,25 +41,24 @@ func _input(event):
 	if music_started:
 		return
 
-	if event is InputEventMouseButton and event.pressed:
-		$MusicPlayer.play()
-		music_started = true
+	#if event is InputEventMouseButton and event.pressed:
+		#$MusicPlayer.play()
+		#music_started = true
 
 
 func _unhandled_input(event):
 	if dragged_pigeon == null:
 		return
-
+	
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and not event.pressed:
-
 		finish_drag()
-
+	
 
 func _fit_loft_to_screen() -> void:
 	var screen := get_viewport_rect().size
-	loft.position = (screen - Vector2(loft.loft_size)) / 2 + Vector2(100, 0)
+	loft.position = (screen - Vector2(loft.loft_size)) / 2 + Vector2(-200, 0)
 
 
 func _on_pigeon_selected(pigeon: Pigeon) -> void:
@@ -73,7 +73,7 @@ func _on_pigeon_selected(pigeon: Pigeon) -> void:
 	
 	_set_selected(selected_pigeon, true)
 
-	farm_ui.show_pigeon(selected_pigeon)
+	pigeon_inspector.show_pigeon(selected_pigeon)
 
 
 func _set_selected(pigeon: Pigeon, value: bool) -> void:
@@ -92,7 +92,7 @@ func _on_sell_pressed() -> void:
 	selected_pigeon.cell.remove_pigeon()
 	selected_pigeon = null
 
-	farm_ui.clear_selection()
+	pigeon_inspector.clear()
 
 
 func finish_drag():

@@ -6,7 +6,7 @@ signal pigeon_selected(pigeon: Pigeon)
 @export var rows: int = 2
 @export var columns: int = 5
 @export var cell_size := Vector2i(200, 200)
-@export var cell_space := 80
+@export var cell_space := 40
 @export var cell_scene: PackedScene
 @export var pigeon_scene: PackedScene
 
