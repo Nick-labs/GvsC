@@ -22,7 +22,9 @@ var music_started := false
 
 
 func _ready() -> void:
-	loft.pigeon_selected.connect(_on_pigeon_selected)
+	loft.pigeon_clicked.connect(_on_pigeon_clicked)
+	loft.pigeon_drag_requested.connect(_on_pigeon_drag_requested)
+	
 	pigeon_inspector.sell_pressed.connect(_on_sell_pressed)
 	
 	farm_ui.set_money(money)
@@ -49,9 +51,9 @@ func _input(event):
 func _unhandled_input(event):
 	if dragged_pigeon == null:
 		return
-	
+
 	if event is InputEventMouseButton \
-	and event.button_index == MOUSE_BUTTON_LEFT \
+	and event.button_index == MOUSE_BUTTON_RIGHT \
 	and not event.pressed:
 		finish_drag()
 	
@@ -61,19 +63,9 @@ func _fit_loft_to_screen() -> void:
 	loft.position = (screen - Vector2(loft.loft_size)) / 2 + Vector2(-200, 0)
 
 
-func _on_pigeon_selected(pigeon: Pigeon) -> void:
-	if selected_pigeon:
-		_set_selected(selected_pigeon, false)
-
-	self.selected_pigeon = pigeon
-	self.dragged_pigeon = pigeon
-	source_cell = pigeon.cell
-	
-	collect_eggs(source_cell)
-	
-	_set_selected(selected_pigeon, true)
-
-	pigeon_inspector.show_pigeon(selected_pigeon)
+func _on_pigeon_drag_requested(pigeon: Pigeon):
+	select_pigeon(pigeon)
+	start_drag()
 
 
 func _set_selected(pigeon: Pigeon, value: bool) -> void:
@@ -95,16 +87,47 @@ func _on_sell_pressed() -> void:
 	pigeon_inspector.clear()
 
 
+func _on_pigeon_clicked(pigeon: Pigeon):
+	collect_eggs(pigeon.cell)
+
+
+func select_pigeon(pigeon: Pigeon):
+	if selected_pigeon == pigeon:
+		return
+
+	if selected_pigeon:
+		_set_selected(selected_pigeon, false)
+
+	selected_pigeon = pigeon
+
+	_set_selected(selected_pigeon, true)
+
+	pigeon_inspector.show_pigeon(selected_pigeon)
+
+	collect_eggs(pigeon.cell)
+
+
+func start_drag():
+	if selected_pigeon == null:
+		return
+
+	if dragged_pigeon:
+		return
+
+	dragged_pigeon = selected_pigeon
+	source_cell = selected_pigeon.cell
+
+
 func finish_drag():
 	var target := loft.get_hovered_cell()
 	
 	if target == null:
 		source_cell.set_pigeon(dragged_pigeon)
-		
+	
 	elif target.is_empty():
 		var pigeon = source_cell.take_pigeon()
 		target.set_pigeon(pigeon)
-		
+	
 	else:
 		swap(source_cell, target)
 

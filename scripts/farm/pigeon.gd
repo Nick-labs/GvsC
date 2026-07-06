@@ -2,6 +2,7 @@ class_name Pigeon
 extends Area2D
 
 signal clicked(pigeon: Pigeon)
+signal drag_requested(pigeon: Pigeon)
 
 @export var data: PigeonData:
 	set(value):
@@ -72,7 +73,10 @@ func fit_to_size(target_size: Vector2) -> void:
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton \
-	and event.button_index == MOUSE_BUTTON_LEFT \
-	and event.pressed:
-		clicked.emit(self)
+	if event is InputEventMouseButton and event.pressed:
+		match event.button_index:
+			MOUSE_BUTTON_LEFT:
+				clicked.emit(self)
+			
+			MOUSE_BUTTON_RIGHT:
+				drag_requested.emit(self)
