@@ -1,19 +1,29 @@
 [gd_scene format=3 uid="uid://deir46p1edu21"]
 
 [ext_resource type="Script" uid="uid://lc7anuj87qbf" path="res://scripts/defense/defense.gd" id="1_ugpjw"]
+[ext_resource type="PackedScene" uid="uid://cl4oy8r5r6k7y" path="res://scenes/defense/fox.tscn" id="2_asd4r"]
 [ext_resource type="PackedScene" uid="uid://b04ywcao285w6" path="res://scenes/defense/world_farm.tscn" id="2_ugpjw"]
 [ext_resource type="PackedScene" uid="uid://ddnyifkc0o3k4" path="res://scenes/defense/crossbow.tscn" id="3_qk0ly"]
 
+[sub_resource type="Curve2D" id="Curve2D_asd4r"]
+
 [node name="Defense" type="Node2D" unique_id=2122941706]
 script = ExtResource("1_ugpjw")
+fox_scene = ExtResource("2_asd4r")
 
 [node name="World" type="Node2D" parent="." unique_id=1992813151]
 
-[node name="WorldFarm" parent="World" unique_id=1760461849 instance=ExtResource("2_ugpjw")]
+[node name="Base" parent="World" unique_id=1760461849 instance=ExtResource("2_ugpjw")]
 
-[node name="Camera2D" type="Camera2D" parent="World/WorldFarm" unique_id=1743624226]
+[node name="Camera2D" type="Camera2D" parent="World/Base" unique_id=1743624226]
 
-[node name="Crossbow" parent="World/WorldFarm" unique_id=1732893570 node_paths=PackedStringArray("center") instance=ExtResource("3_qk0ly")]
+[node name="Crossbow" parent="World/Base" unique_id=1732893570 node_paths=PackedStringArray("center") instance=ExtResource("3_qk0ly")]
 center = NodePath("..")
 
 [node name="Ground" type="Sprite2D" parent="World" unique_id=1775576284]
+
+[node name="SpawnPoint" type="Marker2D" parent="World" unique_id=967421119]
+position = Vector2(0, -600)
+
+[node name="SpawnPath" type="Path2D" parent="World" unique_id=683660222]
+curve = SubResource("Curve2D_asd4r")
