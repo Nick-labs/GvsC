@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://c31s8y7drg3ns"]
 
-[ext_resource type="Texture2D" uid="uid://dv5la03at1c3x" path="res://assets/sprites/bolt.png" id="1_263kd"]
 [ext_resource type="Script" uid="uid://biwb8uj5tfrm2" path="res://scripts/defense/bolt.gd" id="1_pii4n"]
+[ext_resource type="Texture2D" uid="uid://dv2hl441bgmiu" path="res://assets/sprites/field/crossbow/bolt.png" id="2_pii4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
-size = Vector2(40, 10)
+size = Vector2(40, 8)
 
 [node name="Bolt" type="Area2D" unique_id=437399408]
 script = ExtResource("1_pii4n")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1616286707]
-texture = ExtResource("1_263kd")
+position = Vector2(1, -1)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_pii4n")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1475387657]
 shape = SubResource("RectangleShape2D_camgg")

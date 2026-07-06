@@ -2,7 +2,7 @@ class_name Crossbow
 extends Node2D
 
 @export var center: Node2D
-@export var radius := 40
+@export var radius := 60
 @export var rotation_speed := 8.0
 
 @export var bolt_scene: PackedScene

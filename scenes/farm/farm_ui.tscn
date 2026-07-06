@@ -31,7 +31,7 @@ theme_override_font_sizes/font_size = 36
 
 [node name="ExitButton" type="Button" parent="MarginContainer" unique_id=1511620067]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "Выйти"
 

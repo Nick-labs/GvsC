@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="EggData" format=3 uid="uid://bf8tmd44rj7p3"]
 
 [ext_resource type="Script" uid="uid://bju6ideq3gslp" path="res://scripts/farm/egg_data.gd" id="1_31wc8"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_31wc8"]
-load_path = "res://.godot/imported/egg.png-12522289084fca031fd73ee33a79b7ee.ctex"
+[ext_resource type="Texture2D" uid="uid://crwq1kbxouvkt" path="res://assets/sprites/eggs/white-egg.png" id="2_li5oc"]
 
 [resource]
 script = ExtResource("1_31wc8")
-texture = SubResource("CompressedTexture2D_31wc8")
+price = 1
+texture = ExtResource("2_li5oc")
 metadata/_custom_type_script = "uid://bju6ideq3gslp"

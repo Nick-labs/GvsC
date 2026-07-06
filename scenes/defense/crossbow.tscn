@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bvki1e6kv2i2b" path="res://scripts/defense/crossbow.gd" id="1_2nyu2"]
 [ext_resource type="PackedScene" uid="uid://c31s8y7drg3ns" path="res://scenes/defense/bolt.tscn" id="2_ibs7y"]
-[ext_resource type="Texture2D" uid="uid://hka1goa04jli" path="res://assets/sprites/crossbow.png" id="2_yqt5t"]
+[ext_resource type="Texture2D" uid="uid://br0w111k8trse" path="res://assets/sprites/field/crossbow/crossbow-on.png" id="3_ibs7y"]
 
 [node name="Crossbow" type="Node2D" unique_id=1732893570]
 script = ExtResource("1_2nyu2")
 bolt_scene = ExtResource("2_ibs7y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=965149292]
-texture = ExtResource("2_yqt5t")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_ibs7y")
+flip_h = true

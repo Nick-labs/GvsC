@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl4oy8r5r6k7y"]
 
 [ext_resource type="Script" uid="uid://doc2k2yvug2w5" path="res://scripts/defense/fox.gd" id="1_513aj"]
-[ext_resource type="Texture2D" uid="uid://ba5388vsrb686" path="res://assets/sprites/foxes/fox-moving.png" id="2_d231h"]
+[ext_resource type="Texture2D" uid="uid://ck1s50pejc444" path="res://assets/sprites/foxes/default/fox-moving.png" id="2_d231h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d231h"]
 size = Vector2(70, 30)
