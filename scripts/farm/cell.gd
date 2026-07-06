@@ -58,16 +58,10 @@ func receive_egg(data: EggData) -> void:
 	eggs.append(egg)
 
 
-func collect_eggs() -> int:
-	var sum := 0
-
-	for egg in eggs:
-		sum += egg.data.price
-		egg.queue_free()
-
+func take_eggs() -> Array[Egg]:
+	var result := eggs.duplicate()
 	eggs.clear()
-
-	return sum
+	return result
 
 
 func _on_mouse_entered():

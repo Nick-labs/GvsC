@@ -5,11 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://ba66ct4755evq" path="res://scenes/farm/farm_ui.tscn" id="3_fev0l"]
 [ext_resource type="PackedScene" uid="uid://c015lfotxq3w4" path="res://autoload/MusicPlayer.tscn" id="4_36fi7"]
 [ext_resource type="AudioStream" uid="uid://ccrpjc02bb054" path="res://assets/audio/music/test4_OrganFluit.ogg" id="5_36fi7"]
+[ext_resource type="PackedScene" uid="uid://dlnktbeh75sqr" path="res://scenes/farm/egg_basket.tscn" id="6_fhtoc"]
 
 [node name="Farm" type="Node2D" unique_id=1015373910]
 script = ExtResource("1_a4t06")
 
 [node name="Loft" parent="." unique_id=1552193297 instance=ExtResource("2_wgrn4")]
+
+[node name="EggBasket" parent="." unique_id=218532551 instance=ExtResource("6_fhtoc")]
+position = Vector2(161, 848)
 
 [node name="FarmUi" parent="." unique_id=1160712630 instance=ExtResource("3_fev0l")]
 

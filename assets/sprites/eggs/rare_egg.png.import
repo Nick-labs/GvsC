@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clkwuu48ohvi3"
-path.s3tc="res://.godot/imported/test_pigeon.png-5d4f2c09b3081c8155e44356c0061c77.s3tc.ctex"
+uid="uid://cqqo5hq3qjax2"
+path="res://.godot/imported/rare_egg.png-9fb3c95ba36b483a897ab67121a33827.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/test_pigeon.png"
-dest_files=["res://.godot/imported/test_pigeon.png-5d4f2c09b3081c8155e44356c0061c77.s3tc.ctex"]
+source_file="res://assets/sprites/eggs/rare_egg.png"
+dest_files=["res://.godot/imported/rare_egg.png-9fb3c95ba36b483a897ab67121a33827.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

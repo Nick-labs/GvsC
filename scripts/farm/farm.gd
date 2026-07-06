@@ -4,6 +4,7 @@ extends Node2D
 @export var padding: float = 300.0
 
 @onready var loft: Loft = $Loft
+@onready var egg_basket: EggBasket = $EggBasket
 @onready var farm_ui: FarmUI = $FarmUi
 
 
@@ -68,6 +69,8 @@ func _on_pigeon_selected(pigeon: Pigeon) -> void:
 	self.dragged_pigeon = pigeon
 	source_cell = pigeon.cell
 	
+	collect_eggs(source_cell)
+	
 	_set_selected(selected_pigeon, true)
 
 	farm_ui.show_pigeon(selected_pigeon)
@@ -104,9 +107,6 @@ func finish_drag():
 		
 	else:
 		swap(source_cell, target)
-	
-	var egg_value = source_cell.collect_eggs()
-	money += egg_value
 
 	self.dragged_pigeon = null
 	self.source_cell = null
@@ -118,3 +118,29 @@ func swap(a: Cell, b: Cell):
 
 	a.set_pigeon(second)
 	b.set_pigeon(first)
+
+
+func collect_eggs(cell: Cell):
+	for egg in cell.take_eggs():
+		_collect_egg(egg)
+
+
+func _collect_egg(egg: Egg):
+	egg.reparent(self)
+
+	var tween := create_tween()
+	
+	tween.tween_interval(randf_range(0.0, 0.15))
+
+	tween.tween_property(
+		egg,
+		"global_position",
+		egg_basket.global_position,
+		1
+	)
+
+	tween.finished.connect(_on_egg_collected.bind(egg))
+
+
+func _on_egg_collected(egg: Egg):
+	egg_basket.add_egg(egg)

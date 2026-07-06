@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7w326qxatf0"]
 
 [ext_resource type="Script" uid="uid://cs5aprbok82mg" path="res://scripts/farm/egg.gd" id="1_koaw8"]
-[ext_resource type="Texture2D" uid="uid://dfjiblovlwr0g" path="res://assets/sprites/egg.png" id="1_t6vty"]
+[ext_resource type="Texture2D" uid="uid://dfjiblovlwr0g" path="res://assets/sprites/eggs/test_egg.png" id="1_t6vty"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_camgg"]
 radius = 20.09975
