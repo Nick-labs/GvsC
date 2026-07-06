@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://ba5388vsrb686" path="res://assets/sprites/foxes/fox-moving.png" id="2_d231h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d231h"]
-size = Vector2(150, 70)
+size = Vector2(70, 30)
 
 [node name="Fox" type="CharacterBody2D" unique_id=301998062]
 script = ExtResource("1_513aj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1532745747]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_d231h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104450122]

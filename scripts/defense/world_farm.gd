@@ -5,3 +5,10 @@ extends Node2D
 
 
 var health := max_health
+
+
+func take_damage(damage: float) -> void:
+	health -= damage
+	print(health)
+	# ...
+	
