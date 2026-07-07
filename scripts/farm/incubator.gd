@@ -5,7 +5,7 @@ signal egg_drag_requested(egg: Egg, slot: IncubatorSlot)
 signal pigeon_drag_requested(pigeon: Pigeon, slot: IncubatorSlot)
 
 @export var slot_scene: PackedScene
-@export var slot_count := 1
+@export var slot_count := 2
 
 var slots: Array[IncubatorSlot] = []
 

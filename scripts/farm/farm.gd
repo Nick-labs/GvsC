@@ -153,6 +153,7 @@ func _on_sell_pressed() -> void:
 
 
 func _on_pigeon_clicked(pigeon: Pigeon):
+	print("Farm received click:", pigeon)
 	collect_eggs(pigeon.cell)
 
 
@@ -203,7 +204,6 @@ func _finish_pigeon_drag(context: DragContext):
 	var pigeon := context.dragged_object as Pigeon
 	var source := context.source_container
 	
-
 	var target := loft.get_hovered_cell()
 
 	if target == null:
@@ -213,16 +213,16 @@ func _finish_pigeon_drag(context: DragContext):
 		)
 
 	elif target.is_empty():
+		loft.setup_pigeon(pigeon)
 		target.set_pigeon(pigeon)
 
+	elif source is Cell:
+		swap(source, target)
 	else:
-		if source is Cell:
-			swap(source, target)
-		else:
-			_return_pigeon(
-				pigeon,
-				source
-			)
+		_return_pigeon(
+			pigeon,
+			source
+		)
 
 
 func _return_pigeon(

@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dngphhg4b2ddo" path="res://scripts/farm/incubator.gd" id="8_eed4j"]
 [ext_resource type="PackedScene" uid="uid://dgik247pn2v6w" path="res://scenes/farm/incubator_slot.tscn" id="9_k484s"]
 [ext_resource type="Script" uid="uid://11aeoapobylm" path="res://scripts/farm/drag_manager.gd" id="10_51x8p"]
+[ext_resource type="Texture2D" uid="uid://chlqmyrx2pir" path="res://assets/sprites/farm/farm-day.png" id="11_cxgs2"]
 
 [node name="Farm" type="Node2D" unique_id=1015373910]
 script = ExtResource("1_a4t06")
@@ -39,6 +40,12 @@ autoplay = true
 anchor_mode = 0
 
 [node name="FarmUI" parent="." unique_id=1160712630 instance=ExtResource("3_fev0l")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1886667223]
+z_index = -4096
+position = Vector2(961.5, 541.50006)
+scale = Vector2(0.7527343, 0.75347227)
+texture = ExtResource("11_cxgs2")
 
 [connection signal="mouse_entered" from="EggBasket" to="EggBasket" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="EggBasket" to="EggBasket" method="_on_mouse_exited"]

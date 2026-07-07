@@ -76,9 +76,14 @@ func create_default_pigeon() -> Pigeon:
 
 
 func setup_pigeon(pigeon: Pigeon):
-	pigeon.clicked.connect(_on_pigeon_clicked)
-	pigeon.drag_requested.connect(_on_pigeon_drag_requested)
-	pigeon.egg_laid.connect(_on_pigeon_egg_laid)
+	if not pigeon.clicked.is_connected(_on_pigeon_clicked):
+		pigeon.clicked.connect(_on_pigeon_clicked)
+
+	if not pigeon.drag_requested.is_connected(_on_pigeon_drag_requested):
+		pigeon.drag_requested.connect(_on_pigeon_drag_requested)
+
+	if not pigeon.egg_laid.is_connected(_on_pigeon_egg_laid):
+		pigeon.egg_laid.connect(_on_pigeon_egg_laid)
 
 
 func get_hovered_cell() -> Cell:

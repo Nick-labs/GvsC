@@ -15,9 +15,6 @@ func set_pigeon(new_pigeon: Pigeon) -> void:
 	if new_pigeon == null:
 		return
 
-	if new_pigeon.get_parent():
-		new_pigeon.get_parent().remove_child(new_pigeon)
-
 	pigeon = new_pigeon
 	pigeon.cell = self
 	
