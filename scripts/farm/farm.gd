@@ -41,6 +41,12 @@ func _ready() -> void:
 	farm_ui.set_money(money)
 	
 	_fit_loft_to_screen()
+	
+	TimeManager.minute_passed.connect(_on_minute)
+
+
+func _on_minute(day, hour, minute):
+	print(day, " ", hour, ":", minute)
 
 
 func _input(event):
@@ -153,7 +159,6 @@ func _on_sell_pressed() -> void:
 
 
 func _on_pigeon_clicked(pigeon: Pigeon):
-	print("Farm received click:", pigeon)
 	collect_eggs(pigeon.cell)
 
 
@@ -276,6 +281,11 @@ func swap(a: Cell, b: Cell):
 	b.set_pigeon(first)
 
 
+# Здесь был баг с freed object, но я не смог его повторить
 func collect_eggs(cell: Cell):
 	for egg in cell.take_eggs():
+		if !is_instance_valid(egg):
+			push_error("Freed egg found!")
+			continue
+
 		egg_basket.receive_egg(egg)

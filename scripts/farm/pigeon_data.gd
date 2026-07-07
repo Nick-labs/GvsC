@@ -5,7 +5,7 @@ extends Resource
 @export var breed_name: String
 @export var sprite: Texture2D
 @export var price: int
-@export var egg_interval: float
+@export var egg_interval_minutes: int
 @export var egg_template: EggData
 @export var rarity: float = 1.0
 

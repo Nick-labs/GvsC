@@ -7,4 +7,4 @@ extends Resource
 
 @export var parent_data: PigeonData
 
-@export var hatch_time := 15.0
+@export var hatch_time_minutes := 3.0

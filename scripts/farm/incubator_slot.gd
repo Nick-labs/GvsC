@@ -5,7 +5,7 @@ signal egg_drag_requested(egg: Egg)
 signal pigeon_drag_requested(pigeon: Pigeon)
 
 var egg: Egg = null
-var hatch_timer := 0.0
+var minutes_until_hatch := 0
 
 var pigeon: Pigeon = null
 
@@ -14,13 +14,13 @@ var pigeon: Pigeon = null
 var hovered := false
 
 
-func _process(delta):
+func _on_minute_passed(_day: int, _hour: int, _minute: int):
 	if egg == null:
 		return
 
-	hatch_timer += delta
+	minutes_until_hatch -= 1
 
-	if hatch_timer >= egg.data.hatch_time:
+	if minutes_until_hatch <= 0:
 		hatch()
 
 
@@ -50,6 +50,7 @@ func hatch():
 
 	egg.queue_free()
 	egg = null
+	minutes_until_hatch = 0
 
 	var new_pigeon: Pigeon = PigeonFactory.create_from_egg(egg_data)
 
@@ -92,7 +93,7 @@ func put_egg(new_egg: Egg):
 	new_egg.position = marker.position
 
 	egg = new_egg
-	hatch_timer = 0.0
+	minutes_until_hatch = egg.data.hatch_time_minutes
 
 
 func put_pigeon(new_pigeon: Pigeon):
@@ -116,6 +117,7 @@ func take_egg() -> Egg:
 	var result := egg
 
 	egg = null
+	minutes_until_hatch = 0
 
 	result.reparent(get_tree().current_scene)
 
@@ -143,4 +145,14 @@ func clear() -> void:
 		pigeon.queue_free()
 		pigeon = null
 
-	hatch_timer = 0.0
+	minutes_until_hatch = 0
+
+
+func _enter_tree():
+	if !TimeManager.minute_passed.is_connected(_on_minute_passed):
+		TimeManager.minute_passed.connect(_on_minute_passed)
+
+
+func _exit_tree():
+	if TimeManager.minute_passed.is_connected(_on_minute_passed):
+		TimeManager.minute_passed.disconnect(_on_minute_passed)

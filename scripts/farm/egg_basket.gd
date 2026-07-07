@@ -63,6 +63,10 @@ func add_egg_immediately(egg: Egg):
 
 
 func _finish_receiving(egg: Egg):
+	if !is_instance_valid(egg):
+		reserved_slots -= 1
+		return
+	
 	var gp := egg.global_position
 
 	egg.reparent(self)
