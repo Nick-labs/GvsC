@@ -1,5 +1,5 @@
 class_name ClockDisplay
-extends Control
+extends CanvasLayer
 
 @onready var day_label: Label = $MarginContainer/VBoxContainer/DayLabel
 @onready var time_label: Label = $MarginContainer/VBoxContainer/TimeLabel
