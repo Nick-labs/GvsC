@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://bomkkytlaf3uk" path="res://scripts/shop/shopkeeper.gd" id="3_ptf86"]
 [ext_resource type="Texture2D" uid="uid://xnaa15w8xj3r" path="res://assets/sprites/shop/sunset/assistant-sunset.png" id="4_ge4d2"]
 [ext_resource type="Texture2D" uid="uid://bk4up0ekdx2nw" path="res://assets/sprites/shop/sunset/assistant-confused-sunset.png" id="5_ctpgp"]
+[ext_resource type="Script" uid="uid://dumqtar0h8x85" path="res://scripts/shop/assortment_popup.gd" id="7_ge4d2"]
+[ext_resource type="Resource" uid="uid://boteqekgsxwen" path="res://resources/items/KOFE.tres" id="8_xcdpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
 size = Vector2(514, 707)
@@ -39,13 +41,31 @@ texture = ExtResource("4_ge4d2")
 position = Vector2(600, 535)
 shape = SubResource("RectangleShape2D_7r02r")
 
-[node name="BackButton" type="Button" parent="." unique_id=2036288464]
+[node name="ButtonsContainer" type="VBoxContainer" parent="." unique_id=463821339]
+offset_left = 1577.0
+offset_top = 152.0
+offset_right = 1791.0
+offset_bottom = 263.0
+
+[node name="BackButton" type="Button" parent="ButtonsContainer" unique_id=2036288464]
 z_index = 1000
-offset_left = 1610.0
-offset_top = 159.0
-offset_right = 1764.0
-offset_bottom = 232.0
+layout_mode = 2
 text = "Вернуться"
 
+[node name="SellAllButton" type="Button" parent="ButtonsContainer" unique_id=13122615]
+z_index = 1000
+layout_mode = 2
+text = "Продать всё"
+
+[node name="AssortmentButton" type="Button" parent="ButtonsContainer" unique_id=1836839360]
+z_index = 1000
+layout_mode = 2
+text = "Посмотреть ассортимент
+"
+
+[node name="AssortmentPopup" type="CanvasLayer" parent="." unique_id=1574536686]
+script = ExtResource("7_ge4d2")
+Kofe = ExtResource("8_xcdpw")
+
 [connection signal="input_event" from="Shopkeeper" to="Shopkeeper" method="_on_input_event"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]
