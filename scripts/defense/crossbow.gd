@@ -33,7 +33,10 @@ func _update_rotation():
 
 func _handle_shoot(delta):
 	cooldown -= delta
-
+	
+	if !can_shoot:
+		return
+	
 	if Input.is_action_pressed("shoot") and cooldown <= 0:
 		shoot()
 		cooldown = fire_rate

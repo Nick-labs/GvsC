@@ -13,9 +13,9 @@ fox_scene = ExtResource("2_asd4r")
 
 [node name="World" type="Node2D" parent="." unique_id=1992813151]
 
-[node name="Base" parent="World" unique_id=1760461849 instance=ExtResource("2_ugpjw")]
+[node name="Camera2D" type="Camera2D" parent="World" unique_id=1743624226]
 
-[node name="Camera2D" type="Camera2D" parent="World/Base" unique_id=1743624226]
+[node name="Base" parent="World" unique_id=1760461849 instance=ExtResource("2_ugpjw")]
 
 [node name="Crossbow" parent="World/Base" unique_id=1732893570 node_paths=PackedStringArray("center") instance=ExtResource("3_qk0ly")]
 center = NodePath("..")

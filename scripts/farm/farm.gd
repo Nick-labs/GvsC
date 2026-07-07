@@ -1,7 +1,7 @@
 class_name Farm
 extends Node2D
 
-@export var padding: float = 300.0
+signal ready_ui(farm_ui)
 
 @onready var loft: Loft = $Loft
 @onready var egg_basket: EggBasket = $EggBasket
@@ -9,7 +9,7 @@ extends Node2D
 @onready var farm_ui: FarmUI = $FarmUI
 @onready var pigeon_inspector: PigeonInspector  = $FarmUI/MarginContainer/PigeonInspector
 @onready var drag_manager: DragManager = $DragManager
-
+@onready var camera: Camera2D = $Camera2D
 
 var money: int = 100:
 	set(value):
@@ -19,6 +19,9 @@ var money: int = 100:
 
 var selected_pigeon: Pigeon = null
 var music_started := false
+
+var active := true
+
 
 
 func _ready() -> void:
@@ -43,13 +46,19 @@ func _ready() -> void:
 	_fit_loft_to_screen()
 	
 	TimeManager.minute_passed.connect(_on_minute)
+	
+	ready_ui.emit(farm_ui)
 
 
 func _on_minute(day, hour, minute):
-	print(day, " ", hour, ":", minute)
+	pass
+	#print(day, " ", hour, ":", minute)
 
 
 func _input(event):
+	if not active:
+		return
+	
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_RIGHT \
 	and event.pressed:
@@ -289,3 +298,13 @@ func collect_eggs(cell: Cell):
 			continue
 
 		egg_basket.receive_egg(egg)
+
+
+func set_active(value: bool):
+	active = value
+	
+	if value:
+		camera.enabled = true
+		camera.make_current()
+	else:
+		camera.enabled = false

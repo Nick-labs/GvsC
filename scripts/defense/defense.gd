@@ -5,7 +5,12 @@ extends Node2D
 
 @onready var world: Node2D = $World
 @onready var base: WorldFarm = $World/Base
+@onready var crossbow: Crossbow = $World/Base/Crossbow
 @onready var spawner: EnemySpawner = $EnemySpawner
+@onready var camera: Camera2D = $World/Camera2D
+
+var active := true
+
 
 func _ready() -> void:
 	pass
@@ -13,3 +18,14 @@ func _ready() -> void:
 
 func _on_back_button_pressed() -> void:
 	SceneManager.change_scene("farm")
+
+
+func set_active(value: bool):
+	active = value
+	crossbow.can_shoot = value
+	
+	if value:
+		camera.enabled = true
+		camera.make_current()
+	else:
+		camera.enabled = false
