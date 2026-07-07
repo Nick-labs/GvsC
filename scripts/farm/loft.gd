@@ -29,10 +29,6 @@ func _ready() -> void:
 func generate_cells() -> void:
 	cells.clear()
 	
-	print("Marker local:", marker.position)
-	print("Marker global:", marker.global_position)
-	print("Cells global:", cells_root.global_position)
-	
 	for row in rows:
 		for column in columns:
 			var cell := cell_scene.instantiate() as Cell

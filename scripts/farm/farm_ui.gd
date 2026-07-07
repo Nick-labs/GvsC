@@ -1,6 +1,9 @@
 class_name FarmUI
 extends CanvasLayer
 
+signal shop_pressed
+signal defense_pressed
+
 @onready var money_label: Label = $MarginContainer/MoneyLabel
 
 
@@ -13,8 +16,8 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_shop_button_pressed():
-	SceneManager.change_scene("shop")
+	shop_pressed.emit()
 
 
 func _on_defense_button_pressed():
-	SceneManager.change_scene("defense")
+	defense_pressed.emit()

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GvsC"
-run/main_scene="uid://c6go4j3hutskp"
+run/main_scene="uid://dcp63f5iqhyn7"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
