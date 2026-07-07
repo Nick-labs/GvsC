@@ -26,6 +26,9 @@ func _ready() -> void:
 	incubator.egg_drag_requested.connect(
 		_on_incubator_egg_drag_requested
 	)
+	incubator.pigeon_drag_requested.connect(
+		_on_incubator_pigeon_drag_requested
+	)
 	
 	loft.pigeon_clicked.connect(_on_pigeon_clicked)
 	loft.pigeon_drag_requested.connect(_on_pigeon_drag_requested)
@@ -112,6 +115,17 @@ func _on_incubator_egg_drag_requested(egg: Egg, slot: IncubatorSlot):
 	)
 
 
+func _on_incubator_pigeon_drag_requested(
+		pigeon: Pigeon,
+		slot: IncubatorSlot
+	):
+
+	drag_manager.start_drag(
+		pigeon,
+		slot
+	)
+
+
 func _set_selected(pigeon: Pigeon, value: bool) -> void:
 	if value:
 		pigeon.modulate = Color(1.5, 1.5, 1.5, 1.0)
@@ -178,21 +192,42 @@ func _on_drag_finished(context: DragContext):
 
 
 func _finish_pigeon_drag(context: DragContext):
-
 	var pigeon := context.dragged_object as Pigeon
-	var source := context.source_container as Cell
+	var source := context.source_container
+	
 
 	var target := loft.get_hovered_cell()
+	print(pigeon, source, target)
 
 	if target == null:
-		source.set_pigeon(pigeon)
+		_return_pigeon(
+			pigeon,
+			source
+		)
 
 	elif target.is_empty():
-		source.take_pigeon()
 		target.set_pigeon(pigeon)
 
 	else:
-		swap(source, target)
+		if source is Cell:
+			swap(source, target)
+		else:
+			_return_pigeon(
+				pigeon,
+				source
+			)
+
+
+func _return_pigeon(
+		pigeon: Pigeon,
+		source: Node
+	):
+
+	if source is Cell:
+		source.set_pigeon(pigeon)
+
+	elif source is IncubatorSlot:
+		source.put_pigeon(pigeon)
 
 
 func _finish_egg_drag(context: DragContext):

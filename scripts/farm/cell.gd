@@ -20,8 +20,12 @@ func set_pigeon(new_pigeon: Pigeon) -> void:
 
 	pigeon = new_pigeon
 	pigeon.cell = self
-
-	add_child(pigeon)
+	
+	if pigeon.get_parent(): 
+		new_pigeon.reparent(self)
+	else:
+		add_child(new_pigeon)
+	
 	pigeon.position = marker.position
 
 

@@ -2,6 +2,7 @@ class_name IncubatorSlot
 extends Area2D
 
 signal egg_drag_requested(egg: Egg)
+signal pigeon_drag_requested(pigeon: Pigeon)
 
 var egg: Egg = null
 var hatch_timer := 0.0
@@ -33,7 +34,10 @@ func _on_input_event(
 	and event.button_index == MOUSE_BUTTON_RIGHT \
 	and event.pressed:
 
-		if egg:
+		if pigeon:
+			pigeon_drag_requested.emit(pigeon)
+
+		elif egg:
 			egg_drag_requested.emit(egg)
 
 
@@ -94,11 +98,16 @@ func put_pigeon(new_pigeon: Pigeon):
 	if not is_empty():
 		return
 
-	pigeon = new_pigeon
+	print("back")
 
-	add_child(new_pigeon)
+	pigeon = new_pigeon
 	
-	new_pigeon.position = marker.position - Vector2(0, 60)
+	if pigeon.get_parent():
+		pigeon.reparent(self)
+	else:
+		add_child(pigeon)
+	
+	pigeon.position = marker.position - Vector2(0, 60)
 
 
 func take_egg() -> Egg:
@@ -114,5 +123,13 @@ func take_egg() -> Egg:
 	return result
 
 
-#func take_pigeon() -> Pigeon:
-	#pass
+func take_pigeon() -> Pigeon:
+	if pigeon == null:
+		return null
+
+	var result := pigeon
+	pigeon = null
+
+	result.reparent(get_tree().current_scene)
+
+	return result

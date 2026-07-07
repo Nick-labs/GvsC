@@ -2,6 +2,7 @@ class_name Incubator
 extends Node2D
 
 signal egg_drag_requested(egg: Egg, slot: IncubatorSlot)
+signal pigeon_drag_requested(pigeon: Pigeon, slot: IncubatorSlot)
 
 @export var slot_scene: PackedScene
 @export var slot_count := 1
@@ -17,6 +18,9 @@ func _ready():
 			_on_slot_egg_drag_requested
 		)
 		
+		slot.pigeon_drag_requested.connect(
+			_on_slot_pigeon_drag_requested
+		)
 
 func _generate_slots():
 	for i in slot_count:
@@ -49,3 +53,15 @@ func _on_slot_egg_drag_requested(egg: Egg):
 
 	if taken:
 		egg_drag_requested.emit(taken, slot)
+
+
+func _on_slot_pigeon_drag_requested(pigeon: Pigeon):
+	var slot := pigeon.get_parent() as IncubatorSlot
+	
+	if slot == null:
+		return
+	
+	var taken := slot.take_pigeon()
+
+	if taken:
+		pigeon_drag_requested.emit(taken, slot)
