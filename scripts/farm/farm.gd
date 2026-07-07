@@ -196,32 +196,25 @@ func _finish_pigeon_drag(context: DragContext):
 
 
 func _finish_egg_drag(context: DragContext):
-
 	var egg := context.dragged_object as Egg
-
 
 	# 1. Проверяем инкубатор
 	var slot := incubator.get_hovered_slot()
-
+	
 	if slot:
 		if slot.is_empty():
 			slot.put_egg(egg)
 			return
 
-
 	# 2. Проверяем корзину
 	if egg_basket.hovered:
-
-		egg_basket.receive_egg(egg)
+		egg_basket.add_egg_immediately(egg)
 		return
-
 
 	# 3. Если никуда не положили
 	if context.source_container is EggBasket:
-		egg_basket.return_egg(
-			egg,
-			context.source_slot
-		)
+		egg_basket.add_egg_immediately(egg)
+		return
 
 	elif context.source_container is IncubatorSlot:
 		var source := context.source_container as IncubatorSlot

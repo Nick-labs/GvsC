@@ -52,6 +52,22 @@ func receive_egg(egg: Egg):
 	)
 
 
+func add_egg_immediately(egg: Egg):
+	if not egg.drag_requested.is_connected(_on_egg_drag_requested):
+		egg.drag_requested.connect(_on_egg_drag_requested)
+
+	egg.reparent(self)
+
+	eggs.append(egg)
+
+	egg.position = _get_slot_position(
+		eggs.size() - 1
+	)
+	
+	_update_z_order()
+	_layout()
+
+
 func _finish_receiving(egg: Egg):
 	var gp := egg.global_position
 

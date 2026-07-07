@@ -4,7 +4,6 @@ extends Node
 
 signal drag_finished(context: DragContext)
 
-
 var context: DragContext
 
 
