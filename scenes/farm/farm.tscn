@@ -39,7 +39,6 @@ script = ExtResource("10_51x8p")
 
 [node name="MusicPlayer" parent="." unique_id=1334423811 instance=ExtResource("4_36fi7")]
 stream = ExtResource("5_36fi7")
-autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2044596886]
 anchor_mode = 0

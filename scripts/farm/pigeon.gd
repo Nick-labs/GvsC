@@ -13,31 +13,41 @@ signal egg_laid(pigeon: Pigeon)
 			_apply_data()
 
 var cell: Cell
-var egg_timer: float = 0.0
+var minutes_until_next_egg: int
 var can_lay_egg: bool = true
 
 @onready var sprite: Sprite2D = $Sprite2D
 
 
-func _ready() -> void:
+func _ready():
 	_apply_data()
 
+	minutes_until_next_egg = data.egg_interval_minutes
 
-func _process(delta: float) -> void:
+	#TimeManager.minute_passed.connect(_on_minute_passed)
+
+
+func _enter_tree():
+	if !TimeManager.minute_passed.is_connected(_on_minute_passed):
+		TimeManager.minute_passed.connect(_on_minute_passed)
+
+
+func _on_minute_passed(day: int, hour: int, minute: int) -> void:
 	if cell == null:
 		return
 
-	egg_timer += delta
+	if !can_lay_egg:
+		return
+	
+	minutes_until_next_egg -= 1
 
-	if egg_timer >= data.egg_interval:
-		egg_timer = 0.0
+	if minutes_until_next_egg <= 0:
 		lay_egg()
+		minutes_until_next_egg = data.egg_interval_minutes
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		print(str(randi()) + " Pigeon clicked: ", name)
-		
 		match event.button_index:
 			MOUSE_BUTTON_LEFT:
 				clicked.emit(self)
@@ -78,3 +88,8 @@ func fit_to_size(target_size: Vector2) -> void:
 	)
 
 	sprite.scale = Vector2.ONE * scale_factor
+
+
+func _exit_tree():
+	if TimeManager.minute_passed.is_connected(_on_minute_passed):
+		TimeManager.minute_passed.disconnect(_on_minute_passed)

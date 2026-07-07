@@ -9,6 +9,6 @@ script = ExtResource("1_8pckc")
 breed_name = "White pigeon"
 sprite = ExtResource("3_7gjed")
 price = 3
-egg_interval = 3.0
+egg_interval_minutes = 3.0
 egg_template = ExtResource("1_wtmbh")
 metadata/_custom_type_script = "uid://bmosjtxnab5ud"
