@@ -1,6 +1,8 @@
 class_name Defense
 extends Node2D
 
+signal farm_pressed
+
 @export var fox_scene: PackedScene
 
 @onready var world: Node2D = $World
@@ -17,7 +19,7 @@ func _ready() -> void:
 
 
 func _on_back_button_pressed() -> void:
-	SceneManager.change_scene("farm")
+	farm_pressed.emit()
 
 
 func set_active(value: bool):

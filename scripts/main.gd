@@ -9,6 +9,8 @@ func _ready():
 	farm.farm_ui.shop_pressed.connect(show_shop)
 	farm.farm_ui.defense_pressed.connect(show_defense)
 	
+	defense.farm_pressed.connect(show_farm)
+	
 	show_farm()
 
 
@@ -26,6 +28,9 @@ func show_farm():
 	farm.set_active(true)
 	defense.set_active(false)
 	shop.set_active(false)
+	
+	farm.farm_ui.show()
+	
 
 
 func show_defense():
@@ -48,3 +53,5 @@ func show_shop():
 	farm.set_active(false)
 	defense.set_active(false)
 	shop.set_active(true)
+	
+	farm.farm_ui.hide()
