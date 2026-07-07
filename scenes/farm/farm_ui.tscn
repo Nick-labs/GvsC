@@ -29,10 +29,28 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 36
 
-[node name="ExitButton" type="Button" parent="MarginContainer" unique_id=1511620067]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=414675659]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-text = "Выйти"
+theme_override_constants/separation = 98
+alignment = 1
 
-[connection signal="pressed" from="MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="ToDefenseButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1209229103]
+layout_mode = 2
+text = "На карту"
+
+[node name="ToShopButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=749081674]
+layout_mode = 2
+text = "В магазин"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1511620067]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Выйти из игры"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToDefenseButton" to="." method="_on_defense_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

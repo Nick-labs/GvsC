@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 PigeonFactory="*uid://cpewe02rkskak"
+SceneManager="*uid://cpp6u25kgntnx"
+MusicPlayer="*uid://c015lfotxq3w4"
 
 [display]
 

@@ -35,3 +35,13 @@ enemy_container = NodePath("../World/Units/Foxes")
 [node name="WaveManager" type="Node" parent="." unique_id=209894844 node_paths=PackedStringArray("spawner")]
 script = ExtResource("6_ows6c")
 spawner = NodePath("../EnemySpawner")
+
+[node name="BackButton" type="Button" parent="." unique_id=788568126]
+offset_left = 803.0
+offset_top = -503.0
+offset_right = 920.0
+offset_bottom = -456.0
+theme_override_font_sizes/font_size = 16
+text = "Вернуться"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

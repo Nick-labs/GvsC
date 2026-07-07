@@ -138,12 +138,9 @@ func clear() -> void:
 	if egg:
 		egg.queue_free()
 		egg = null
-
-	print("Deleting pigeon: ", pigeon.name)
-	print("Parent: ", pigeon.get_parent())
-	print("Children: ", pigeon.get_children())
-
-	pigeon.queue_free()
-	pigeon = null
+	
+	if pigeon:
+		pigeon.queue_free()
+		pigeon = null
 
 	hatch_timer = 0.0

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://d03d067j2iyjj"]
+
+[ext_resource type="Texture2D" uid="uid://ba3clmm8jsgtx" path="res://assets/sprites/shop/sunset/shop-back-sunset.png" id="1_jp048"]
+[ext_resource type="Script" uid="uid://cdrmawgkd7mh4" path="res://scripts/shop/shop.gd" id="1_ptf86"]
+[ext_resource type="Texture2D" uid="uid://eagr0t7l63xe" path="res://assets/sprites/shop/sunset/shop-sunset.png" id="2_ctpgp"]
+[ext_resource type="Script" uid="uid://bomkkytlaf3uk" path="res://scripts/shop/shopkeeper.gd" id="3_ptf86"]
+[ext_resource type="Texture2D" uid="uid://xnaa15w8xj3r" path="res://assets/sprites/shop/sunset/assistant-sunset.png" id="4_ge4d2"]
+[ext_resource type="Texture2D" uid="uid://bk4up0ekdx2nw" path="res://assets/sprites/shop/sunset/assistant-confused-sunset.png" id="5_ctpgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
+size = Vector2(514, 707)
+
+[node name="Shop" type="Node2D" unique_id=1571493533]
+script = ExtResource("1_ptf86")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=926839609]
+position = Vector2(956.99994, 536)
+scale = Vector2(0.7546874, 0.75972223)
+texture = ExtResource("1_jp048")
+
+[node name="Counter" type="Sprite2D" parent="." unique_id=2000563239]
+z_index = 2
+position = Vector2(959.99994, 538)
+scale = Vector2(0.759375, 0.7583334)
+texture = ExtResource("2_ctpgp")
+
+[node name="Shopkeeper" type="Area2D" parent="." unique_id=4643410]
+z_index = 1
+script = ExtResource("3_ptf86")
+normal_texture = ExtResource("4_ge4d2")
+embarrassed_texture = ExtResource("5_ctpgp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shopkeeper" unique_id=608705451]
+position = Vector2(950, 581)
+scale = Vector2(0.76269525, 0.7666667)
+texture = ExtResource("4_ge4d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper" unique_id=115237581]
+position = Vector2(600, 535)
+shape = SubResource("RectangleShape2D_7r02r")
+
+[node name="BackButton" type="Button" parent="." unique_id=2036288464]
+z_index = 1000
+offset_left = 1610.0
+offset_top = 159.0
+offset_right = 1764.0
+offset_bottom = 232.0
+text = "Вернуться"
+
+[connection signal="input_event" from="Shopkeeper" to="Shopkeeper" method="_on_input_event"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
