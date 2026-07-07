@@ -18,11 +18,20 @@ var hour: int:
 		@warning_ignore("integer_division")
 		return (_total_minutes / 60) % 24
 
-
 var day: int:
 	get:
 		@warning_ignore("integer_division")
 		return _total_minutes / (24 * 60) + 1
+
+var total_minutes: int:
+	get:
+		return _total_minutes
+
+
+var total_hours: int:
+	get:
+		@warning_ignore("integer_division")
+		return _total_minutes / 60
 
 
 func _process(delta: float) -> void:
@@ -52,3 +61,7 @@ func skip_minutes(count: int) -> void:
 
 func skip_hours(count: int) -> void:
 	advance_minutes(count * 60)
+
+
+func skip_days(days: int):
+	advance_minutes(days * 24 * 60)
