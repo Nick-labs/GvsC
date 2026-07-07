@@ -36,6 +36,7 @@ func _on_input_event(
 
 		if pigeon:
 			pigeon_drag_requested.emit(pigeon)
+			
 
 		elif egg:
 			egg_drag_requested.emit(egg)

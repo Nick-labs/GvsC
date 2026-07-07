@@ -40,6 +40,16 @@ func _process(delta: float) -> void:
 		lay_egg()
 
 
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		match event.button_index:
+			MOUSE_BUTTON_LEFT:
+				clicked.emit(self)
+			
+			MOUSE_BUTTON_RIGHT:
+				drag_requested.emit(self)
+
+
 func _apply_data():
 	if data == null:
 		return
@@ -72,13 +82,3 @@ func fit_to_size(target_size: Vector2) -> void:
 	)
 
 	sprite.scale = Vector2.ONE * scale_factor
-
-
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		match event.button_index:
-			MOUSE_BUTTON_LEFT:
-				clicked.emit(self)
-			
-			MOUSE_BUTTON_RIGHT:
-				drag_requested.emit(self)

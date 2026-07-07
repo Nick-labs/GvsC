@@ -119,7 +119,8 @@ func _on_incubator_pigeon_drag_requested(
 		pigeon: Pigeon,
 		slot: IncubatorSlot
 	):
-
+	
+	select_pigeon(pigeon)
 	drag_manager.start_drag(
 		pigeon,
 		slot
@@ -166,8 +167,9 @@ func select_pigeon(pigeon: Pigeon):
 	_set_selected(selected_pigeon, true)
 
 	pigeon_inspector.show_pigeon(selected_pigeon)
-
-	collect_eggs(pigeon.cell)
+	
+	if pigeon.cell != null:
+		collect_eggs(pigeon.cell)
 
 
 func start_drag():
