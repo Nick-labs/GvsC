@@ -4,11 +4,51 @@ extends Area2D
 signal egg_drag_requested(egg: Egg)
 
 var egg: Egg = null
+var hatch_timer := 0.0
+
 var pigeon: Pigeon = null
 
 @onready var marker: Marker2D = $Marker2D
 
 var hovered := false
+
+
+func _process(delta):
+	if egg == null:
+		return
+
+	hatch_timer += delta
+
+	if hatch_timer >= egg.data.hatch_time:
+		hatch()
+
+
+func _on_input_event(
+	_viewport: Node,
+	event: InputEvent,
+	_shape_idx: int
+):
+
+	if event is InputEventMouseButton \
+	and event.button_index == MOUSE_BUTTON_RIGHT \
+	and event.pressed:
+
+		if egg:
+			egg_drag_requested.emit(egg)
+
+
+func hatch():
+	if egg == null:
+		return
+
+	var egg_data := egg.data
+
+	egg.queue_free()
+	egg = null
+
+	var new_pigeon: Pigeon = PigeonFactory.create_from_egg(egg_data)
+
+	put_pigeon(new_pigeon)
 
 
 func _on_mouse_entered():
@@ -47,10 +87,18 @@ func put_egg(new_egg: Egg):
 	new_egg.position = marker.position
 
 	egg = new_egg
+	hatch_timer = 0.0
 
 
 func put_pigeon(new_pigeon: Pigeon):
-	pass
+	if not is_empty():
+		return
+
+	pigeon = new_pigeon
+
+	add_child(new_pigeon)
+	
+	new_pigeon.position = marker.position - Vector2(0, 60)
 
 
 func take_egg() -> Egg:
@@ -68,17 +116,3 @@ func take_egg() -> Egg:
 
 #func take_pigeon() -> Pigeon:
 	#pass
-
-
-func _on_input_event(
-	_viewport: Node,
-	event: InputEvent,
-	_shape_idx: int
-):
-
-	if event is InputEventMouseButton \
-	and event.button_index == MOUSE_BUTTON_RIGHT \
-	and event.pressed:
-
-		if egg:
-			egg_drag_requested.emit(egg)

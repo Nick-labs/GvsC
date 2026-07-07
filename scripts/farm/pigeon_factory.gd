@@ -16,11 +16,13 @@ func create_from_template(template: PigeonData) -> Pigeon:
 	return pigeon
 
 
-func create_egg(parent1: PigeonData, parent2: PigeonData = null) -> EggData:
-	var egg := parent1.egg_template.duplicate(true)
+func create_egg(parent: PigeonData) -> EggData:
+	var egg := parent.egg_template.duplicate(true)
+	egg.parent_data = parent
 	return egg
 
 
-#func create_from_egg(egg: EggData) -> Pigeon
-#
-#func breed(mother: PigeonData, father: PigeonData) -> Pigeon
+func create_from_egg(egg: EggData) -> Pigeon:
+	var pigeon := pigeon_scene.instantiate() as Pigeon
+	pigeon.data = egg.parent_data.duplicate(true)
+	return pigeon
