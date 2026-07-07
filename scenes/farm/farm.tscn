@@ -17,15 +17,20 @@ script = ExtResource("1_a4t06")
 
 [node name="Loft" parent="." unique_id=1552193297 instance=ExtResource("2_wgrn4")]
 
+[node name="Cells" type="Node2D" parent="Loft" unique_id=869035246]
+
+[node name="Marker2D" type="Marker2D" parent="Loft/Cells" unique_id=976511098]
+position = Vector2(158, 500)
+
 [node name="PigeonFactory" parent="." unique_id=208138106 instance=ExtResource("7_f0ucu")]
 
 [node name="EggBasket" parent="." unique_id=218532551 instance=ExtResource("6_fhtoc")]
-position = Vector2(249, 881)
+position = Vector2(923, 412)
 scale = Vector2(0.8, 0.8)
 
 [node name="Incubator" type="Node2D" parent="." unique_id=519888172]
 z_index = -100
-position = Vector2(586, 863)
+position = Vector2(288, 397)
 script = ExtResource("8_eed4j")
 slot_scene = ExtResource("9_k484s")
 
@@ -43,7 +48,7 @@ anchor_mode = 0
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1886667223]
 z_index = -4096
-position = Vector2(961.5, 541.50006)
+position = Vector2(960, 540)
 scale = Vector2(0.7527343, 0.75347227)
 texture = ExtResource("11_cxgs2")
 

@@ -30,11 +30,11 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 36
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=414675659]
-custom_minimum_size = Vector2(500, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_constants/separation = 98
+theme_override_constants/separation = 49
 alignment = 1
 
 [node name="ToDefenseButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1209229103]
