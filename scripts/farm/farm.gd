@@ -94,7 +94,7 @@ func _on_pigeon_clicked(pigeon: Pigeon):
 
 func _on_pigeon_egg_laid(pigeon: Pigeon):
 	if pigeon == selected_pigeon:
-		pigeon_inspector.show_pigeon(pigeon)
+		pigeon_inspector.update_labels()
 
 
 func select_pigeon(pigeon: Pigeon):
