@@ -213,6 +213,11 @@ func _finish_pigeon_drag(context: DragContext):
 		)
 
 	elif target.is_empty():
+		if source is Cell:
+			source.take_pigeon()
+		elif source is IncubatorSlot:
+			source.take_pigeon()
+
 		loft.setup_pigeon(pigeon)
 		target.set_pigeon(pigeon)
 

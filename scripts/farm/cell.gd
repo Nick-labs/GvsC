@@ -14,6 +14,9 @@ var eggs: Array[Egg] = []
 func set_pigeon(new_pigeon: Pigeon) -> void:
 	if new_pigeon == null:
 		return
+	
+	if new_pigeon.cell != null and new_pigeon.cell != self:
+		new_pigeon.cell.pigeon = null
 
 	pigeon = new_pigeon
 	pigeon.cell = self
