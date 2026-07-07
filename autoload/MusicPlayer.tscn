@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://c015lfotxq3w4"]
 
+[ext_resource type="AudioStream" uid="uid://ccrpjc02bb054" path="res://assets/audio/music/test4_OrganFluit.ogg" id="1_0cr2e"]
+
 [node name="MusicPlayer" type="AudioStreamPlayer2D" unique_id=1334423811]
+stream = ExtResource("1_0cr2e")
+autoplay = true

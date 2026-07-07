@@ -17,10 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PigeonFactory="*uid://cpewe02rkskak"
 SceneManager="*uid://cpp6u25kgntnx"
-MusicPlayer="*uid://c015lfotxq3w4"
 TimeManager="*uid://b36tdor0aop1w"
+Inventory="*uid://dobt0igvxpat4"
+MusicPlayer="*uid://br3sy053hq2jy"
+PigeonFactory="*uid://cpewe02rkskak"
 
 [display]
 

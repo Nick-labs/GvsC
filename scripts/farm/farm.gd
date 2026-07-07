@@ -23,7 +23,6 @@ var music_started := false
 var active := true
 
 
-
 func _ready() -> void:
 	egg_basket.egg_drag_requested.connect(_on_egg_drag_requested)
 	incubator.egg_drag_requested.connect(
