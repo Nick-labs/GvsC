@@ -65,3 +65,7 @@ func _on_slot_pigeon_drag_requested(pigeon: Pigeon):
 
 	if taken:
 		pigeon_drag_requested.emit(taken, slot)
+
+
+func get_slots():
+	return slots

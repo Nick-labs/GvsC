@@ -140,7 +140,13 @@ func _on_sell_pressed() -> void:
 	
 	money += selected_pigeon.data.price
 	
-	selected_pigeon.cell.remove_pigeon()
+	if selected_pigeon.cell != null:
+		selected_pigeon.cell.remove_pigeon()
+	
+	for inc_slot in incubator.get_slots():
+		if inc_slot.pigeon == selected_pigeon:
+			inc_slot.clear()
+
 	selected_pigeon = null
 
 	pigeon_inspector.clear()
@@ -199,7 +205,6 @@ func _finish_pigeon_drag(context: DragContext):
 	
 
 	var target := loft.get_hovered_cell()
-	print(pigeon, source, target)
 
 	if target == null:
 		_return_pigeon(

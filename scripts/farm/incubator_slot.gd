@@ -99,8 +99,6 @@ func put_pigeon(new_pigeon: Pigeon):
 	if not is_empty():
 		return
 
-	print("back")
-
 	pigeon = new_pigeon
 	
 	if pigeon.get_parent():
@@ -132,5 +130,20 @@ func take_pigeon() -> Pigeon:
 	pigeon = null
 
 	result.reparent(get_tree().current_scene)
-
+	
 	return result
+
+
+func clear() -> void:
+	if egg:
+		egg.queue_free()
+		egg = null
+
+	print("Deleting pigeon: ", pigeon.name)
+	print("Parent: ", pigeon.get_parent())
+	print("Children: ", pigeon.get_children())
+
+	pigeon.queue_free()
+	pigeon = null
+
+	hatch_timer = 0.0

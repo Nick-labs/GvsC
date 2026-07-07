@@ -21,12 +21,6 @@ var can_lay_egg: bool = true
 
 func _ready() -> void:
 	_apply_data()
-	
-	# Это и так сделано через инспектор сигналов
-	# Может, стоит заменить на это:
-	#input_event.connect(_on_input_event)
-	#mouse_entered.connect(_on_mouse_entered)
-	#mouse_exited.connect(_on_mouse_exited)
 
 
 func _process(delta: float) -> void:
