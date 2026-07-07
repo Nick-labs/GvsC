@@ -7,6 +7,7 @@
 size = Vector2(200, 200)
 
 [node name="IncubatorSlot" type="Area2D" unique_id=1244284107]
+z_index = -1001
 script = ExtResource("1_jv3mu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=351727098]

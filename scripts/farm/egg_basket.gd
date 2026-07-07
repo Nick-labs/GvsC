@@ -31,9 +31,6 @@ func get_egg_count() -> int:
 
 
 func receive_egg(egg: Egg):
-	if not egg.drag_requested.is_connected(_on_egg_drag_requested):
-		egg.drag_requested.connect(_on_egg_drag_requested)
-	
 	var target := _get_next_position()
 	
 	egg.reparent(get_tree().current_scene)
@@ -53,9 +50,6 @@ func receive_egg(egg: Egg):
 
 
 func add_egg_immediately(egg: Egg):
-	if not egg.drag_requested.is_connected(_on_egg_drag_requested):
-		egg.drag_requested.connect(_on_egg_drag_requested)
-
 	egg.reparent(self)
 
 	eggs.append(egg)

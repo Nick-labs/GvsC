@@ -11,10 +11,6 @@ var pigeon: Pigeon = null
 var hovered := false
 
 
-func _ready() -> void:
-	input_event.connect(_on_input_event)
-
-
 func _on_mouse_entered():
 	hovered = true
 
