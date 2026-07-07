@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://boteqekgsxwen"]
+
+[ext_resource type="Script" uid="uid://b2ir6hvqln27h" path="res://scripts/shop/item_data.gd" id="1_a3f41"]
+[ext_resource type="Texture2D" uid="uid://dmjqcwyykoc2d" path="res://assets/sprites/field/crossbow/bolt-buffed.png" id="1_utgoc"]
+
+[resource]
+script = ExtResource("1_a3f41")
+description = "KOFE"
+price = 50
+icon = ExtResource("1_utgoc")
+item_type = "Food"
+usable = true
+effect_value = 1.0
+effect_type = "ENERGY"
+metadata/_custom_type_script = "uid://b2ir6hvqln27h"
