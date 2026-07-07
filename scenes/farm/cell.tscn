@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c8148ubg5lw28" path="res://scripts/farm/cell.gd" id="1_gxb75"]
 [ext_resource type="PackedScene" uid="uid://7w326qxatf0" path="res://scenes/farm/egg.tscn" id="2_4voau"]
 [ext_resource type="Texture2D" uid="uid://comnkt2fq5xtc" path="res://assets/sprites/farm/nest.png" id="3_4voau"]
+[ext_resource type="Texture2D" uid="uid://dx6b6k8yy8rh1" path="res://assets/sprites/farm/cell-default.png" id="3_j8368"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
 size = Vector2(200, 200)
@@ -10,16 +11,25 @@ size = Vector2(200, 200)
 [node name="Cell" type="Area2D" unique_id=742452346]
 script = ExtResource("1_gxb75")
 egg_scene = ExtResource("2_4voau")
+metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2066731230]
-z_index = -1000
-position = Vector2(0, 60)
-scale = Vector2(0.2, 0.2)
+[node name="BoxSprite" type="Sprite2D" parent="." unique_id=245117960]
+z_index = -2001
+position = Vector2(-9.599985, -155)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_j8368")
+
+[node name="NestSprite" type="Sprite2D" parent="." unique_id=2066731230]
+z_index = -2000
+position = Vector2(-14.599991, -116.000015)
+scale = Vector2(0.2, 0.17120743)
 texture = ExtResource("3_4voau")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=799329861]
+position = Vector2(-10.599991, -172.00002)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=80685375]
+position = Vector2(-10.599991, -172.00002)
 shape = SubResource("RectangleShape2D_camgg")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

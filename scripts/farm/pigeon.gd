@@ -21,12 +21,6 @@ var can_lay_egg: bool = true
 
 func _ready() -> void:
 	_apply_data()
-	
-	# Это и так сделано через инспектор сигналов
-	# Может, стоит заменить на это:
-	#input_event.connect(_on_input_event)
-	#mouse_entered.connect(_on_mouse_entered)
-	#mouse_exited.connect(_on_mouse_exited)
 
 
 func _process(delta: float) -> void:
@@ -38,6 +32,18 @@ func _process(delta: float) -> void:
 	if egg_timer >= data.egg_interval:
 		egg_timer = 0.0
 		lay_egg()
+
+
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		print(str(randi()) + " Pigeon clicked: ", name)
+		
+		match event.button_index:
+			MOUSE_BUTTON_LEFT:
+				clicked.emit(self)
+			
+			MOUSE_BUTTON_RIGHT:
+				drag_requested.emit(self)
 
 
 func _apply_data():
@@ -72,13 +78,3 @@ func fit_to_size(target_size: Vector2) -> void:
 	)
 
 	sprite.scale = Vector2.ONE * scale_factor
-
-
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		match event.button_index:
-			MOUSE_BUTTON_LEFT:
-				clicked.emit(self)
-			
-			MOUSE_BUTTON_RIGHT:
-				drag_requested.emit(self)

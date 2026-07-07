@@ -15,13 +15,14 @@ func set_pigeon(new_pigeon: Pigeon) -> void:
 	if new_pigeon == null:
 		return
 
-	if new_pigeon.get_parent():
-		new_pigeon.get_parent().remove_child(new_pigeon)
-
 	pigeon = new_pigeon
 	pigeon.cell = self
-
-	add_child(pigeon)
+	
+	if pigeon.get_parent(): 
+		new_pigeon.reparent(self)
+	else:
+		add_child(new_pigeon)
+	
 	pigeon.position = marker.position
 
 

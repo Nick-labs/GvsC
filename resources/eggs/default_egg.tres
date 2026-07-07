@@ -7,4 +7,5 @@
 script = ExtResource("1_31wc8")
 price = 1
 texture = ExtResource("2_li5oc")
+hatch_time = 3.0
 metadata/_custom_type_script = "uid://bju6ideq3gslp"

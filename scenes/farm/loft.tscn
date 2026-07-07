@@ -8,5 +8,3 @@
 script = ExtResource("1_dp73g")
 cell_scene = ExtResource("2_esqty")
 pigeon_scene = ExtResource("3_pw5dd")
-
-[node name="Cells" type="Node2D" parent="." unique_id=5746623]

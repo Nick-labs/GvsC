@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://d3wm0op3mpy8q" path="res://scripts/farm/egg_basket.gd" id="1_461re"]
 [ext_resource type="Texture2D" uid="uid://bj4m2mpuusfr" path="res://assets/sprites/farm/basket.png" id="2_5u4eu"]
 
-[node name="EggBasket" type="Node2D" unique_id=218532551]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
+size = Vector2(400, 250)
+
+[node name="EggBasket" type="Area2D" unique_id=288303347]
 script = ExtResource("1_461re")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=610189866]
@@ -13,3 +16,7 @@ texture = ExtResource("2_5u4eu")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=366019453]
 position = Vector2(-111, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087219097]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_camgg")

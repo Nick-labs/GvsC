@@ -8,16 +8,18 @@ signal pigeon_egg_laid(pigeon: Pigeon)
 @export var rows: int = 2
 @export var columns: int = 5
 @export var cell_size := Vector2i(200, 200)
-@export var cell_space := 40
+@export var cell_space_x := 60
+@export var cell_space_y := 30
 @export var cell_scene: PackedScene
 @export var pigeon_scene: PackedScene
 
-var loft_size := Vector2i(cell_size.x * columns + cell_space * (columns - 1),
- 						  cell_size.y * rows + cell_space * (rows - 1))
+var loft_size := Vector2i(cell_size.x * columns + cell_space_x * (columns - 1),
+ 						  cell_size.y * rows + cell_space_y * (rows - 1))
 
 var cells: Array[Cell] = []
 
 @onready var cells_root: Node2D = $Cells
+@onready var marker: Marker2D = $Cells/Marker2D
 
 
 func _ready() -> void:
@@ -27,16 +29,19 @@ func _ready() -> void:
 func generate_cells() -> void:
 	cells.clear()
 	
+	print("Marker local:", marker.position)
+	print("Marker global:", marker.global_position)
+	print("Cells global:", cells_root.global_position)
+	
 	for row in rows:
 		for column in columns:
-		
 			var cell := cell_scene.instantiate() as Cell
-			
+
 			cells_root.add_child(cell)
 			
-			cell.position = Vector2(
-				column * cell_size.x + column * cell_space,
-				row * cell_size.y + row * cell_space
+			cell.position = marker.position + Vector2(
+				column * cell_size.x + column * cell_space_x,
+				row * cell_size.y + row * cell_space_y
 			)
 			
 			cell.index = Vector2i(column, row)
@@ -76,9 +81,14 @@ func create_default_pigeon() -> Pigeon:
 
 
 func setup_pigeon(pigeon: Pigeon):
-	pigeon.clicked.connect(_on_pigeon_clicked)
-	pigeon.drag_requested.connect(_on_pigeon_drag_requested)
-	pigeon.egg_laid.connect(_on_pigeon_egg_laid)
+	if not pigeon.clicked.is_connected(_on_pigeon_clicked):
+		pigeon.clicked.connect(_on_pigeon_clicked)
+
+	if not pigeon.drag_requested.is_connected(_on_pigeon_drag_requested):
+		pigeon.drag_requested.connect(_on_pigeon_drag_requested)
+
+	if not pigeon.egg_laid.is_connected(_on_pigeon_egg_laid):
+		pigeon.egg_laid.connect(_on_pigeon_egg_laid)
 
 
 func get_hovered_cell() -> Cell:
