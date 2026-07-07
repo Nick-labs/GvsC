@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://cyj50pqlynyfj" path="res://scripts/farm/pigeon_factory.gd" id="1_ombfs"]
 [ext_resource type="PackedScene" uid="uid://0vqpv2qnkwkc" path="res://scenes/farm/pigeon.tscn" id="2_slxyh"]
 [ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="3_rn4fw"]
-[ext_resource type="Resource" uid="uid://db3hyob6o7jx2" path="res://resources/pigeons/default_pigeon.tres" id="4_slxyh"]
+[ext_resource type="Resource" uid="uid://brbixvnswwcwa" path="res://resources/pigeons/grey_pigeon.tres" id="4_urolv"]
+[ext_resource type="Resource" uid="uid://r2x0ipbkn3u7" path="res://resources/pigeons/white_pigeon.tres" id="5_dmsm5"]
 [ext_resource type="Resource" uid="uid://dvheiqa3a2x25" path="res://resources/pigeons/skebob_pigeon.tres" id="5_rn4fw"]
 
 [node name="PigeonFactory" type="Node" unique_id=208138106]
 script = ExtResource("1_ombfs")
 pigeon_scene = ExtResource("2_slxyh")
-pigeon_templates = Array[ExtResource("3_rn4fw")]([ExtResource("4_slxyh"), ExtResource("5_rn4fw")])
+pigeon_templates = Array[ExtResource("3_rn4fw")]([ExtResource("4_urolv"), ExtResource("5_dmsm5"), ExtResource("5_rn4fw")])

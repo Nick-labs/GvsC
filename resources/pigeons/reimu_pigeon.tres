@@ -1,7 +1,14 @@
 [gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://rxg35cypdggv"]
 
 [ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="1_lu284"]
+[ext_resource type="Resource" uid="uid://bf8tmd44rj7p3" path="res://resources/eggs/default_egg.tres" id="1_msh3r"]
+[ext_resource type="Texture2D" uid="uid://c2n7b8lt2q3g0" path="res://assets/sprites/pigeons/pigeon-reimu.png" id="3_5u2ew"]
 
 [resource]
 script = ExtResource("1_lu284")
+breed_name = "Reimu pigeon"
+sprite = ExtResource("3_5u2ew")
+price = 3
+egg_interval = 3.0
+egg_template = ExtResource("1_msh3r")
 metadata/_custom_type_script = "uid://bmosjtxnab5ud"

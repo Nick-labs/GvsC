@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8148ubg5lw28" path="res://scripts/farm/cell.gd" id="1_gxb75"]
 [ext_resource type="PackedScene" uid="uid://7w326qxatf0" path="res://scenes/farm/egg.tscn" id="2_4voau"]
-[ext_resource type="Texture2D" uid="uid://ppw08opm77r3" path="res://assets/sprites/cell.png" id="2_ujoei"]
+[ext_resource type="Texture2D" uid="uid://comnkt2fq5xtc" path="res://assets/sprites/farm/nest.png" id="3_4voau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
 size = Vector2(200, 200)
@@ -12,7 +12,10 @@ script = ExtResource("1_gxb75")
 egg_scene = ExtResource("2_4voau")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2066731230]
-texture = ExtResource("2_ujoei")
+z_index = -1000
+position = Vector2(0, 60)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_4voau")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=799329861]
 

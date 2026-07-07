@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://dlnktbeh75sqr"]
 
 [ext_resource type="Script" uid="uid://d3wm0op3mpy8q" path="res://scripts/farm/egg_basket.gd" id="1_461re"]
-[ext_resource type="Texture2D" uid="uid://cx2bqs8q6d61w" path="res://assets/sprites/egg_storage.png" id="2_5u4eu"]
+[ext_resource type="Texture2D" uid="uid://bj4m2mpuusfr" path="res://assets/sprites/farm/basket.png" id="2_5u4eu"]
 
 [node name="EggBasket" type="Node2D" unique_id=218532551]
 script = ExtResource("1_461re")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=610189866]
+z_index = -1000
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_5u4eu")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=366019453]
-position = Vector2(-96, 102)
+position = Vector2(-111, 58)

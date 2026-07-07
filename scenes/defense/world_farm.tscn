@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b04ywcao285w6"]
 
 [ext_resource type="Script" uid="uid://bnud0kvw38ay1" path="res://scripts/defense/world_farm.gd" id="1_n3sm6"]
-[ext_resource type="Texture2D" uid="uid://c0nc5vug7j8n0" path="res://assets/sprites/world_farm.png" id="2_dpj7m"]
+[ext_resource type="Texture2D" uid="uid://dpbl2wgbfmx4j" path="res://assets/sprites/field/night/farmhouse.png" id="2_dpj7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
 size = Vector2(60, 60)
@@ -10,6 +10,8 @@ size = Vector2(60, 60)
 script = ExtResource("1_n3sm6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001770647]
+position = Vector2(-9.999999, 0)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_dpj7m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1288438264]
