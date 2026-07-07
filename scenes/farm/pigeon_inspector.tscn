@@ -29,7 +29,6 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1887897250]
 layout_mode = 2
-alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1043838563]
 layout_mode = 2
@@ -57,11 +56,28 @@ horizontal_alignment = 1
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="EggsCounterLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1398975748]
+[node name="EggContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1305080417]
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+alignment = 1
+
+[node name="EggPortrait" type="TextureRect" parent="MarginContainer/VBoxContainer/EggContainer" unique_id=1276935782]
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="EggLabel" type="Label" parent="MarginContainer/VBoxContainer/EggContainer" unique_id=2026613819]
+layout_mode = 2
+
+[node name="EggPriceLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1552220481]
 layout_mode = 2
 horizontal_alignment = 1
 
 [node name="IntervalLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2044374666]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="EggsCounterLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1398975748]
 layout_mode = 2
 horizontal_alignment = 1
 

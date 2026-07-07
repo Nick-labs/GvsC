@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_31wc8")
+name = "Дефолтное яйцо"
 price = 1
 texture = ExtResource("2_li5oc")
 hatch_time = 3.0
