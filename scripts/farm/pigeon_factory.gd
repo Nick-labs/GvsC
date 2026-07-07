@@ -24,5 +24,11 @@ func create_egg(parent: PigeonData) -> EggData:
 
 func create_from_egg(egg: EggData) -> Pigeon:
 	var pigeon := pigeon_scene.instantiate() as Pigeon
-	pigeon.data = egg.parent_data.duplicate(true)
+
+	var data := egg.parent_data.duplicate(true)
+	data.generation = egg.parent_data.generation + 1
+
+	pigeon.data = data
+	pigeon.data.egg_template.parent_data = pigeon.data
+
 	return pigeon

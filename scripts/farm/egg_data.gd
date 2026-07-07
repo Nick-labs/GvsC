@@ -1,6 +1,7 @@
 class_name EggData
 extends Resource
 
+@export var name: String
 @export var price: int = 3
 @export var texture: Texture2D
 
