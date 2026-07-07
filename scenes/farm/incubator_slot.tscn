@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dgik247pn2v6w"]
+
+[ext_resource type="Script" uid="uid://dwqcb7cr8j1xo" path="res://scripts/farm/incubator_slot.gd" id="1_jv3mu"]
+[ext_resource type="Texture2D" uid="uid://comnkt2fq5xtc" path="res://assets/sprites/farm/nest.png" id="2_dak75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
+size = Vector2(200, 200)
+
+[node name="IncubatorSlot" type="Area2D" unique_id=1244284107]
+script = ExtResource("1_jv3mu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=351727098]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_dak75")
+
+[node name="Content" type="Node2D" parent="." unique_id=42701079]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=709055485]
+shape = SubResource("RectangleShape2D_camgg")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

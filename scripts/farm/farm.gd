@@ -5,8 +5,10 @@ extends Node2D
 
 @onready var loft: Loft = $Loft
 @onready var egg_basket: EggBasket = $EggBasket
+@onready var incubator: Incubator = $Incubator
 @onready var farm_ui: FarmUI = $FarmUI
 @onready var pigeon_inspector: PigeonInspector  = $FarmUI/MarginContainer/PigeonInspector
+@onready var drag_manager: DragManager = $DragManager
 
 
 var money: int = 100:
@@ -16,15 +18,17 @@ var money: int = 100:
 			farm_ui.set_money(money)
 
 var selected_pigeon: Pigeon = null
-var dragged_pigeon: Pigeon = null
-var source_cell: Cell = null
 var music_started := false
 
 
 func _ready() -> void:
+	egg_basket.egg_drag_requested.connect(_on_egg_drag_requested)
+	
 	loft.pigeon_clicked.connect(_on_pigeon_clicked)
 	loft.pigeon_drag_requested.connect(_on_pigeon_drag_requested)
 	loft.pigeon_egg_laid.connect(_on_pigeon_egg_laid)
+	
+	drag_manager.drag_finished.connect(_on_drag_finished)
 	
 	pigeon_inspector.sell_pressed.connect(_on_sell_pressed)
 	
@@ -33,14 +37,13 @@ func _ready() -> void:
 	_fit_loft_to_screen()
 
 
-func _process(_delta):
-	if dragged_pigeon == null:
-		return
-
-	dragged_pigeon.global_position = get_global_mouse_position()
-
-
 func _input(event):
+	if event is InputEventMouseButton \
+	and event.button_index == MOUSE_BUTTON_RIGHT \
+	and event.pressed:
+
+		try_start_egg_drag()
+	
 	if music_started:
 		return
 
@@ -49,15 +52,35 @@ func _input(event):
 		#music_started = true
 
 
-func _unhandled_input(event):
-	if dragged_pigeon == null:
-		return
+func try_start_egg_drag():
+	var space := get_world_2d().direct_space_state
 
-	if event is InputEventMouseButton \
-	and event.button_index == MOUSE_BUTTON_RIGHT \
-	and not event.pressed:
-		finish_drag()
-	
+	var query := PhysicsPointQueryParameters2D.new()
+	query.position = get_global_mouse_position()
+	query.collide_with_areas = true
+
+	var results := space.intersect_point(query)
+
+	var selected: Egg = null
+	var max_z := -99999
+
+	for result in results:
+		var collider = result.collider
+
+		if collider is Egg:
+			if collider.z_index > max_z:
+				selected = collider
+				max_z = collider.z_index
+
+	if selected:
+		var slot := egg_basket.take_egg(selected)
+		
+		drag_manager.start_drag(
+			selected,
+			egg_basket,
+			slot
+		)
+
 
 func _fit_loft_to_screen() -> void:
 	var screen := get_viewport_rect().size
@@ -67,6 +90,16 @@ func _fit_loft_to_screen() -> void:
 func _on_pigeon_drag_requested(pigeon: Pigeon):
 	select_pigeon(pigeon)
 	start_drag()
+
+
+func _on_egg_drag_requested(egg: Egg):
+	var slot: int = egg_basket.take_egg(egg)
+
+	drag_manager.start_drag(
+		egg,
+		egg_basket,
+		slot
+	)
 
 
 func _set_selected(pigeon: Pigeon, value: bool) -> void:
@@ -117,28 +150,61 @@ func start_drag():
 	if selected_pigeon == null:
 		return
 
-	if dragged_pigeon:
+	drag_manager.start_drag(
+		selected_pigeon,
+		selected_pigeon.cell
+	)
+
+
+func _on_drag_finished(context: DragContext):
+	if context == null:
 		return
 
-	dragged_pigeon = selected_pigeon
-	source_cell = selected_pigeon.cell
+	if context.dragged_object is Pigeon:
+		_finish_pigeon_drag(context)
+
+	elif context.dragged_object is Egg:
+		_finish_egg_drag(context)
 
 
-func finish_drag():
+func _finish_pigeon_drag(context: DragContext):
+
+	var pigeon := context.dragged_object as Pigeon
+	var source := context.source_container as Cell
+
 	var target := loft.get_hovered_cell()
-	
-	if target == null:
-		source_cell.set_pigeon(dragged_pigeon)
-	
-	elif target.is_empty():
-		var pigeon = source_cell.take_pigeon()
-		target.set_pigeon(pigeon)
-	
-	else:
-		swap(source_cell, target)
 
-	self.dragged_pigeon = null
-	self.source_cell = null
+	if target == null:
+		source.set_pigeon(pigeon)
+
+	elif target.is_empty():
+		source.take_pigeon()
+		target.set_pigeon(pigeon)
+
+	else:
+		swap(source, target)
+
+
+func _finish_egg_drag(context: DragContext):
+	var egg := context.dragged_object as Egg
+	var basket := context.source_container as EggBasket
+
+	var target := incubator.get_hovered_slot()
+
+	if target == null:
+		basket.return_egg(
+			egg,
+			context.source_slot
+		)
+
+	elif target.is_empty():
+		target.put_egg(egg)
+
+	else:
+		basket.return_egg(
+			egg,
+			context.source_slot
+		)
 
 
 func swap(a: Cell, b: Cell):

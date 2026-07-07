@@ -13,7 +13,6 @@
 
 [node name="Farm" type="Node2D" unique_id=1015373910]
 script = ExtResource("1_a4t06")
-padding = null
 
 [node name="Loft" parent="." unique_id=1552193297 instance=ExtResource("2_wgrn4")]
 
@@ -24,8 +23,7 @@ position = Vector2(249, 881)
 scale = Vector2(0.8, 0.8)
 
 [node name="Incubator" type="Node2D" parent="." unique_id=519888172]
-z_index = -100
-position = Vector2(586, 863)
+position = Vector2(200, 200)
 script = ExtResource("8_eed4j")
 slot_scene = ExtResource("9_k484s")
 

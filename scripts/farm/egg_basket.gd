@@ -1,6 +1,8 @@
 class_name EggBasket
 extends Node2D
 
+signal egg_drag_requested(egg: Egg)
+
 @onready var storage_point: Marker2D = $Marker2D
 
 var eggs: Array[Egg] = []
@@ -10,7 +12,18 @@ var reserved_slots := 0
 @export var max_in_row := 12
 
 
+func is_empty() -> bool:
+	return eggs.is_empty()
+
+
+func get_egg_count() -> int:
+	return eggs.size()
+
+
 func receive_egg(egg: Egg):
+	if not egg.drag_requested.is_connected(_on_egg_drag_requested):
+		egg.drag_requested.connect(_on_egg_drag_requested)
+	
 	var target := _get_next_position()
 	
 	egg.reparent(get_tree().current_scene)
@@ -38,7 +51,13 @@ func _finish_receiving(egg: Egg):
 	eggs.append(egg)
 	reserved_slots -= 1
 
+	_update_z_order()
 	_layout()
+
+
+func _update_z_order():
+	for i in eggs.size():
+		eggs[i].z_index = i
 
 
 func _layout():
@@ -74,3 +93,36 @@ func _get_slot_position(index: int) -> Vector2:
 
 func _get_slot_global_position(index: int) -> Vector2:
 	return to_global(_get_slot_position(index))
+
+
+func take_egg(egg: Egg) -> int:
+	if not eggs.has(egg):
+		return -1
+
+	var index := eggs.find(egg)
+
+	var gp := egg.global_position
+
+	eggs.erase(egg)
+
+	egg.reparent(get_tree().current_scene)
+	egg.global_position = gp
+
+	_layout()
+
+	return index
+
+
+func return_egg(egg: Egg, index: int):
+	egg.reparent(self)
+	egg.position = _get_slot_position(index)
+
+	eggs.append(egg)
+
+	_update_z_order()
+	_layout()
+
+
+func _on_egg_drag_requested(egg: Egg):
+	take_egg(egg)
+	egg_drag_requested.emit(egg)

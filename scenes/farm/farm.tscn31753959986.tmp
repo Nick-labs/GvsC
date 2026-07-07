@@ -13,7 +13,6 @@
 
 [node name="Farm" type="Node2D" unique_id=1015373910]
 script = ExtResource("1_a4t06")
-padding = null
 
 [node name="Loft" parent="." unique_id=1552193297 instance=ExtResource("2_wgrn4")]
 
