@@ -41,6 +41,12 @@ func _ready() -> void:
 	farm_ui.set_money(money)
 	
 	_fit_loft_to_screen()
+	
+	TimeManager.minute_passed.connect(_on_minute)
+
+
+func _on_minute(day, hour, minute):
+	print(day, " ", hour, ":", minute)
 
 
 func _input(event):
