@@ -11,6 +11,8 @@ func _ready():
 	
 	defense.farm_pressed.connect(show_farm)
 	
+	shop.farm_pressed.connect(show_farm)
+	
 	show_farm()
 
 
