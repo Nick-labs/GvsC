@@ -13,7 +13,6 @@
 
 [node name="Farm" type="Node2D" unique_id=1015373910]
 script = ExtResource("1_a4t06")
-padding = null
 
 [node name="Loft" parent="." unique_id=1552193297 instance=ExtResource("2_wgrn4")]
 
@@ -40,3 +39,6 @@ autoplay = true
 anchor_mode = 0
 
 [node name="FarmUI" parent="." unique_id=1160712630 instance=ExtResource("3_fev0l")]
+
+[connection signal="mouse_entered" from="EggBasket" to="EggBasket" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EggBasket" to="EggBasket" method="_on_mouse_exited"]

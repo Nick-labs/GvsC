@@ -23,6 +23,9 @@ var music_started := false
 
 func _ready() -> void:
 	egg_basket.egg_drag_requested.connect(_on_egg_drag_requested)
+	incubator.egg_drag_requested.connect(
+		_on_incubator_egg_drag_requested
+	)
 	
 	loft.pigeon_clicked.connect(_on_pigeon_clicked)
 	loft.pigeon_drag_requested.connect(_on_pigeon_drag_requested)
@@ -98,6 +101,13 @@ func _on_egg_drag_requested(egg: Egg):
 	drag_manager.start_drag(
 		egg,
 		egg_basket,
+		slot
+	)
+
+
+func _on_incubator_egg_drag_requested(egg: Egg, slot: IncubatorSlot):
+	drag_manager.start_drag(
+		egg,
 		slot
 	)
 
@@ -186,25 +196,36 @@ func _finish_pigeon_drag(context: DragContext):
 
 
 func _finish_egg_drag(context: DragContext):
+
 	var egg := context.dragged_object as Egg
-	var basket := context.source_container as EggBasket
 
-	var target := incubator.get_hovered_slot()
 
-	if target == null:
-		basket.return_egg(
+	# 1. Проверяем инкубатор
+	var slot := incubator.get_hovered_slot()
+
+	if slot:
+		if slot.is_empty():
+			slot.put_egg(egg)
+			return
+
+
+	# 2. Проверяем корзину
+	if egg_basket.hovered:
+
+		egg_basket.receive_egg(egg)
+		return
+
+
+	# 3. Если никуда не положили
+	if context.source_container is EggBasket:
+		egg_basket.return_egg(
 			egg,
 			context.source_slot
 		)
 
-	elif target.is_empty():
-		target.put_egg(egg)
-
-	else:
-		basket.return_egg(
-			egg,
-			context.source_slot
-		)
+	elif context.source_container is IncubatorSlot:
+		var source := context.source_container as IncubatorSlot
+		source.put_egg(egg)
 
 
 func swap(a: Cell, b: Cell):

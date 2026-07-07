@@ -3,13 +3,23 @@ extends Node2D
 
 signal egg_drag_requested(egg: Egg)
 
-@onready var storage_point: Marker2D = $Marker2D
+@export var egg_spacing := 20.0
+@export var max_in_row := 12
 
 var eggs: Array[Egg] = []
 var reserved_slots := 0
 
-@export var egg_spacing := 20.0
-@export var max_in_row := 12
+var hovered := false
+
+@onready var storage_point: Marker2D = $Marker2D
+
+
+func _on_mouse_entered():
+	hovered = true
+
+
+func _on_mouse_exited():
+	hovered = false
 
 
 func is_empty() -> bool:
