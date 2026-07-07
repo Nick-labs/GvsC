@@ -1,0 +1,75 @@
+* [33m4f799b9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/shop-itemsV2[m[33m, [m[1;31morigin/feature/shop-itemsV2[m[33m)[m repair v1
+* [33m1b4f6af[m[33m ([m[1;31morigin/feature/shop-items[m[33m, [m[1;32mfeature/shop-items[m[33m)[m add backpakc and shop items
+* [33m1574bc8[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m Delete junk
+*   [33me4dedca[m Merge branch 'dev' of github.com:Nick-labs/GvsC into dev
+[32m|[m[33m\[m  
+[32m|[m *   [33mf694dee[m Merge pull request #2 from Nick-labs/test/pull-request
+[32m|[m [34m|[m[35m\[m  
+[32m|[m [34m|[m * [33m5aeb243[m Test commit
+[32m|[m [34m|[m[34m/[m  
+* [34m|[m   [33m325ee75[m Merge branch 'feature/breeding' into dev
+[36m|[m[1;31m\[m [34m\[m  
+[36m|[m * [34m|[m [33m82b11ac[m Fix incubator marker
+[36m|[m * [34m|[m [33m49e9a1d[m Update farm visual
+[36m|[m * [34m|[m [33m911e213[m Fix pigeon from incubator selecting
+[36m|[m * [34m|[m [33m958360f[m Add scene transition
+[36m|[m * [34m|[m [33mbed5507[m Add pigeon selling from incubator
+[36m|[m * [34m|[m [33mcadcac0[m Add inspector view for incubator pigeon
+[36m|[m * [34m|[m [33ma7b4928[m Fix pigeon from incubator dragging
+[36m|[m * [34m|[m [33meef731d[m Add hatching
+[36m|[m * [34m|[m [33m615d5bd[m Refactor egg system
+[36m|[m * [34m|[m [33m25e5725[m Fix egg draging
+[36m|[m * [34m|[m [33ma10039b[m Add egg to incubator dragging
+[36m|[m * [34m|[m [33mb857a96[m Add egg dragging
+[36m|[m * [34m|[m [33m4f4ca4f[m Fix egg basket
+[36m|[m[36m/[m [34m/[m  
+* [34m|[m   [33md2c0a72[m Merge branch 'feature/defense' into dev
+[1;32m|[m[1;33m\[m [34m\[m  
+[1;32m|[m * [34m|[m [33mefedf53[m Fix pigeon nickname editting bug
+[1;32m|[m * [34m|[m [33mc046242[m Add sprites
+[1;32m|[m * [34m|[m [33mf426947[m Add WaveManager
+[1;32m|[m * [34m|[m [33md8cff40[m Add EnemySpawnew
+[1;32m|[m * [34m|[m [33m3b9cfe3[m Add fox spawning
+[1;32m|[m * [34m|[m [33m747735d[m Add Fox
+[1;32m|[m[1;32m/[m [34m/[m  
+* [34m|[m   [33me2bb1db[m Merge branch 'feature/farm' into dev
+[34m|[m[1;35m\[m [34m\[m  
+[34m|[m [1;35m|[m[34m/[m  
+[34m|[m[34m/[m[1;35m|[m   
+[34m|[m * [33md131912[m Add crossbow on defense map
+[34m|[m * [33m458f70e[m Refactor loft.gd
+[34m|[m * [33m37df186[m Add pigeon egg counter
+[34m|[m * [33mc4aacdb[m Separate LMB and RMB logic
+[34m|[m * [33mcbe6582[m Add PigeonInspector
+[34m|[m * [33mdaa4aac[m Add proper eggs tween
+[34m|[m * [33m45db6b5[m Update egg_basket
+[34m|[m * [33m14b7444[m Add eggs to basket transportation
+[34m|[m * [33m26c8100[m Add eggs collection tween
+[34m|[m * [33ma4da197[m Edit pigeon_data
+[34m|[m * [33m6209dd9[m Update PigeonFactory
+[34m|[m * [33mad53a39[m Add PigeonFactory
+[34m|[m * [33m8dc1226[m Refactor scripts
+[34m|[m * [33m828bb1b[m Add .gitattributes
+[34m|[m * [33m604053b[m Remove player
+[34m|[m * [33mb792670[m Add defense scene
+[34m|[m * [33m9958851[m Update UI
+[34m|[m * [33m535c063[m Fix eggs spawning
+[34m|[m * [33m4377c00[m Add eggs spawning
+[34m|[m * [33maa79075[m Compress sprites
+[34m|[m * [33m8bbb425[m Update MusicPlayer for HTML version
+[34m|[m * [33m627a28f[m Change farm music
+[34m|[m * [33m5689928[m Add exit button
+[34m|[m * [33ma1ebd00[m Add pigeon sprites
+[34m|[m * [33mbe0e4ed[m Add pigeon names
+[34m|[m * [33m8655f72[m Add pigeon dragging
+[34m|[m * [33m4d0cc1b[m Add simple UI
+[34m|[m * [33m2c3194b[m Add cells and loft
+[34m|[m * [33m37b1f5e[m Add pigeon node
+[34m|[m[34m/[m  
+[34m|[m *   [33m3bb2467[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Merge branch 'dev'
+[34m|[m [1;36m|[m[34m\[m  
+[34m|[m [1;36m|[m[34m/[m  
+[34m|[m[34m/[m[1;36m|[m   
+* [1;36m|[m [33m0dc90cf[m Upgrade to Godot 4.7
+[1;36m|[m[1;36m/[m  
+* [33mf8988c9[m Init commit
