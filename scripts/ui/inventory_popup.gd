@@ -6,11 +6,13 @@ var panel = null
 var items_list = null
 var close_button = null
 
+
 func _ready():
 	_create_ui()
 	hide()
 	
 	Inventory.inventory_updated.connect(_update_display)
+
 
 func _create_ui():
 	for child in get_children():
@@ -73,9 +75,11 @@ func _create_ui():
 	
 	_update_display()
 
+
 func _on_bg_click(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed:
 		hide()
+
 
 func _update_display():
 	if not items_list:
@@ -103,6 +107,7 @@ func _update_display():
 		empty_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		empty_label.add_theme_font_size_override("font_size", 18)
 		items_list.add_child(empty_label)
+
 
 func _create_item_line(item_name: String, quantity: int, data) -> HBoxContainer:
 	var line = HBoxContainer.new()
@@ -145,6 +150,7 @@ func _create_item_line(item_name: String, quantity: int, data) -> HBoxContainer:
 	
 	return line
 
+
 func _on_use_pressed(item_name: String, data):
 	if not data.usable:
 		print("%s нельзя использовать!" % item_name)
@@ -173,6 +179,7 @@ func _on_use_pressed(item_name: String, data):
 	Inventory.remove_item(Inventory.CATEGORY_CONSUMABLES, item_name, 1)
 	_update_display()
 
+
 func _on_info_pressed(item_name: String, data):
 	print("ℹ️ Нажата Инфо для: ", item_name)
 	
@@ -195,8 +202,10 @@ func _on_info_pressed(item_name: String, data):
 	popup.popup_centered()
 	popup.close_requested.connect(popup.queue_free)
 
+
 func _on_close_pressed():
 	hide()
+
 
 func open_centered():
 	_update_display()

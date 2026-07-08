@@ -9,6 +9,6 @@ script = ExtResource("1_b07yd")
 breed_name = "White patsan"
 sprite = ExtResource("3_3dovb")
 price = 3
-egg_interval_minutes = 3.0
 egg_template = ExtResource("1_lsv6y")
+tier = 1
 metadata/_custom_type_script = "uid://bmosjtxnab5ud"

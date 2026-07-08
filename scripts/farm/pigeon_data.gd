@@ -7,7 +7,8 @@ extends Resource
 @export var price: int
 @export var egg_interval_minutes: int
 @export var egg_template: EggData
-@export var rarity: float = 1.0
+@export var tier: int = 0
+
 
 @export_group("Individual")
 var nickname := ""
