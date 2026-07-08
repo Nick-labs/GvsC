@@ -5,9 +5,8 @@
 [ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="3_rn4fw"]
 [ext_resource type="Resource" uid="uid://brbixvnswwcwa" path="res://resources/pigeons/tier_0/grey_pigeon.tres" id="4_urolv"]
 [ext_resource type="Resource" uid="uid://r2x0ipbkn3u7" path="res://resources/pigeons/tier_0/white_pigeon.tres" id="5_dmsm5"]
-[ext_resource type="Resource" uid="uid://dvheiqa3a2x25" path="res://resources/pigeons/tier_4/skebob_pigeon.tres" id="5_rn4fw"]
 
 [node name="PigeonFactory" type="Node" unique_id=208138106]
 script = ExtResource("1_ombfs")
 pigeon_scene = ExtResource("2_slxyh")
-pigeon_templates = Array[ExtResource("3_rn4fw")]([ExtResource("4_urolv"), ExtResource("5_dmsm5"), ExtResource("5_rn4fw")])
+start_pigeons = Array[ExtResource("3_rn4fw")]([ExtResource("4_urolv"), ExtResource("5_dmsm5")])

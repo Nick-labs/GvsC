@@ -29,7 +29,7 @@ func _get_random_from_dictionary(dictionary: Dictionary, tier: int) -> PigeonDat
 	if !dictionary.has(tier):
 		return null
 
-	var list: Array[PigeonData] = dictionary[tier]
+	var list: Array = dictionary[tier]
 
 	if list.is_empty():
 		return null
