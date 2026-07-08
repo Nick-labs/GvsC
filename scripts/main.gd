@@ -17,6 +17,10 @@ func _ready():
 	shop.farm_pressed.connect(show_farm)
 	
 	PlayerData.victory.connect(_on_victory)
+
+	MusicPlayer.play_music(
+		preload("res://assets/audio/music/test4_OrganFluit.ogg")
+	)
 	
 	show_farm()
 
