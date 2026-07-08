@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_a3f41")
-description = "KOFE"
+item_name = "Kofe"
 price = 50
 icon = ExtResource("1_utgoc")
 item_type = "Food"
