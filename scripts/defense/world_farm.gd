@@ -11,9 +11,11 @@ signal hp_changed(health)
 var health := max_health
 var regen_timer := 0.0
 
+
 func _ready():
 	health = max_health
 	hp_changed.emit(health)
+
 
 func _process(delta):
 	if health <= 0:
@@ -25,11 +27,13 @@ func _process(delta):
 		regenerate()
 		regen_timer = regen_interval
 
+
 func regenerate():
 	if health < max_health:
 		health += regen_amount
 		health = min(health,max_health)
 		hp_changed.emit(health)
+
 
 func take_damage(damage:float):
 	health -= damage
@@ -39,6 +43,7 @@ func take_damage(damage:float):
 
 	if health <= 0:
 		destroy()
+
 
 func destroy():
 	destroyed.emit()

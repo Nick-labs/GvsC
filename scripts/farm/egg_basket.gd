@@ -59,7 +59,7 @@ func add_egg_immediately(egg: Egg):
 	)
 	
 	_update_z_order()
-	_layout()
+	layout()
 
 
 func _finish_receiving(egg: Egg):
@@ -75,10 +75,11 @@ func _finish_receiving(egg: Egg):
 	eggs.append(egg)
 	reserved_slots -= 1
 	
-	egg.collected.connect(_on_egg_collected)
+	if !egg.collected.is_connected(_on_egg_collected):
+		egg.collected.connect(_on_egg_collected)
 
 	_update_z_order()
-	_layout()
+	layout()
 
 
 func _update_z_order():
@@ -88,8 +89,11 @@ func _update_z_order():
 			eggs[i].z_index = i
 
 
-func _layout():
+func layout():
+	cleanup()
+	
 	for i in eggs.size():
+		
 		var tween := create_tween()
 
 		tween.tween_property(
@@ -136,7 +140,7 @@ func take_egg(egg: Egg) -> int:
 	egg.reparent(get_tree().current_scene)
 	egg.global_position = gp
 
-	_layout()
+	layout()
 
 	return index
 
@@ -148,7 +152,7 @@ func return_egg(egg: Egg, index: int):
 	eggs.append(egg)
 
 	_update_z_order()
-	_layout()
+	layout()
 
 
 func _on_egg_drag_requested(egg: Egg):
@@ -163,3 +167,10 @@ func _on_egg_collected(egg: Egg):
 	if PlayerData.backpack.add_egg(egg.data):
 		eggs.erase(egg)
 		egg.queue_free()
+
+
+func cleanup():
+	eggs = eggs.filter(
+		func(e):
+			return is_instance_valid(e)
+	)
