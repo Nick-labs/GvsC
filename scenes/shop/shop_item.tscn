@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dk3xjxyovwybq"]
+
+[ext_resource type="Script" uid="uid://c1hgrxdx61h37" path="res://scripts/shop/shop_item.gd" id="1_3rqce"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
+size = Vector2(200, 200)
+
+[node name="ShopItem" type="Area2D" unique_id=1695072338]
+script = ExtResource("1_3rqce")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=13428175]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1267680543]
+shape = SubResource("RectangleShape2D_camgg")
+
+[node name="PriceLabel" type="Label" parent="." unique_id=1643156207]
+offset_right = 40.0
+offset_bottom = 23.0

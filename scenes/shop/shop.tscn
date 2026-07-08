@@ -55,16 +55,22 @@ z_index = 1000
 layout_mode = 2
 text = "Продать всё"
 
-[node name="AssortmentButton" type="Button" parent="ButtonsContainer" unique_id=1836839360]
-z_index = 1000
-layout_mode = 2
-text = "Посмотреть ассортимент
-"
+[node name="CounterPoints" type="Node2D" parent="." unique_id=855976284]
 
-[node name="InventoryButton" type="Button" parent="ButtonsContainer" unique_id=257526102]
-layout_mode = 2
-text = "Рюкзак"
+[node name="Marker1" type="Marker2D" parent="CounterPoints" unique_id=2143249321]
+position = Vector2(300, 850)
+
+[node name="Marker2" type="Marker2D" parent="CounterPoints" unique_id=865246090]
+position = Vector2(600, 850)
+
+[node name="Marker3" type="Marker2D" parent="CounterPoints" unique_id=1701453180]
+position = Vector2(900, 850)
+
+[node name="Marker4" type="Marker2D" parent="CounterPoints" unique_id=40018259]
+position = Vector2(1200, 850)
+
+[node name="Marker5" type="Marker2D" parent="CounterPoints" unique_id=137998077]
+position = Vector2(1500, 850)
 
 [connection signal="input_event" from="Shopkeeper" to="Shopkeeper" method="_on_input_event"]
 [connection signal="pressed" from="ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="ButtonsContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]

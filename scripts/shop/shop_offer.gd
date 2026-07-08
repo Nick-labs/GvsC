@@ -15,5 +15,7 @@ enum OfferType {
 
 @export var type: OfferType
 
+@export var tier: int = 0
+
 # Сюда будем класть PigeonData, ItemData, UpgradeData
 @export var data: Resource
