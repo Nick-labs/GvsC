@@ -88,3 +88,8 @@ func set_active(value: bool):
 
 func refresh():
 	spawn_items()
+
+
+func _on_sell_all_button_pressed() -> int:
+	var earned: int = PlayerData.sell_backpack()
+	return earned

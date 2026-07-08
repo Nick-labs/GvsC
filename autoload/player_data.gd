@@ -23,3 +23,9 @@ func add_egg(egg: EggData):
 func add_pigeon(pigeon: PigeonData):
 	if backpack.add_pigeon(pigeon):
 		backpack_changed.emit()
+
+
+func sell_backpack():
+	var earned := backpack.sell_all()
+	money += earned
+	return earned

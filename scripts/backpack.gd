@@ -12,7 +12,6 @@ func get_used_space() -> int:
 	return eggs.size()
 	
 
-
 func get_free_space() -> int:
 	return capacity - get_used_space()
 
@@ -43,3 +42,18 @@ func remove_egg(egg: EggData):
 
 func remove_pigeon(pigeon: PigeonData):
 	pigeons.erase(pigeon)
+
+
+func sell_all() -> int:
+	var total := 0
+
+	for egg: EggData in eggs:
+		total += egg.price
+
+	for pigeon: PigeonData in pigeons:
+		total += pigeon.price
+
+	eggs.clear()
+	pigeons.clear()
+
+	return total
