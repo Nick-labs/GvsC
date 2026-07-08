@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://r2x0ipbkn3u7"]
 
 [ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="1_8pckc"]
-[ext_resource type="Resource" uid="uid://bf8tmd44rj7p3" path="res://resources/eggs/default_egg.tres" id="1_wtmbh"]
+[ext_resource type="Resource" uid="uid://b861jjvs4v8ti" path="res://resources/eggs/tier_0/white_egg.tres" id="1_wtmbh"]
 [ext_resource type="Texture2D" uid="uid://chr6qpc25mlpr" path="res://assets/sprites/pigeons/pigeon-white.png" id="3_7gjed"]
 
 [resource]

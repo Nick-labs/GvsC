@@ -81,7 +81,9 @@ func _finish_receiving(egg: Egg):
 
 func _update_z_order():
 	for i in eggs.size():
-		eggs[i].z_index = i
+		# тут был баг с freed object у яиц, пока так
+		if eggs[i] != null:
+			eggs[i].z_index = i
 
 
 func _layout():

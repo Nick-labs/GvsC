@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://dioln16mx4n4j"]
+
+[ext_resource type="Resource" uid="uid://cnv5qhbmh1w0" path="res://resources/eggs/tier_3/informal_egg.tres" id="1_to7mu"]
+[ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="2_v7xfw"]
+[ext_resource type="Texture2D" uid="uid://cickwma0pq2e7" path="res://assets/sprites/pigeons/dsbm-patsan.png" id="3_en5rs"]
+
+[resource]
+script = ExtResource("2_v7xfw")
+breed_name = "DSBM patsan"
+sprite = ExtResource("3_en5rs")
+price = 3
+egg_template = ExtResource("1_to7mu")
+tier = 3
+metadata/_custom_type_script = "uid://bmosjtxnab5ud"

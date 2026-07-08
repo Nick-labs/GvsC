@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EggData" format=3 uid="uid://c1no6faj5qidc"]
+
+[ext_resource type="Script" uid="uid://qaw1oeacb4qf" path="res://scripts/farm/hatch_chance.gd" id="1_w8i7x"]
+[ext_resource type="Script" uid="uid://bju6ideq3gslp" path="res://scripts/farm/egg_data.gd" id="2_osdo5"]
+[ext_resource type="Texture2D" uid="uid://cdgm0v7r8l7bc" path="res://assets/sprites/eggs/cursed-egg.png" id="3_2p54e"]
+
+[sub_resource type="Resource" id="Resource_glhhd"]
+script = ExtResource("1_w8i7x")
+tier_offset = -1
+chance = 95.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[sub_resource type="Resource" id="Resource_r1035"]
+script = ExtResource("1_w8i7x")
+chance = 5.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[resource]
+script = ExtResource("2_osdo5")
+name = "Cursed egg"
+price = 25
+texture = ExtResource("3_2p54e")
+hatch_time_minutes = 5.0
+tier = 5
+hatch_chances = Array[ExtResource("1_w8i7x")]([SubResource("Resource_glhhd"), SubResource("Resource_r1035")])
+metadata/_custom_type_script = "uid://bju6ideq3gslp"

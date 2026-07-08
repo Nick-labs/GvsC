@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://dfqwqr7wnv3ut"]
+
+[ext_resource type="Resource" uid="uid://c1no6faj5qidc" path="res://resources/eggs/tier_5/cursed_egg.tres" id="1_0ggmk"]
+[ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="2_al0hc"]
+[ext_resource type="Texture2D" uid="uid://b443iu3oo8b4l" path="res://assets/sprites/pigeons/tjoy.png" id="3_tvdbk"]
+
+[resource]
+script = ExtResource("2_al0hc")
+breed_name = "Tjoy"
+sprite = ExtResource("3_tvdbk")
+price = 67
+egg_template = ExtResource("1_0ggmk")
+tier = 5
+metadata/_custom_type_script = "uid://bmosjtxnab5ud"
