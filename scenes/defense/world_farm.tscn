@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dpbl2wgbfmx4j" path="res://assets/sprites/field/night/farmhouse.png" id="2_dpj7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
-size = Vector2(60, 60)
+size = Vector2(156, 150)
 
 [node name="WorldFarm" type="Area2D" unique_id=1760461849]
 script = ExtResource("1_n3sm6")
@@ -15,4 +15,5 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_dpj7m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1288438264]
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_camgg")

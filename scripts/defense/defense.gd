@@ -2,32 +2,58 @@ class_name Defense
 extends Node2D
 
 signal farm_pressed
+signal lose_game
+signal win_game
 
-@export var fox_scene: PackedScene
+@onready var base:WorldFarm = $World/Base
+@onready var crossbow:Crossbow = $World/Base/Crossbow
+@onready var wave_manager:WaveManager = $WaveManager
+@onready var camera:Camera2D = $World/Camera2D
 
-@onready var world: Node2D = $World
-@onready var base: WorldFarm = $World/Base
-@onready var crossbow: Crossbow = $World/Base/Crossbow
-@onready var spawner: EnemySpawner = $EnemySpawner
-@onready var camera: Camera2D = $World/Camera2D
+@onready var base_hp_bar:ProgressBar = $CanvasLayer/BaseHPBar
+@onready var win_screen:ColorRect = $CanvasLayer/WinScreen
+@onready var lose_screen:ColorRect = $CanvasLayer/LoseScreen
 
 var active := true
 
+func _ready():
+	base.destroyed.connect(_on_base_destroyed)
+	base.hp_changed.connect(_on_hp_changed)
 
-func _ready() -> void:
-	pass
+	TimeManager.hour_passed.connect(_on_hour_passed)
+
+	win_screen.hide()
+	lose_screen.hide()
+
+	base_hp_bar.max_value = base.max_health
+	base_hp_bar.value = base.health
 
 
-func _on_back_button_pressed() -> void:
+func _on_hp_changed(value):
+	base_hp_bar.value = value
+
+
+func _on_base_destroyed():
+	lose_screen.show()
+	lose_game.emit()
+	get_tree().paused = true
+
+
+func _on_hour_passed(_day,hour):
+	if hour == 6:
+		win_screen.show()
+		win_game.emit()
+		get_tree().paused = true
+
+
+func _on_back_button_pressed():
 	farm_pressed.emit()
 
 
-func set_active(value: bool):
+func set_active(value:bool):
 	active = value
 	crossbow.can_shoot = value
-	
+	camera.enabled = value
+
 	if value:
-		camera.enabled = true
 		camera.make_current()
-	else:
-		camera.enabled = false

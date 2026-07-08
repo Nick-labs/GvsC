@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://b04ywcao285w6" path="res://scenes/defense/world_farm.tscn" id="2_ugpjw"]
 [ext_resource type="PackedScene" uid="uid://ddnyifkc0o3k4" path="res://scenes/defense/crossbow.tscn" id="3_qk0ly"]
 [ext_resource type="Script" uid="uid://dm0l7djmijskg" path="res://scripts/defense/enemy_spawner.gd" id="3_yaq5k"]
+[ext_resource type="Texture2D" uid="uid://d087hp23svh7w" path="res://assets/sprites/field/night/night-tile.png" id="4_7sasd"]
 [ext_resource type="Script" uid="uid://dl8yr1fcin3ay" path="res://scripts/defense/wave_manager.gd" id="6_ows6c"]
+[ext_resource type="Texture2D" uid="uid://upjrybmw8foj" path="res://assets/sprites/field/night/trees.png" id="8_1jfis"]
 
 [node name="Defense" type="Node2D" unique_id=2122941706]
 script = ExtResource("1_ugpjw")
-fox_scene = ExtResource("2_asd4r")
 
 [node name="World" type="Node2D" parent="." unique_id=1992813151]
 
@@ -43,5 +44,81 @@ offset_right = 920.0
 offset_bottom = -456.0
 theme_override_font_sizes/font_size = 16
 text = "Вернуться"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=379951036]
+
+[node name="BaseHPBar" type="ProgressBar" parent="CanvasLayer" unique_id=1824139705]
+visible = false
+offset_left = 765.0
+offset_top = 469.0
+offset_right = 922.0
+offset_bottom = 499.0
+show_percentage = false
+
+[node name="WinScreen" type="ColorRect" parent="CanvasLayer" unique_id=870640540]
+visible = false
+offset_left = -837.0
+offset_top = -431.0
+offset_right = 873.0
+offset_bottom = 434.0
+color = Color(0.69020283, 0.7840987, 0.5255087, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/WinScreen" unique_id=147757632]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 417.0
+offset_right = 876.0
+offset_bottom = 440.0
+text = "ПОБЕДА!!"
+
+[node name="LoseScreen" type="ColorRect" parent="CanvasLayer" unique_id=16340591]
+visible = false
+offset_left = -837.0
+offset_top = -431.0
+offset_right = 873.0
+offset_bottom = 434.0
+color = Color(0.9345362, 0.6581365, 0.6645904, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/LoseScreen" unique_id=814350676]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 417.0
+offset_right = 876.0
+offset_bottom = 440.0
+text = "ПОРАЖЕНИЕ ):"
+
+[node name="Control" type="Control" parent="." unique_id=2084454998]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1744890547]
+z_index = -4096
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -977.0
+offset_top = -558.0
+offset_right = 970.0
+offset_bottom = 558.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_7sasd")
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1937433231]
+layout_mode = 0
+offset_left = -977.0
+offset_top = -558.0
+offset_right = 970.0
+offset_bottom = 558.0
+mouse_filter = 2
+texture = ExtResource("8_1jfis")
+expand_mode = 1
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
