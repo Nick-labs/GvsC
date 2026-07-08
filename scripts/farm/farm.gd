@@ -14,6 +14,8 @@ signal ready_ui(farm_ui)
 var selected_pigeon: Pigeon = null
 var music_started := false
 
+var collecting := false
+
 var active := true
 
 
@@ -62,6 +64,11 @@ func _input(event):
 	and event.pressed:
 
 		try_start_egg_drag()
+		
+	if event is InputEventMouseButton and \
+	event.button_index == MOUSE_BUTTON_LEFT:
+		
+		collecting = event.pressed
 	
 	if music_started:
 		return

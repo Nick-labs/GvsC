@@ -2,7 +2,7 @@ class_name ShopItem
 extends Area2D
 
 signal selected(offer: ShopOffer)
-signal bought
+#signal bought
 
 @export var max_sprite_size := Vector2(256, 256)
 
