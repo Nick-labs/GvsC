@@ -69,6 +69,8 @@ func _input(event):
 	event.button_index == MOUSE_BUTTON_LEFT:
 		
 		collecting = event.pressed
+		if !event.pressed:
+			egg_basket.layout()
 	
 	if music_started:
 		return
@@ -304,6 +306,7 @@ func collect_eggs(cell: Cell):
 			continue
 
 		egg_basket.receive_egg(egg)
+
 
 func take_egg_to_backpack(egg: Egg):
 	if PlayerData.add_egg(egg.data):
