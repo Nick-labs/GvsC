@@ -34,16 +34,14 @@ func _on_hp_changed(value):
 
 
 func _on_base_destroyed():
-	lose_screen.show()
-	lose_game.emit()
-	get_tree().paused = true
+	pass
+	#lose_screen.show()
+	#lose_game.emit()
+	#get_tree().paused = true
 
 
 func _on_hour_passed(_day,hour):
-	if hour == 6:
-		win_screen.show()
-		win_game.emit()
-		get_tree().paused = true
+	pass
 
 
 func _on_back_button_pressed():

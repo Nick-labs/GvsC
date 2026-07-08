@@ -5,7 +5,6 @@ extends Node2D
 @onready var shop = $Shop
 
 
-
 func _ready():
 	_show_intro()
 	
