@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://bj3tejodjtglo" path="res://scripts/farm/farm.gd" id="1_a4t06"]
 [ext_resource type="PackedScene" uid="uid://bmejj6a5xgtxu" path="res://scenes/farm/loft.tscn" id="2_wgrn4"]
 [ext_resource type="PackedScene" uid="uid://ba66ct4755evq" path="res://scenes/farm/farm_ui.tscn" id="3_fev0l"]
-[ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="4_a5wis"]
-[ext_resource type="Resource" uid="uid://brbixvnswwcwa" path="res://resources/pigeons/tier_0/grey_pigeon.tres" id="5_72sg3"]
-[ext_resource type="Resource" uid="uid://r2x0ipbkn3u7" path="res://resources/pigeons/tier_0/white_pigeon.tres" id="6_0uhpw"]
 [ext_resource type="PackedScene" uid="uid://dlnktbeh75sqr" path="res://scenes/farm/egg_basket.tscn" id="6_fhtoc"]
 [ext_resource type="PackedScene" uid="uid://cpewe02rkskak" path="res://scenes/farm/pigeon_factory.tscn" id="7_f0ucu"]
 [ext_resource type="Script" uid="uid://dngphhg4b2ddo" path="res://scripts/farm/incubator.gd" id="8_eed4j"]
@@ -24,7 +21,6 @@ script = ExtResource("1_a4t06")
 position = Vector2(158, 500)
 
 [node name="PigeonFactory" parent="." unique_id=208138106 instance=ExtResource("7_f0ucu")]
-start_pigeons = Array[ExtResource("4_a5wis")]([ExtResource("5_72sg3"), ExtResource("6_0uhpw")])
 
 [node name="EggBasket" parent="." unique_id=218532551 instance=ExtResource("6_fhtoc")]
 position = Vector2(923, 412)

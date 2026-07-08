@@ -71,7 +71,7 @@ func add_pigeon(pigeon: Pigeon) -> bool:
 
 
 func create_default_pigeon() -> Pigeon:
-	var pigeon: Pigeon = PigeonFactory.create_start_pigeon()
+	var pigeon: Pigeon = PigeonFactory.create_from_template(SpeciesRegistry.get_random_hatchable_species(0))
 	setup_pigeon(pigeon)
 	return pigeon
 
