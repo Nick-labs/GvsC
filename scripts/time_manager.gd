@@ -45,12 +45,12 @@ func _process(delta: float) -> void:
 func advance_minutes(count: int) -> void:
 	for i in count:
 		_total_minutes += 1
-
+	
 		minute_passed.emit(day, hour, minute)
-
+		
 		if minute == 0:
 			hour_passed.emit(day, hour)
-
+		
 		if hour == 0 and minute == 0:
 			day_passed.emit(day)
 
