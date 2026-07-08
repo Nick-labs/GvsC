@@ -1,49 +1,95 @@
+class_name Shop
 extends Node2D
 
 signal farm_pressed
 
-@onready var sell_all_button = $ButtonsContainer/SellAllButton
-@onready var assortment_button = $ButtonsContainer/AssortmentButton
-@onready var back_button = $ButtonsContainer/BackButton
-@onready var assortment_popup = $AssortmentPopup  # Теперь это CanvasLayer
+@export var catalog: ShopCatalog
+@export var shop_item_scene: PackedScene
+
+@onready var item_points := $CounterPoints.get_children()
+@onready var purchase_dialog: PurchaseDialog = $PurchaseDialog
+@onready var seller_point: Marker2D = $Shopkeeper/DialogPoint
+
+var selected_item: ShopItem
 
 var active: bool = false
 
 
 func _ready():
-	if sell_all_button:
-		sell_all_button.pressed.connect(_on_sell_all_pressed)
-	if assortment_button:
-		assortment_button.pressed.connect(_on_assortment_pressed)
-	if back_button:
-		back_button.pressed.connect(_on_back_button_pressed)
+	spawn_items()
+	
+	purchase_dialog.buy_pressed.connect(
+		_on_buy_pressed
+	)
 
-func _on_sell_all_pressed():
-	if Inventory.eggs.is_empty() and Inventory.pigeons.is_empty():
-		print("В рюкзаке нет яиц и голубей!")
+
+func spawn_items():
+	if catalog == null:
+		print("Shop: каталог не задан")
 		return
 	
-	var result = Inventory.sell_eggs_and_pigeons()
-	var message = "=== ПРОДАЖА ВСЕГО ===\n\n"
+	clear_items()
 	
-	for item_name in result["sold_items"].keys():
-		var data = result["sold_items"][item_name]
-		message += "%s (%s): %s грошей\n" % [item_name, data["category"], data["price"]]
-	
-	message += "\nВсего получено: %s грошей" % result["total_earned"]
-	print(message)
+	var offers: Array = catalog.get_current_offers()
 
-func _on_assortment_pressed():
-	if assortment_popup:
-		assortment_popup.open_centered()
-	else:
-		print("Ошибка: окно ассортимента не найдено!")
+	for i in min(offers.size(), item_points.size()):
+		var item := shop_item_scene.instantiate() as ShopItem
+
+		add_child(item)
+
+		item.position = item_points[i].position
+		item.setup(offers[i])
+		
+		item.selected.connect(
+			_on_item_selected.bind(item)
+		)
+
+
+func clear_items():
+	for child in get_children():
+		if child is ShopItem:
+			child.queue_free()
+
+
+func _on_item_selected(offer: ShopOffer, item: ShopItem):
+	selected_item = item
+	purchase_dialog.show_offer(
+		offer,
+		seller_point.global_position
+	)
+
 
 func _on_back_button_pressed() -> void:
 	farm_pressed.emit()
-	
-func _on_close_button_pressed() -> void:
-	assortment_popup.hide()
+
+
+func _on_buy_pressed(offer: ShopOffer):
+	var success := ShopManager.buy(offer)
+
+	if success:
+		print("Покупка успешна")
+		if selected_item:
+			selected_item.queue_free()
+			selected_item = null
+	else:
+		print("Недостаточно денег")
+
 
 func set_active(value: bool):
 	active = value
+	visible = value
+	
+	if value:
+		selected_item = null
+		refresh()
+	else:
+		purchase_dialog.hide()
+
+
+func refresh():
+	spawn_items()
+
+
+func _on_sell_all_button_pressed() -> int:
+	var earned: int = PlayerData.sell_backpack()
+	return earned

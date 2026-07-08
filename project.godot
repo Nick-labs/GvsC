@@ -19,16 +19,24 @@ config/icon="res://icon.svg"
 
 SceneManager="*uid://cpp6u25kgntnx"
 TimeManager="*uid://b36tdor0aop1w"
-Inventory="*uid://dobt0igvxpat4"
-MusicPlayer="*uid://br3sy053hq2jy"
+MusicPlayer="*uid://c015lfotxq3w4"
 PigeonFactory="*uid://cpewe02rkskak"
 SpeciesRegistry="*uid://cdic46le38iei"
+PlayerData="*uid://bg2yeyxn62x04"
+ShopManager="*uid://cyu06uxn36ucx"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
+
+[file_customization]
+
+folder_colors={
+"res://scenes/shop/": "yellow",
+"res://scripts/shop/": "yellow"
+}
 
 [input]
 

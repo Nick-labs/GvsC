@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopOffer" format=3 uid="uid://utvdl3ctj0ji"]
+
+[ext_resource type="Resource" uid="uid://cqhdb4h7wpgx3" path="res://resources/pigeons/tier_2/ios_pigeon.tres" id="1_anmjk"]
+[ext_resource type="Texture2D" uid="uid://b1smr4kfcqu02" path="res://assets/sprites/pigeons/pigeon-ios.png" id="2_8bm6y"]
+[ext_resource type="Script" uid="uid://bbq16g04eaq8d" path="res://scripts/shop/shop_offer.gd" id="3_m81ve"]
+
+[resource]
+script = ExtResource("3_m81ve")
+title = "IOS голубь "
+icon = ExtResource("2_8bm6y")
+price = 150
+tier = 2
+data = ExtResource("1_anmjk")
+metadata/_custom_type_script = "uid://bbq16g04eaq8d"

@@ -54,6 +54,7 @@ func is_empty() -> bool:
 
 func receive_egg(data: EggData) -> void:
 	var egg := egg_scene.instantiate() as Egg
+	
 	add_child(egg)
 
 	egg.position = marker.position + Vector2(randi_range(-10, 10), 60)

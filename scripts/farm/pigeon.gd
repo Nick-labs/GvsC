@@ -66,6 +66,7 @@ func _apply_data():
 
 func lay_egg():
 	var egg: EggData = PigeonFactory.create_egg(data)
+	
 	cell.receive_egg(egg)
 	data.eggs_laid += 1
 	egg_laid.emit(self)

@@ -42,11 +42,10 @@ func generate_cells() -> void:
 			
 			cell.index = Vector2i(column, row)
 			
-			var pigeon := create_default_pigeon()
-			cell.set_pigeon(pigeon)
-			
 			cells.append(cell)
-
+	
+	var pigeon := create_default_pigeon()
+	cells[0].set_pigeon(pigeon)
 
 func get_cell(index: int) -> Cell:
 	return cells[index]

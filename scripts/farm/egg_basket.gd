@@ -74,6 +74,8 @@ func _finish_receiving(egg: Egg):
 
 	eggs.append(egg)
 	reserved_slots -= 1
+	
+	egg.collected.connect(_on_egg_collected)
 
 	_update_z_order()
 	_layout()
@@ -152,3 +154,12 @@ func return_egg(egg: Egg, index: int):
 func _on_egg_drag_requested(egg: Egg):
 	take_egg(egg)
 	egg_drag_requested.emit(egg)
+
+
+func _on_egg_collected(egg: Egg):
+	if not eggs.has(egg):
+		return
+
+	if PlayerData.backpack.add_egg(egg.data):
+		eggs.erase(egg)
+		egg.queue_free()

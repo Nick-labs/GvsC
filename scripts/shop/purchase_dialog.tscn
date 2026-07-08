@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dri8ayokswgmw"]
+
+[ext_resource type="Script" uid="uid://bc0qgdt1ggrry" path="res://scripts/shop/purchase_dialog.gd" id="1_vqv54"]
+
+[node name="PurchaseDialog" type="CanvasLayer" unique_id=1017263019]
+script = ExtResource("1_vqv54")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1739496486]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1190564165]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel" unique_id=868309950]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 50
+
+[node name="QuestionLabel" type="Label" parent="CenterContainer/Panel/MarginContainer" unique_id=128369298]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer" unique_id=1149815120]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=1072960789]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Да"
+
+[node name="VSeparator" type="VSeparator" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=299131244]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=1241264057]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Нет"
+
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

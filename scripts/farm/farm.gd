@@ -11,20 +11,17 @@ signal ready_ui(farm_ui)
 @onready var drag_manager: DragManager = $DragManager
 @onready var camera: Camera2D = $Camera2D
 
-var money: int = 100:
-	set(value):
-		money = value
-		if is_node_ready():
-			farm_ui.set_money(money)
-
 var selected_pigeon: Pigeon = null
 var music_started := false
+
+var collecting := false
 
 var active := true
 
 
 func _ready() -> void:
 	egg_basket.egg_drag_requested.connect(_on_egg_drag_requested)
+	
 	incubator.egg_drag_requested.connect(
 		_on_incubator_egg_drag_requested
 	)
@@ -40,13 +37,17 @@ func _ready() -> void:
 	
 	pigeon_inspector.sell_pressed.connect(_on_sell_pressed)
 	
-	farm_ui.set_money(money)
+	farm_ui.set_money(PlayerData.money)
 	
 	_fit_loft_to_screen()
 	
 	TimeManager.minute_passed.connect(_on_minute)
 	
 	ready_ui.emit(farm_ui)
+	
+	PlayerData.money_changed.connect(_on_money_changed)
+
+	farm_ui.set_money(PlayerData.money)
 
 
 func _on_minute(day, hour, minute):
@@ -63,6 +64,11 @@ func _input(event):
 	and event.pressed:
 
 		try_start_egg_drag()
+		
+	if event is InputEventMouseButton and \
+	event.button_index == MOUSE_BUTTON_LEFT:
+		
+		collecting = event.pressed
 	
 	if music_started:
 		return
@@ -152,17 +158,18 @@ func _on_sell_pressed() -> void:
 	if selected_pigeon == null:
 		return
 	
-	money += selected_pigeon.data.price
-	
 	if selected_pigeon.cell != null:
 		selected_pigeon.cell.remove_pigeon()
 	
 	for inc_slot in incubator.get_slots():
 		if inc_slot.pigeon == selected_pigeon:
 			inc_slot.clear()
-
+	
+	if PlayerData.backpack.add_pigeon(selected_pigeon.data):
+		selected_pigeon.queue_free()
+	
 	selected_pigeon = null
-
+	
 	pigeon_inspector.clear()
 
 
@@ -298,6 +305,16 @@ func collect_eggs(cell: Cell):
 
 		egg_basket.receive_egg(egg)
 
+func take_egg_to_backpack(egg: Egg):
+	if PlayerData.add_egg(egg.data):
+		egg_basket.take_egg(egg)
+		egg.queue_free()
+
+
+func take_pigeon_to_backpack(pigeon: Pigeon):
+	if PlayerData.add_pigeon(pigeon.data):
+		pigeon.cell.remove_pigeon()
+
 
 func set_active(value: bool):
 	active = value
@@ -307,3 +324,7 @@ func set_active(value: bool):
 		camera.make_current()
 	else:
 		camera.enabled = false
+
+
+func _on_money_changed(value: int):
+	farm_ui.set_money(value)
