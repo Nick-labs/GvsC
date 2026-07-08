@@ -11,6 +11,40 @@ const CATEGORY_EGGS = "eggs"
 const CATEGORY_PIGEONS = "pigeons"
 const CATEGORY_CONSUMABLES = "consumables"
 
+func _ready():
+	_initialize_test_data()
+
+func _initialize_test_data():
+	# Яйца
+	var egg1 = EggData.new()
+	egg1.price = 10
+	#egg1.hatch_time = 15.0
+	eggs.append({"name": "Белое", "data": egg1})
+	
+	var egg2 = EggData.new()
+	egg2.price = 15
+	#egg2.hatch_time = 20.0
+	eggs.append({"name": "Коричневое", "data": egg2})
+	
+	# Голуби
+	var pigeon1 = PigeonData.new()
+	pigeon1.breed_name = "Почтовый"
+	pigeon1.price = 100
+	pigeons.append({"name": "Почтовый", "data": pigeon1})
+	
+	var pigeon2 = PigeonData.new()
+	pigeon2.breed_name = "Гончий"
+	pigeon2.price = 150
+	pigeons.append({"name": "Гончий", "data": pigeon2})
+	
+	# Расходники
+	var food = ItemData.new()
+	food.item_name = "Корм"
+	food.price = 5
+	food.item_type = "Food"
+	food.description = "Корм для голубей"
+	consumables.append({"name": "Корм", "data": food, "quantity": 10})
+
 # ============ ПОИСК ПО ИМЕНИ ============
 
 func find_item(list: Array, item_name: String) -> int:

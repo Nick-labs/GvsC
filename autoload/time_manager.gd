@@ -4,7 +4,7 @@ signal minute_passed(day, hour, minute)
 signal hour_passed(day, hour)
 signal day_passed(day)
 
-@export var minutes_per_second: float = 1.0
+@export var minutes_per_second: float = 3.0
 
 var _total_minutes: int = 360
 var _minute_progress: float = 0.0

@@ -5,6 +5,7 @@ extends Node2D
 @onready var shop = $Shop
 
 
+
 func _ready():
 	farm.farm_ui.shop_pressed.connect(show_shop)
 	farm.farm_ui.defense_pressed.connect(show_defense)
