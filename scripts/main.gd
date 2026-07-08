@@ -7,6 +7,8 @@ extends Node2D
 
 
 func _ready():
+	_show_intro()
+	
 	farm.farm_ui.shop_pressed.connect(show_shop)
 	farm.farm_ui.defense_pressed.connect(show_defense)
 	
@@ -14,7 +16,22 @@ func _ready():
 	
 	shop.farm_pressed.connect(show_farm)
 	
+	PlayerData.victory.connect(_on_victory)
+	
 	show_farm()
+
+
+func _show_intro():
+	var dialog := AcceptDialog.new()
+
+	dialog.title = "Добро пожаловать!"
+	dialog.dialog_text = \
+		"Ваша цель — накопить 5000 грошей.\n\n" + \
+		"Разводите голубей, выводя более редкие виды,\nсобирайте более редкие и дорогие яйца, " + \
+		"продавайте и то, и другое."
+
+	add_child(dialog)
+	dialog.popup_centered()
 
 
 func _connect_farm_ui(ui):
@@ -58,3 +75,13 @@ func show_shop():
 	shop.set_active(true)
 	
 	farm.farm_ui.hide()
+
+
+func _on_victory():
+	var dialog := AcceptDialog.new()
+
+	dialog.dialog_text = "Победа! Вы накопили 5000 грошей!"
+
+	add_child(dialog)
+
+	dialog.popup_centered()

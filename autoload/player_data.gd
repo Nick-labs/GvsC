@@ -3,12 +3,22 @@ extends Node
 signal money_changed(value: int)
 signal backpack_changed
 
+signal victory
+
 var backpack: Backpack
 
-var money: int = 100:
+const VICTORY_MONEY := 5000
+var has_won := false
+
+
+var money: int = 0:
 	set(value):
 		money = value
 		money_changed.emit(money)
+		
+		if !has_won and money >= VICTORY_MONEY:
+			has_won = true
+			victory.emit()
 
 
 func _ready():
