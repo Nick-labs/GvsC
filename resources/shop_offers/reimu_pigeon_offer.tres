@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopOffer" format=3 uid="uid://nhcmoigu7qe2"]
+
+[ext_resource type="Resource" uid="uid://rxg35cypdggv" path="res://resources/pigeons/tier_3/reimu_pigeon.tres" id="1_yn1me"]
+[ext_resource type="Texture2D" uid="uid://c2n7b8lt2q3g0" path="res://assets/sprites/pigeons/pigeon-reimu.png" id="2_1gjuf"]
+[ext_resource type="Script" uid="uid://bbq16g04eaq8d" path="res://scripts/shop/shop_offer.gd" id="3_t4hh4"]
+
+[resource]
+script = ExtResource("3_t4hh4")
+title = "Рейму голубь"
+icon = ExtResource("2_1gjuf")
+price = 300
+tier = 3
+data = ExtResource("1_yn1me")
+metadata/_custom_type_script = "uid://bbq16g04eaq8d"

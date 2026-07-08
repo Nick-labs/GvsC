@@ -158,17 +158,18 @@ func _on_sell_pressed() -> void:
 	if selected_pigeon == null:
 		return
 	
-	PlayerData.money += selected_pigeon.data.price
-	
 	if selected_pigeon.cell != null:
 		selected_pigeon.cell.remove_pigeon()
 	
 	for inc_slot in incubator.get_slots():
 		if inc_slot.pigeon == selected_pigeon:
 			inc_slot.clear()
-
+	
+	if PlayerData.backpack.add_pigeon(selected_pigeon.data):
+		selected_pigeon.queue_free()
+	
 	selected_pigeon = null
-
+	
 	pigeon_inspector.clear()
 
 

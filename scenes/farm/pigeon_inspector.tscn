@@ -24,7 +24,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Space" type="Control" parent="MarginContainer/VBoxContainer" unique_id=722328356]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1887897250]
@@ -81,9 +81,13 @@ horizontal_alignment = 1
 layout_mode = 2
 horizontal_alignment = 1
 
+[node name="Space2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1927456541]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
 [node name="SellButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1844214244]
 layout_mode = 2
-text = "Продать"
+text = "На продажу"
 
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer/NicknameEdit" to="." method="_on_nickname_edit_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]

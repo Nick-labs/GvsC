@@ -66,19 +66,19 @@ text = "Продать всё"
 [node name="CounterPoints" type="Node2D" parent="." unique_id=855976284]
 
 [node name="Marker1" type="Marker2D" parent="CounterPoints" unique_id=2143249321]
-position = Vector2(300, 850)
+position = Vector2(300, 820)
 
 [node name="Marker2" type="Marker2D" parent="CounterPoints" unique_id=865246090]
-position = Vector2(600, 850)
+position = Vector2(600, 820)
 
 [node name="Marker3" type="Marker2D" parent="CounterPoints" unique_id=1701453180]
-position = Vector2(900, 850)
+position = Vector2(900, 820)
 
 [node name="Marker4" type="Marker2D" parent="CounterPoints" unique_id=40018259]
-position = Vector2(1200, 850)
+position = Vector2(1200, 820)
 
 [node name="Marker5" type="Marker2D" parent="CounterPoints" unique_id=137998077]
-position = Vector2(1500, 850)
+position = Vector2(1500, 820)
 
 [node name="PurchaseDialog" parent="." unique_id=1017263019 instance=ExtResource("7_ge4d2")]
 
