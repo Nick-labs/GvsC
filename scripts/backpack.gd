@@ -1,7 +1,7 @@
 class_name Backpack
 extends Resource
 
-@export var max_capacity: int = 10
+@export var capacity: int = 10
 
 var eggs: Array[EggData] = []
 var pigeons: Array[PigeonData] = []
@@ -10,5 +10,34 @@ var pigeons: Array[PigeonData] = []
 func get_used_space() -> int:
 	return eggs.size() + pigeons.size()
 
-func has_space(amount := 1) -> bool:
-	return get_used_space() + amount <= max_capacity
+
+func get_free_space() -> int:
+	return capacity - get_used_space()
+
+
+func has_space(amount: int = 1) -> bool:
+	return get_used_space() + amount <= capacity
+
+
+func add_egg(egg: EggData) -> bool:
+	if not has_space():
+		return false
+
+	eggs.append(egg)
+	return true
+
+
+func add_pigeon(pigeon: PigeonData) -> bool:
+	if not has_space():
+		return false
+
+	pigeons.append(pigeon)
+	return true
+
+
+func remove_egg(egg: EggData):
+	eggs.erase(egg)
+
+
+func remove_pigeon(pigeon: PigeonData):
+	pigeons.erase(pigeon)

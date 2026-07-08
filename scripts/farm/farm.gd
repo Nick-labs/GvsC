@@ -11,12 +11,6 @@ signal ready_ui(farm_ui)
 @onready var drag_manager: DragManager = $DragManager
 @onready var camera: Camera2D = $Camera2D
 
-var money: int = 100:
-	set(value):
-		money = value
-		if is_node_ready():
-			farm_ui.set_money(money)
-
 var selected_pigeon: Pigeon = null
 var music_started := false
 
@@ -25,6 +19,7 @@ var active := true
 
 func _ready() -> void:
 	egg_basket.egg_drag_requested.connect(_on_egg_drag_requested)
+	
 	incubator.egg_drag_requested.connect(
 		_on_incubator_egg_drag_requested
 	)
@@ -40,13 +35,17 @@ func _ready() -> void:
 	
 	pigeon_inspector.sell_pressed.connect(_on_sell_pressed)
 	
-	farm_ui.set_money(money)
+	farm_ui.set_money(PlayerData.money)
 	
 	_fit_loft_to_screen()
 	
 	TimeManager.minute_passed.connect(_on_minute)
 	
 	ready_ui.emit(farm_ui)
+	
+	PlayerData.money_changed.connect(_on_money_changed)
+
+	farm_ui.set_money(PlayerData.money)
 
 
 func _on_minute(day, hour, minute):
@@ -152,7 +151,7 @@ func _on_sell_pressed() -> void:
 	if selected_pigeon == null:
 		return
 	
-	money += selected_pigeon.data.price
+	PlayerData.money += selected_pigeon.data.price
 	
 	if selected_pigeon.cell != null:
 		selected_pigeon.cell.remove_pigeon()
@@ -307,3 +306,7 @@ func set_active(value: bool):
 		camera.make_current()
 	else:
 		camera.enabled = false
+
+
+func _on_money_changed(value: int):
+	farm_ui.set_money(value)
