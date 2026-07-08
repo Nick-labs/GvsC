@@ -6,9 +6,6 @@
 [ext_resource type="Script" uid="uid://bomkkytlaf3uk" path="res://scripts/shop/shopkeeper.gd" id="3_ptf86"]
 [ext_resource type="Texture2D" uid="uid://xnaa15w8xj3r" path="res://assets/sprites/shop/sunset/assistant-sunset.png" id="4_ge4d2"]
 [ext_resource type="Texture2D" uid="uid://bk4up0ekdx2nw" path="res://assets/sprites/shop/sunset/assistant-confused-sunset.png" id="5_ctpgp"]
-[ext_resource type="Script" uid="uid://dumqtar0h8x85" path="res://scripts/shop/assortment_popup.gd" id="7_ge4d2"]
-[ext_resource type="Resource" uid="uid://boteqekgsxwen" path="res://resources/items/KOFE.tres" id="8_xcdpw"]
-[ext_resource type="Script" uid="uid://ckhwnvilboace" path="res://scripts/ui/inventory_popup.gd" id="9_tp26b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
 size = Vector2(514, 707)
@@ -67,13 +64,6 @@ text = "Посмотреть ассортимент
 [node name="InventoryButton" type="Button" parent="ButtonsContainer" unique_id=257526102]
 layout_mode = 2
 text = "Рюкзак"
-
-[node name="AssortmentPopup" type="CanvasLayer" parent="." unique_id=1574536686]
-script = ExtResource("7_ge4d2")
-Kofe = ExtResource("8_xcdpw")
-
-[node name="InventoryPopup" type="CanvasLayer" parent="." unique_id=785926834]
-script = ExtResource("9_tp26b")
 
 [connection signal="input_event" from="Shopkeeper" to="Shopkeeper" method="_on_input_event"]
 [connection signal="pressed" from="ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]

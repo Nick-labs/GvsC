@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://sy74eoj5plvc"]
+
+[ext_resource type="Script" uid="uid://tciwmhbywhsv" path="res://autoload/shop_catalog.gd" id="1_fypts"]
+
+[node name="ShopCatalog" type="Node" unique_id=836580248]
+script = ExtResource("1_fypts")
