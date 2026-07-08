@@ -297,6 +297,16 @@ func collect_eggs(cell: Cell):
 
 		egg_basket.receive_egg(egg)
 
+func take_egg_to_backpack(egg: Egg):
+	if PlayerData.add_egg(egg.data):
+		egg_basket.take_egg(egg)
+		egg.queue_free()
+
+
+func take_pigeon_to_backpack(pigeon: Pigeon):
+	if PlayerData.add_pigeon(pigeon.data):
+		pigeon.cell.remove_pigeon()
+
 
 func set_active(value: bool):
 	active = value

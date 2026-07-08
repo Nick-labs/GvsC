@@ -19,3 +19,15 @@ enum OfferType {
 
 # Сюда будем класть PigeonData, ItemData, UpgradeData
 @export var data: Resource
+
+
+func is_pigeon_offer() -> bool:
+	return type == OfferType.PIGEON
+
+
+func is_item_offer() -> bool:
+	return type == OfferType.ITEM
+
+
+func is_upgrade_offer() -> bool:
+	return type == OfferType.UPGRADE

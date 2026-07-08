@@ -6,24 +6,32 @@ signal closed
 
 var current_offer: ShopOffer
 
-@onready var name_label = $Panel/NameLabel
-@onready var price_label = $Panel/PriceLabel
+@onready var question_label = $CenterContainer/Panel/MarginContainer/QuestionLabel
+@onready var panel = $CenterContainer/Panel
 
 
-func show_offer(offer: ShopOffer):
+func show_offer(
+		offer: ShopOffer,
+		world_position: Vector2
+	):
+
 	current_offer = offer
-
-	name_label.text = offer.title
-	price_label.text = str(offer.price)
-
+	
+	question_label.text = "Ты действительно хочешь купить " + offer.title + " за " + str(offer.price) + " грошей?"
+	
 	show()
+	
+	await get_tree().process_frame
+
+	#var screen_position = world_position
+	panel.position = world_position
 
 
-func _on_buy_button_pressed():
+func _on_buy_button_pressed() -> void:
 	buy_pressed.emit(current_offer)
 	hide()
 
 
-func _on_cancel_button_pressed():
+func _on_cancel_button_pressed() -> void:
 	closed.emit()
 	hide()

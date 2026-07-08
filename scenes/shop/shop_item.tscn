@@ -6,6 +6,7 @@
 size = Vector2(200, 200)
 
 [node name="ShopItem" type="Area2D" unique_id=1695072338]
+z_index = 100
 script = ExtResource("1_3rqce")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=13428175]
