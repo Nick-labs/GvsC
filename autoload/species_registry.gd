@@ -6,6 +6,9 @@ extends Node
 var hatchable_by_tier: Dictionary = {}
 var shop_by_tier: Dictionary = {}
 
+const MAX_TIER := 5
+const MIN_TIER := 0
+
 
 func _ready():
 	_build_dictionary(hatchable_species, hatchable_by_tier)
@@ -67,3 +70,25 @@ func get_random_species_of_tier(tier: int) -> PigeonData:
 		return null
 
 	return candidates.pick_random()
+
+
+func get_random_hatchable_by_egg(egg: EggData) -> PigeonData:
+	var tier := _roll_tier(egg)
+	return get_random_hatchable_species(tier)
+
+
+func _roll_tier(egg: EggData) -> int:
+	var roll := randf() * 100.0
+	var accumulated := 0.0
+
+	for chance in egg.hatch_chances:
+		accumulated += chance.chance
+
+		if roll <= accumulated:
+			return clamp(
+				egg.tier + chance.tier_offset,
+				MIN_TIER,
+				MAX_TIER
+			)
+
+	return egg.tier

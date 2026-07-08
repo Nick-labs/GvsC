@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cdic46le38iei"]
-
-[ext_resource type="Script" uid="uid://ewcmxx5fs2br" path="res://autoload/speices_registry.gd" id="1_7koqn"]
-
-[node name="SpeicesRegistry" type="Node" unique_id=1657120194]
-script = ExtResource("1_7koqn")
