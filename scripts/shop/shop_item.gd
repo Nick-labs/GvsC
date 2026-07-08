@@ -2,6 +2,7 @@ class_name ShopItem
 extends Area2D
 
 signal selected(offer: ShopOffer)
+signal bought
 
 @export var max_sprite_size := Vector2(256, 256)
 
@@ -44,3 +45,7 @@ func _fit_sprite():
 	)
 
 	sprite.scale = Vector2.ONE * scale_factor
+
+
+func remove_from_shop():
+	queue_free()

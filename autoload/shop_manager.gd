@@ -16,7 +16,7 @@ func buy(offer: ShopOffer) -> bool:
 
 		#ShopOffer.OfferType.UPGRADE:
 			#_buy_upgrade(offer)
-
+	
 	return true
 
 

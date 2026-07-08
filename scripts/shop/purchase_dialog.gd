@@ -27,11 +27,16 @@ func show_offer(
 	panel.position = world_position
 
 
-func _on_buy_button_pressed() -> void:
+func _on_buy_button_pressed():
+	if current_offer == null:
+		return
+
 	buy_pressed.emit(current_offer)
+
 	hide()
 
 
 func _on_cancel_button_pressed() -> void:
+	current_offer = null
 	closed.emit()
 	hide()

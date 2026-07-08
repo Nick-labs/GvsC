@@ -10,6 +10,8 @@ signal farm_pressed
 @onready var purchase_dialog: PurchaseDialog = $PurchaseDialog
 @onready var seller_point: Marker2D = $Shopkeeper/DialogPoint
 
+var selected_item: ShopItem
+
 var active: bool = false
 
 
@@ -38,7 +40,9 @@ func spawn_items():
 		item.position = item_points[i].position
 		item.setup(offers[i])
 		
-		item.selected.connect(_on_item_selected)
+		item.selected.connect(
+			_on_item_selected.bind(item)
+		)
 
 
 func clear_items():
@@ -47,7 +51,8 @@ func clear_items():
 			child.queue_free()
 
 
-func _on_item_selected(offer: ShopOffer):
+func _on_item_selected(offer: ShopOffer, item: ShopItem):
+	selected_item = item
 	purchase_dialog.show_offer(
 		offer,
 		seller_point.global_position
@@ -59,10 +64,13 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_buy_pressed(offer: ShopOffer):
-	var success = ShopManager.buy(offer)
+	var success := ShopManager.buy(offer)
 
 	if success:
 		print("Покупка успешна")
+		if selected_item:
+			selected_item.queue_free()
+			selected_item = null
 	else:
 		print("Недостаточно денег")
 
@@ -72,6 +80,7 @@ func set_active(value: bool):
 	visible = value
 	
 	if value:
+		selected_item = null
 		refresh()
 	else:
 		purchase_dialog.hide()
