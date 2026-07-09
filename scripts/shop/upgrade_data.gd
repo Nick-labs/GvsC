@@ -13,7 +13,7 @@ enum UpgradeType {
 @export var value: int = 1
 
 @export_group("Price")
-@export var base_price := 200
+@export var base_price := 100
 @export var price_step := 100
 
 
