@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://dri8ayokswgmw"]
 
 [ext_resource type="Script" uid="uid://bc0qgdt1ggrry" path="res://scripts/shop/purchase_dialog.gd" id="1_vqv54"]
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="2_ct3ww"]
+
+[sub_resource type="Theme" id="Theme_wmk64"]
+default_font = ExtResource("2_ct3ww")
+default_font_size = 30
+
+[sub_resource type="SystemFont" id="SystemFont_lwald"]
+
+[sub_resource type="Theme" id="Theme_ct3ww"]
+default_font = SubResource("SystemFont_lwald")
 
 [node name="PurchaseDialog" type="CanvasLayer" unique_id=1017263019]
 script = ExtResource("1_vqv54")
@@ -11,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_wmk64")
 
 [node name="Panel" type="Panel" parent="CenterContainer" unique_id=1190564165]
 custom_minimum_size = Vector2(800, 200)
@@ -31,6 +42,7 @@ theme_override_constants/margin_bottom = 50
 [node name="QuestionLabel" type="Label" parent="CenterContainer/Panel/MarginContainer" unique_id=128369298]
 layout_mode = 2
 size_flags_vertical = 0
+theme = SubResource("Theme_ct3ww")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer" unique_id=1149815120]

@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dikbeu3tfv1dd"]
 
 [ext_resource type="Script" uid="uid://3iucqk86fu50" path="res://scenes/ui/warning_popup.gd" id="1_6p4n4"]
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="2_nsh0e"]
+
+[sub_resource type="Theme" id="Theme_trp22"]
+default_font = ExtResource("2_nsh0e")
+default_font_size = 40
 
 [node name="WarningPopup" type="CanvasLayer" unique_id=1712510301]
 visible = false
@@ -21,6 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = SubResource("Theme_trp22")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1248359237]
 layout_mode = 1

@@ -64,10 +64,18 @@ func receive_egg(data: EggData) -> void:
 	eggs.append(egg)
 
 
-func take_eggs() -> Array[Egg]:
-	var result := eggs.duplicate()
-	eggs.clear()
-	return result
+#func take_eggs() -> Array[Egg]:
+	#var result := eggs.duplicate()
+	#eggs.clear()
+	#return result
+
+
+func get_eggs() -> Array[Egg]:
+	return eggs.duplicate()
+
+
+func remove_egg(egg: Egg):
+	eggs.erase(egg)
 
 
 func _on_mouse_entered():

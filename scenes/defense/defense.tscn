@@ -7,7 +7,12 @@
 [ext_resource type="Script" uid="uid://dm0l7djmijskg" path="res://scripts/defense/enemy_spawner.gd" id="3_yaq5k"]
 [ext_resource type="Texture2D" uid="uid://d087hp23svh7w" path="res://assets/sprites/field/night/night-tile.png" id="4_7sasd"]
 [ext_resource type="Script" uid="uid://dl8yr1fcin3ay" path="res://scripts/defense/wave_manager.gd" id="6_ows6c"]
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="7_wwjrr"]
 [ext_resource type="Texture2D" uid="uid://upjrybmw8foj" path="res://assets/sprites/field/night/trees.png" id="8_1jfis"]
+
+[sub_resource type="Theme" id="Theme_f5vgk"]
+default_font = ExtResource("7_wwjrr")
+default_font_size = 40
 
 [node name="Defense" type="Node2D" unique_id=2122941706]
 script = ExtResource("1_ugpjw")
@@ -42,6 +47,7 @@ offset_left = 803.0
 offset_top = -503.0
 offset_right = 920.0
 offset_bottom = -456.0
+theme = SubResource("Theme_f5vgk")
 theme_override_font_sizes/font_size = 16
 text = "Вернуться"
 

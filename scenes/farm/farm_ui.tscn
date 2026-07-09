@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c2ueijenddd86" path="res://scripts/farm/farm_ui.gd" id="1_r57qr"]
 [ext_resource type="PackedScene" uid="uid://c6ahqraxmu6xw" path="res://scenes/farm/pigeon_inspector.tscn" id="2_47p7y"]
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="2_f5vgk"]
+
+[sub_resource type="Theme" id="Theme_ys0pl"]
+default_font = ExtResource("2_f5vgk")
+default_font_size = 40
 
 [node name="FarmUi" type="CanvasLayer" unique_id=1160712630]
 script = ExtResource("1_r57qr")
@@ -12,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_ys0pl")
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40

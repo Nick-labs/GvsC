@@ -296,12 +296,15 @@ func swap(a: Cell, b: Cell):
 
 # Здесь был баг с freed object, но я не смог его повторить
 func collect_eggs(cell: Cell):
-	for egg in cell.take_eggs():
+	if cell == null:
+		return
+	
+	for egg in cell.get_eggs():
 		if !is_instance_valid(egg):
-			push_error("Freed egg found!")
 			continue
 
-		egg_basket.receive_egg(egg)
+		if egg_basket.receive_egg(egg):
+			cell.remove_egg(egg)
 
 
 func take_egg_to_backpack(egg: Egg):

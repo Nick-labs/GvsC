@@ -9,9 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://xnaa15w8xj3r" path="res://assets/sprites/shop/sunset/assistant-sunset.png" id="4_ge4d2"]
 [ext_resource type="Texture2D" uid="uid://bk4up0ekdx2nw" path="res://assets/sprites/shop/sunset/assistant-confused-sunset.png" id="5_ctpgp"]
 [ext_resource type="PackedScene" uid="uid://dri8ayokswgmw" path="res://scripts/shop/purchase_dialog.tscn" id="7_ge4d2"]
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="9_vk20h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
 size = Vector2(514, 540.5)
+
+[sub_resource type="Theme" id="Theme_lqwvk"]
+default_font = ExtResource("9_vk20h")
+default_font_size = 40
 
 [node name="Shop" type="Node2D" unique_id=1571493533]
 script = ExtResource("1_ptf86")
@@ -53,6 +58,7 @@ offset_left = 1577.0
 offset_top = 152.0
 offset_right = 1791.0
 offset_bottom = 263.0
+theme = SubResource("Theme_lqwvk")
 
 [node name="BackButton" type="Button" parent="ButtonsContainer" unique_id=2036288464]
 z_index = 1000

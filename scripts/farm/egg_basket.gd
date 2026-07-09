@@ -30,12 +30,12 @@ func get_egg_count() -> int:
 	return eggs.size()
 
 
-func receive_egg(egg: Egg):
+func receive_egg(egg: Egg) -> bool:
 	if !has_space():
-		return
-	
+		return false
+
 	var target := _get_next_position()
-	
+
 	egg.reparent(get_tree().current_scene)
 
 	var tween := create_tween()
@@ -44,12 +44,14 @@ func receive_egg(egg: Egg):
 		egg,
 		"global_position",
 		target,
-		1
+		1.0
 	)
 
 	tween.finished.connect(
 		_finish_receiving.bind(egg)
 	)
+
+	return true
 
 
 func add_egg_immediately(egg: Egg):
