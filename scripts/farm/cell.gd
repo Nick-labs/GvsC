@@ -9,6 +9,7 @@ var hovered := false
 var eggs: Array[Egg] = []
 
 @onready var marker: Marker2D = $Marker2D
+@onready var nest_sprite: Sprite2D = $NestSprite
 
 
 func set_pigeon(new_pigeon: Pigeon) -> void:
@@ -57,7 +58,7 @@ func receive_egg(data: EggData) -> void:
 	
 	add_child(egg)
 
-	egg.position = marker.position + Vector2(randi_range(-10, 10), 60)
+	egg.position = marker.position + Vector2(randi_range(-10, 10), 0)
 	egg.setup(data)
 
 	eggs.append(egg)
@@ -75,3 +76,7 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	hovered = false
+
+
+func can_receive_egg() -> bool:
+	return eggs.size() < PlayerData.upgrades.nest_capacity

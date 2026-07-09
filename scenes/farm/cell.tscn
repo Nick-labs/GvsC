@@ -9,28 +9,31 @@
 size = Vector2(200, 200)
 
 [node name="Cell" type="Area2D" unique_id=742452346]
+position = Vector2(105.99999, 104.99999)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_gxb75")
 egg_scene = ExtResource("2_4voau")
-metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="BoxSprite" type="Sprite2D" parent="." unique_id=245117960]
 z_index = -2001
-position = Vector2(-9.599985, -155)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_j8368")
+metadata/_edit_lock_ = true
 
 [node name="NestSprite" type="Sprite2D" parent="." unique_id=2066731230]
 z_index = -2000
-position = Vector2(-14.599991, -116.000015)
+position = Vector2(0, 40)
 scale = Vector2(0.2, 0.17120743)
 texture = ExtResource("3_4voau")
+metadata/_edit_lock_ = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=799329861]
-position = Vector2(-10.599991, -172.00002)
+position = Vector2(0, 40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=80685375]
-position = Vector2(-10.599991, -172.00002)
 shape = SubResource("RectangleShape2D_camgg")
+metadata/_edit_lock_ = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

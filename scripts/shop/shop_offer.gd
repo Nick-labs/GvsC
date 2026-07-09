@@ -31,3 +31,13 @@ func is_item_offer() -> bool:
 
 func is_upgrade_offer() -> bool:
 	return type == OfferType.UPGRADE
+
+
+func get_price() -> int:
+	if data is UpgradeData:
+		var upgrade := data as UpgradeData
+		return upgrade.get_price(
+			PlayerData.get_upgrade_level(upgrade.type)
+		)
+
+	return price

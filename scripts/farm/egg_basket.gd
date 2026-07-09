@@ -31,6 +31,9 @@ func get_egg_count() -> int:
 
 
 func receive_egg(egg: Egg):
+	if !has_space():
+		return
+	
 	var target := _get_next_position()
 	
 	egg.reparent(get_tree().current_scene)
@@ -174,3 +177,7 @@ func cleanup():
 		func(e):
 			return is_instance_valid(e)
 	)
+
+
+func has_space() -> bool:
+	return eggs.size() + reserved_slots < PlayerData.upgrades.basket_capacity

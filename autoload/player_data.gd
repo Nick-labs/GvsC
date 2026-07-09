@@ -3,15 +3,19 @@ extends Node
 signal money_changed(value: int)
 signal backpack_changed
 
+signal upgrades_changed
+
 signal victory
 
 var backpack: Backpack
+
+var upgrades := FarmUpgrades.new()
 
 const VICTORY_MONEY := 5000
 var has_won := false
 
 
-var money: int = 0:
+var money: int = 500:
 	set(value):
 		money = value
 		money_changed.emit(money)
@@ -39,3 +43,24 @@ func sell_backpack():
 	var earned := backpack.sell_all()
 	money += earned
 	return earned
+
+
+func get_upgrade_level(type: UpgradeData.UpgradeType) -> int:
+	match type:
+		UpgradeData.UpgradeType.BACKPACK_CAPACITY:
+			return upgrades.backpack_level
+
+		UpgradeData.UpgradeType.BASKET_CAPACITY:
+			return upgrades.basket_level
+
+		UpgradeData.UpgradeType.CELL:
+			return upgrades.cell_level
+
+		UpgradeData.UpgradeType.INCUBATOR:
+			return upgrades.incubator_level
+
+	return 0
+
+
+func upgrades_updated():
+	upgrades_changed.emit()

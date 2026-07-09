@@ -46,7 +46,7 @@ func show_pigeon(new_pigeon: Pigeon):
 	egg_label.text = data.egg_template.name
 	
 	egg_price_label.text = "Цена яиц: " + str(data.egg_template.price)
-	interval_label.text = "Кулдаун: " + str(data.egg_interval_minutes)
+	interval_label.text = "Яйценоскость: %.2f яиц в час" % (data.egg_interval_minutes / 60.0)
 	
 	eggs_counter_label.text = "Яиц снесено: " + str(data.eggs_laid)
 	
@@ -61,8 +61,8 @@ func update_labels():
 	price_label.text = "Цена: " + str(data.price) + " грошей"
 	eggs_counter_label.text = "Яиц снесено: " + str(data.eggs_laid)
 	generation_label.text = "Поколение: " + str(data.generation)
-	egg_price_label.text = "Цена яиц: " + str(data.egg_template.price)
-	interval_label.text = "Кулдаун: " + str(data.egg_interval_minutes)
+	egg_price_label.text = "Цена яйца: " + str(data.egg_template.price)
+	interval_label.text = "Яйценоскость: %.2f яиц в час" % (data.egg_interval_minutes / 60.0)
 	eggs_counter_label.text = "Яиц снесено: " + str(data.eggs_laid)
 
 

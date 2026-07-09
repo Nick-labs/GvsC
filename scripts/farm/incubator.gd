@@ -5,14 +5,16 @@ signal egg_drag_requested(egg: Egg, slot: IncubatorSlot)
 signal pigeon_drag_requested(pigeon: Pigeon, slot: IncubatorSlot)
 
 @export var slot_scene: PackedScene
-@export var slot_count := 2
-@export var slot_interval := 260
+@export var slot_count := 4
+@export var slot_interval := 210
 
 var slots: Array[IncubatorSlot] = []
 
 
 func _ready():
 	_generate_slots()
+	
+	update_unlocked_slots()
 	
 	for slot in slots:
 		slot.egg_drag_requested.connect(
@@ -27,12 +29,19 @@ func _generate_slots():
 	for i in slot_count:
 		var slot := slot_scene.instantiate() as IncubatorSlot
 		add_child(slot)
-		slot.position = Vector2(i * slot_interval, 0)
+		slot.position = Vector2(i * slot_interval, -42)
 		slots.append(slot)
 
 
+func update_unlocked_slots():
+	for i in slots.size():
+		slots[i].visible = i < PlayerData.upgrades.unlocked_incubators
+
+
 func add_egg(egg: Egg) -> bool:
-	for slot in slots:
+	for i in PlayerData.upgrades.unlocked_incubators:
+		var slot := slots[i]
+
 		if slot.is_empty():
 			slot.put_egg(egg)
 			return true
@@ -41,7 +50,9 @@ func add_egg(egg: Egg) -> bool:
 
 
 func get_hovered_slot() -> IncubatorSlot:
-	for slot in slots:
+	for i in PlayerData.upgrades.unlocked_incubators:
+		var slot := slots[i]
+
 		if slot.hovered:
 			return slot
 

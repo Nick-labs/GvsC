@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopOffer" format=3 uid="uid://5h5eaa87qx2j"]
+
+[ext_resource type="Resource" uid="uid://dkcdg1fdyhryo" path="res://resources/upgrade_data/backpack_upgrade_data.tres" id="1_v1nnw"]
+[ext_resource type="Texture2D" uid="uid://bj4m2mpuusfr" path="res://assets/sprites/farm/basket.png" id="2_v1nnw"]
+[ext_resource type="Script" uid="uid://bbq16g04eaq8d" path="res://scripts/shop/shop_offer.gd" id="3_u5dvi"]
+
+[resource]
+script = ExtResource("3_u5dvi")
+title = "увеличение рюкзака на 10 слотов"
+icon = ExtResource("2_v1nnw")
+type = 2
+tier = 1
+data = ExtResource("1_v1nnw")
+metadata/_custom_type_script = "uid://bbq16g04eaq8d"

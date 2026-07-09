@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopOffer" format=3 uid="uid://c4lkfrmjt7ow6"]
+
+[ext_resource type="Resource" uid="uid://cspfp07caqik7" path="res://resources/upgrade_data/nests_upgrade_data.tres" id="1_h10fd"]
+[ext_resource type="Texture2D" uid="uid://comnkt2fq5xtc" path="res://assets/sprites/farm/nest.png" id="2_2eqnu"]
+[ext_resource type="Script" uid="uid://bbq16g04eaq8d" path="res://scripts/shop/shop_offer.gd" id="3_te7rp"]
+
+[resource]
+script = ExtResource("3_te7rp")
+title = "улучшение вместимости гнезд"
+icon = ExtResource("2_2eqnu")
+price = 5
+type = 2
+tier = 1
+data = ExtResource("1_h10fd")
+metadata/_custom_type_script = "uid://bbq16g04eaq8d"

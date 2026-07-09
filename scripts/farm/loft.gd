@@ -5,18 +5,17 @@ signal pigeon_clicked(pigeon: Pigeon)
 signal pigeon_drag_requested(pigeon: Pigeon)
 signal pigeon_egg_laid(pigeon: Pigeon)
 
-@export var rows: int = 2
-@export var columns: int = 5
+@export var rows: int = 3
+@export var columns: int = 6
 @export var cell_size := Vector2i(200, 200)
-@export var cell_space_x := 60
-@export var cell_space_y := 30
+@export var cell_space_x := 10
+@export var cell_space_y := -15
 @export var cell_scene: PackedScene
 @export var pigeon_scene: PackedScene
 
-var loft_size := Vector2i(cell_size.x * columns + cell_space_x * (columns - 1),
- 						  cell_size.y * rows + cell_space_y * (rows - 1))
-
 var cells: Array[Cell] = []
+
+var offset: Vector2 = Vector2(130, 40)
 
 @onready var cells_root: Node2D = $Cells
 @onready var marker: Marker2D = $Cells/Marker2D
@@ -38,23 +37,32 @@ func generate_cells() -> void:
 			cell.position = marker.position + Vector2(
 				column * cell_size.x + column * cell_space_x,
 				row * cell_size.y + row * cell_space_y
-			)
+			) + offset
 			
 			cell.index = Vector2i(column, row)
 			
 			cells.append(cell)
 	
+	update_unlocked_cells()
+	
 	var pigeon := create_default_pigeon()
 	cells[0].set_pigeon(pigeon)
 
+
 func get_cell(index: int) -> Cell:
+	if index >= PlayerData.upgrades.unlocked_cells:
+		return null
+
 	return cells[index]
 
 
 func get_free_cell() -> Cell:
-	for cell in cells:
+	for i in PlayerData.upgrades.unlocked_cells:
+		var cell := cells[i]
+
 		if cell.is_empty():
 			return cell
+
 	return null
 
 
@@ -67,6 +75,11 @@ func add_pigeon(pigeon: Pigeon) -> bool:
 	cell.set_pigeon(pigeon)
 	
 	return true
+
+
+func update_unlocked_cells():
+	for i in cells.size():
+		cells[i].nest_sprite.visible = i < PlayerData.upgrades.unlocked_cells
 
 
 func create_default_pigeon() -> Pigeon:
@@ -87,10 +100,12 @@ func setup_pigeon(pigeon: Pigeon):
 
 
 func get_hovered_cell() -> Cell:
-	for cell in cells:
+	for i in PlayerData.upgrades.unlocked_cells:
+		var cell := cells[i]
+
 		if cell.hovered:
 			return cell
-	
+
 	return null
 
 
