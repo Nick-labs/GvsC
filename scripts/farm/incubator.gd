@@ -5,8 +5,8 @@ signal egg_drag_requested(egg: Egg, slot: IncubatorSlot)
 signal pigeon_drag_requested(pigeon: Pigeon, slot: IncubatorSlot)
 
 @export var slot_scene: PackedScene
-@export var slot_count := 2
-@export var slot_interval := 260
+@export var slot_count := 4
+@export var slot_interval := 210
 
 var slots: Array[IncubatorSlot] = []
 
@@ -27,7 +27,7 @@ func _generate_slots():
 	for i in slot_count:
 		var slot := slot_scene.instantiate() as IncubatorSlot
 		add_child(slot)
-		slot.position = Vector2(i * slot_interval, 0)
+		slot.position = Vector2(i * slot_interval, -42)
 		slots.append(slot)
 
 

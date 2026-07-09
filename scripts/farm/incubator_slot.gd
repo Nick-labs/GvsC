@@ -107,7 +107,7 @@ func put_pigeon(new_pigeon: Pigeon):
 	else:
 		add_child(pigeon)
 	
-	pigeon.position = marker.position - Vector2(0, 60)
+	pigeon.position = marker.position
 
 
 func take_egg() -> Egg:

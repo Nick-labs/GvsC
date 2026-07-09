@@ -39,8 +39,6 @@ func _ready() -> void:
 	
 	farm_ui.set_money(PlayerData.money)
 	
-	_fit_loft_to_screen()
-	
 	TimeManager.minute_passed.connect(_on_minute)
 	
 	ready_ui.emit(farm_ui)
@@ -108,11 +106,6 @@ func try_start_egg_drag():
 			egg_basket,
 			slot
 		)
-
-
-func _fit_loft_to_screen() -> void:
-	var screen := get_viewport_rect().size
-	loft.position = (screen - Vector2(loft.loft_size)) / 2 + Vector2(-200, 0)
 
 
 func _on_pigeon_drag_requested(pigeon: Pigeon):

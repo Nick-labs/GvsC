@@ -8,15 +8,17 @@
 size = Vector2(200, 200)
 
 [node name="Pigeon" type="Area2D" unique_id=1765929669]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_ltfnt")
 data = ExtResource("2_q2ogf")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=545107183]
-position = Vector2(-23, -18)
+position = Vector2(-20, -85)
 texture = ExtResource("3_q2ogf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1583731603]
-position = Vector2(-25, -19)
+position = Vector2(0, -85)
 shape = SubResource("RectangleShape2D_q2ogf")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

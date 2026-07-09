@@ -57,7 +57,7 @@ func receive_egg(data: EggData) -> void:
 	
 	add_child(egg)
 
-	egg.position = marker.position + Vector2(randi_range(-10, 10), 60)
+	egg.position = marker.position + Vector2(randi_range(-10, 10), 0)
 	egg.setup(data)
 
 	eggs.append(egg)
