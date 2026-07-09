@@ -44,6 +44,9 @@ func _connect_farm_ui(ui):
 
 
 func show_farm():
+	if shop.active:
+		TimeManager.skip_minutes(30)
+	
 	farm.visible = true
 	defense.visible = false
 	shop.visible = false
@@ -69,6 +72,8 @@ func show_defense():
 
 
 func show_shop():
+	TimeManager.skip_minutes(30)
+	
 	farm.visible = false
 	defense.visible = false
 	shop.visible = true

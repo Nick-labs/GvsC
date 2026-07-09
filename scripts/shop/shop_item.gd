@@ -16,7 +16,7 @@ func setup(new_offer: ShopOffer):
 	offer = new_offer
 
 	sprite.texture = offer.icon
-	price_label.text = str(offer.price)
+	price_label.text = str(offer.get_price())
 
 	_fit_sprite()
 

@@ -45,5 +45,22 @@ func sell_backpack():
 	return earned
 
 
+func get_upgrade_level(type: UpgradeData.UpgradeType) -> int:
+	match type:
+		UpgradeData.UpgradeType.BACKPACK_CAPACITY:
+			return upgrades.backpack_level
+
+		UpgradeData.UpgradeType.BASKET_CAPACITY:
+			return upgrades.basket_level
+
+		UpgradeData.UpgradeType.CELL:
+			return upgrades.cell_level
+
+		UpgradeData.UpgradeType.INCUBATOR:
+			return upgrades.incubator_level
+
+	return 0
+
+
 func upgrades_updated():
 	upgrades_changed.emit()

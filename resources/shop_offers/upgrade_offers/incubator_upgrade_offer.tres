@@ -1,14 +1,13 @@
 [gd_resource type="Resource" script_class="ShopOffer" format=3 uid="uid://b36o8i3xxguw2"]
 
 [ext_resource type="Resource" uid="uid://bnpmixqk0n5nd" path="res://resources/upgrade_data/incubator_upgrade_data.tres" id="1_10hag"]
-[ext_resource type="Texture2D" uid="uid://comnkt2fq5xtc" path="res://assets/sprites/farm/nest.png" id="2_bjyyu"]
+[ext_resource type="Texture2D" uid="uid://dy7jlvo60xiqr" path="res://assets/sprites/farm/cell-incubator.png" id="2_10hag"]
 [ext_resource type="Script" uid="uid://bbq16g04eaq8d" path="res://scripts/shop/shop_offer.gd" id="3_66pss"]
 
 [resource]
 script = ExtResource("3_66pss")
 title = "инкубатор"
-icon = ExtResource("2_bjyyu")
-price = 5
+icon = ExtResource("2_10hag")
 type = 2
 tier = 1
 data = ExtResource("1_10hag")
