@@ -51,7 +51,7 @@ position = Vector2(535, 440)
 shape = SubResource("RectangleShape2D_7r02r")
 
 [node name="DialogPoint" type="Marker2D" parent="Shopkeeper" unique_id=2041131413]
-position = Vector2(888, 200)
+position = Vector2(800, 200)
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="." unique_id=463821339]
 offset_left = 1577.0

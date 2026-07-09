@@ -17,7 +17,7 @@ func show_offer(
 	
 	current_offer = offer
 	
-	question_label.text = "Ты действительно хочешь купить " + offer.title + " за " + str(offer.get_price()) + " грошей?"
+	question_label.text = "Хочешь купить " + offer.title + " за " + str(offer.get_price()) + " грошей?"
 	
 	show()
 	
