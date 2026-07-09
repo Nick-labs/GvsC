@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bk4up0ekdx2nw" path="res://assets/sprites/shop/sunset/assistant-confused-sunset.png" id="5_ctpgp"]
 [ext_resource type="PackedScene" uid="uid://dri8ayokswgmw" path="res://scripts/shop/purchase_dialog.tscn" id="7_ge4d2"]
 [ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="9_vk20h"]
+[ext_resource type="Texture2D" uid="uid://brja54e30y7u8" path="res://assets/sprites/ui/window1.png" id="10_8qn5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
 size = Vector2(514, 540.5)
@@ -17,6 +18,12 @@ size = Vector2(514, 540.5)
 [sub_resource type="Theme" id="Theme_lqwvk"]
 default_font = ExtResource("9_vk20h")
 default_font_size = 40
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7mnk"]
+texture = ExtResource("10_8qn5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1c7u"]
+texture = ExtResource("10_8qn5i")
 
 [node name="Shop" type="Node2D" unique_id=1571493533]
 script = ExtResource("1_ptf86")
@@ -63,11 +70,13 @@ theme = SubResource("Theme_lqwvk")
 [node name="BackButton" type="Button" parent="ButtonsContainer" unique_id=2036288464]
 z_index = 1000
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_c7mnk")
 text = "Вернуться"
 
 [node name="SellAllButton" type="Button" parent="ButtonsContainer" unique_id=13122615]
 z_index = 1000
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_y1c7u")
 text = "Продать всё"
 
 [node name="CounterPoints" type="Node2D" parent="." unique_id=855976284]

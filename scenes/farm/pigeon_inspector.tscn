@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://c6ahqraxmu6xw"]
 
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="1_i5hwu"]
 [ext_resource type="Script" uid="uid://bdmhlmfwai2v8" path="res://scripts/farm/pigeon_inspector.gd" id="1_pjm7s"]
+[ext_resource type="Texture2D" uid="uid://du4pi41qcnw1r" path="res://assets/sprites/ui/window2.png" id="2_jxvaq"]
+
+[sub_resource type="Theme" id="Theme_8qn5i"]
+default_font = ExtResource("1_i5hwu")
+default_font_size = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dww4p"]
+texture = ExtResource("2_jxvaq")
 
 [node name="PigeonInspector" type="PanelContainer" unique_id=1190866342]
+theme = SubResource("Theme_8qn5i")
+theme_override_styles/panel = SubResource("StyleBoxTexture_dww4p")
 script = ExtResource("1_pjm7s")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1398509358]

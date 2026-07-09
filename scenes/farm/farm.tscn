@@ -49,6 +49,7 @@ texture = ExtResource("11_cxgs2")
 metadata/_edit_lock_ = true
 
 [node name="BackpackVisual" type="Node2D" parent="." unique_id=256596606]
+visible = false
 script = ExtResource("10_cxgs2")
 
 [node name="Marker2D" type="Marker2D" parent="BackpackVisual" unique_id=739179375]

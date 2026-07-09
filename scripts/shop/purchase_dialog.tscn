@@ -13,7 +13,7 @@ subpixel_positioning = 0
 
 [sub_resource type="Theme" id="Theme_ct3ww"]
 default_font = SubResource("SystemFont_lwald")
-default_font_size = 20
+default_font_size = 21
 
 [node name="PurchaseDialog" type="CanvasLayer" unique_id=1017263019]
 script = ExtResource("1_vqv54")
