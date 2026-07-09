@@ -22,16 +22,23 @@ func _ready():
 		started = true
 		start_next_wave()
 
+
 func _on_hour_passed(_day,_hour):
 	if is_night() and not started:
+		await UIManager.show_warning(
+			"⚠ Чернобурки приближаются!",
+			5.0
+		)
+		
 		started = true
+		
 		start_next_wave()
 
 	if not is_night():
 		started = false
 
-func start_next_wave():
 
+func start_next_wave():
 	current_wave += 1
 
 	if current_wave > max_waves:

@@ -16,11 +16,10 @@ signal win_game
 
 var active := true
 
+
 func _ready():
 	base.destroyed.connect(_on_base_destroyed)
 	base.hp_changed.connect(_on_hp_changed)
-
-	TimeManager.hour_passed.connect(_on_hour_passed)
 
 	win_screen.hide()
 	lose_screen.hide()
@@ -38,10 +37,6 @@ func _on_base_destroyed():
 	#lose_screen.show()
 	#lose_game.emit()
 	#get_tree().paused = true
-
-
-func _on_hour_passed(_day,hour):
-	pass
 
 
 func _on_back_button_pressed():

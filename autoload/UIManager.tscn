@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://v8is0yc4vv1y"]
+
+[ext_resource type="Script" uid="uid://bbowbtiog0au4" path="res://autoload/ui_manager.gd" id="1_o0d6g"]
+[ext_resource type="PackedScene" uid="uid://dikbeu3tfv1dd" path="res://scenes/ui/warning_popup.tscn" id="2_o5vi6"]
+
+[node name="UiManager" type="Node" unique_id=2047718261]
+script = ExtResource("1_o0d6g")
+
+[node name="WarningPopup" parent="." unique_id=1712510301 instance=ExtResource("2_o5vi6")]
