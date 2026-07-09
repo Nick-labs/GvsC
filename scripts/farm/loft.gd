@@ -43,18 +43,26 @@ func generate_cells() -> void:
 			
 			cells.append(cell)
 	
+	update_unlocked_cells()
+	
 	var pigeon := create_default_pigeon()
 	cells[0].set_pigeon(pigeon)
 
 
 func get_cell(index: int) -> Cell:
+	if index >= PlayerData.upgrades.unlocked_cells:
+		return null
+
 	return cells[index]
 
 
 func get_free_cell() -> Cell:
-	for cell in cells:
+	for i in PlayerData.upgrades.unlocked_cells:
+		var cell := cells[i]
+
 		if cell.is_empty():
 			return cell
+
 	return null
 
 
@@ -67,6 +75,11 @@ func add_pigeon(pigeon: Pigeon) -> bool:
 	cell.set_pigeon(pigeon)
 	
 	return true
+
+
+func update_unlocked_cells():
+	for i in cells.size():
+		cells[i].visible = i < PlayerData.upgrades.unlocked_cells
 
 
 func create_default_pigeon() -> Pigeon:
@@ -87,10 +100,12 @@ func setup_pigeon(pigeon: Pigeon):
 
 
 func get_hovered_cell() -> Cell:
-	for cell in cells:
+	for i in PlayerData.upgrades.unlocked_cells:
+		var cell := cells[i]
+
 		if cell.hovered:
 			return cell
-	
+
 	return null
 
 

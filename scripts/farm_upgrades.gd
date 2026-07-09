@@ -9,3 +9,7 @@ extends Resource
 
 @export_group("Backpack")
 @export var backpack_capacity := 10
+
+@export_group("Buildings")
+@export var unlocked_cells := 4
+@export var unlocked_incubators := 1

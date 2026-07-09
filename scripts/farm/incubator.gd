@@ -14,6 +14,8 @@ var slots: Array[IncubatorSlot] = []
 func _ready():
 	_generate_slots()
 	
+	update_unlocked_slots()
+	
 	for slot in slots:
 		slot.egg_drag_requested.connect(
 			_on_slot_egg_drag_requested
@@ -31,8 +33,15 @@ func _generate_slots():
 		slots.append(slot)
 
 
+func update_unlocked_slots():
+	for i in slots.size():
+		slots[i].visible = i < PlayerData.upgrades.unlocked_incubators
+
+
 func add_egg(egg: Egg) -> bool:
-	for slot in slots:
+	for i in PlayerData.upgrades.unlocked_incubators:
+		var slot := slots[i]
+
 		if slot.is_empty():
 			slot.put_egg(egg)
 			return true
@@ -41,7 +50,9 @@ func add_egg(egg: Egg) -> bool:
 
 
 func get_hovered_slot() -> IncubatorSlot:
-	for slot in slots:
+	for i in PlayerData.upgrades.unlocked_incubators:
+		var slot := slots[i]
+
 		if slot.hovered:
 			return slot
 

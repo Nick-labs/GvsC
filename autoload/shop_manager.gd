@@ -47,3 +47,11 @@ func _buy_upgrade(offer: ShopOffer):
 		
 		UpgradeData.UpgradeType.NEST_CAPACITY:
 			PlayerData.upgrades.nest_capacity += upgrade.value
+		
+		UpgradeData.UpgradeType.CELL:
+			PlayerData.upgrades.unlocked_cells += 1
+
+		UpgradeData.UpgradeType.INCUBATOR:
+			PlayerData.upgrades.unlocked_incubators += 1
+	
+	PlayerData.upgrades_updated()

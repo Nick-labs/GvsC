@@ -44,7 +44,10 @@ func _ready() -> void:
 	ready_ui.emit(farm_ui)
 	
 	PlayerData.money_changed.connect(_on_money_changed)
-
+	PlayerData.upgrades_changed.connect(_on_upgrades_changed)
+	
+	_on_upgrades_changed()
+	
 	farm_ui.set_money(PlayerData.money)
 
 
@@ -324,3 +327,7 @@ func set_active(value: bool):
 
 func _on_money_changed(value: int):
 	farm_ui.set_money(value)
+
+func _on_upgrades_changed():
+	loft.update_unlocked_cells()
+	incubator.update_unlocked_slots()

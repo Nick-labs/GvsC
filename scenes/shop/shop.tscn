@@ -22,6 +22,7 @@ shop_item_scene = ExtResource("2_xcdpw")
 position = Vector2(956.99994, 536)
 scale = Vector2(0.7546874, 0.75972223)
 texture = ExtResource("1_jp048")
+metadata/_edit_lock_ = true
 
 [node name="Counter" type="Sprite2D" parent="." unique_id=2000563239]
 z_index = 2
@@ -88,6 +89,12 @@ position = Vector2(1200, 600)
 
 [node name="Marker8" type="Marker2D" parent="CounterPoints" unique_id=1610975447]
 position = Vector2(1500, 600)
+
+[node name="Marker9" type="Marker2D" parent="CounterPoints" unique_id=1265035747]
+position = Vector2(1200, 380)
+
+[node name="Marker10" type="Marker2D" parent="CounterPoints" unique_id=1253147293]
+position = Vector2(1500, 380)
 
 [node name="PurchaseDialog" parent="." unique_id=1017263019 instance=ExtResource("7_ge4d2")]
 

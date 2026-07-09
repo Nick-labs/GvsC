@@ -3,6 +3,8 @@ extends Node
 signal money_changed(value: int)
 signal backpack_changed
 
+signal upgrades_changed
+
 signal victory
 
 var backpack: Backpack
@@ -41,3 +43,7 @@ func sell_backpack():
 	var earned := backpack.sell_all()
 	money += earned
 	return earned
+
+
+func upgrades_updated():
+	upgrades_changed.emit()
