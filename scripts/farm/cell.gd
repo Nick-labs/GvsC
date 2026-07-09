@@ -9,6 +9,7 @@ var hovered := false
 var eggs: Array[Egg] = []
 
 @onready var marker: Marker2D = $Marker2D
+@onready var nest_sprite: Sprite2D = $NestSprite
 
 
 func set_pigeon(new_pigeon: Pigeon) -> void:

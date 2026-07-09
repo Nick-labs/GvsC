@@ -79,7 +79,7 @@ func add_pigeon(pigeon: Pigeon) -> bool:
 
 func update_unlocked_cells():
 	for i in cells.size():
-		cells[i].visible = i < PlayerData.upgrades.unlocked_cells
+		cells[i].nest_sprite.visible = i < PlayerData.upgrades.unlocked_cells
 
 
 func create_default_pigeon() -> Pigeon:
