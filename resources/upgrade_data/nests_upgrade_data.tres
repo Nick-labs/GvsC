@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cspfp07caqik7"]
+
+[ext_resource type="Script" uid="uid://bdtlrvduouae5" path="res://scripts/shop/upgrade_data.gd" id="1_ynrxi"]
+
+[resource]
+script = ExtResource("1_ynrxi")
+type = 2
+metadata/_custom_type_script = "uid://bdtlrvduouae5"

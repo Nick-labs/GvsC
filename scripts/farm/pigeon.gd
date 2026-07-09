@@ -65,6 +65,9 @@ func _apply_data():
 
 
 func lay_egg():
+	if !cell.can_receive_egg():
+		return
+	
 	var egg: EggData = PigeonFactory.create_egg(data)
 	
 	cell.receive_egg(egg)

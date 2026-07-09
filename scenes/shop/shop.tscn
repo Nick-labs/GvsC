@@ -36,12 +36,12 @@ normal_texture = ExtResource("4_ge4d2")
 embarrassed_texture = ExtResource("5_ctpgp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Shopkeeper" unique_id=608705451]
-position = Vector2(950, 581)
+position = Vector2(835.00006, 550)
 scale = Vector2(0.76269525, 0.7666667)
 texture = ExtResource("4_ge4d2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper" unique_id=115237581]
-position = Vector2(600, 451.75)
+position = Vector2(491, 440)
 shape = SubResource("RectangleShape2D_7r02r")
 
 [node name="DialogPoint" type="Marker2D" parent="Shopkeeper" unique_id=2041131413]
@@ -79,6 +79,15 @@ position = Vector2(1200, 820)
 
 [node name="Marker5" type="Marker2D" parent="CounterPoints" unique_id=137998077]
 position = Vector2(1500, 820)
+
+[node name="Marker6" type="Marker2D" parent="CounterPoints" unique_id=863317777]
+position = Vector2(900, 600)
+
+[node name="Marker7" type="Marker2D" parent="CounterPoints" unique_id=884370736]
+position = Vector2(1200, 600)
+
+[node name="Marker8" type="Marker2D" parent="CounterPoints" unique_id=1610975447]
+position = Vector2(1500, 600)
 
 [node name="PurchaseDialog" parent="." unique_id=1017263019 instance=ExtResource("7_ge4d2")]
 

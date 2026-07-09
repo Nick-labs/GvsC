@@ -1,13 +1,16 @@
 [gd_resource type="Resource" script_class="ShopCatalog" format=3 uid="uid://csgw1nwlegj0s"]
 
 [ext_resource type="Script" uid="uid://bbq16g04eaq8d" path="res://scripts/shop/shop_offer.gd" id="1_bx62j"]
+[ext_resource type="Resource" uid="uid://bsww42426noqc" path="res://resources/shop_offers/pigeon_offers/black_patsan_offer.tres" id="2_6w734"]
 [ext_resource type="Script" uid="uid://tciwmhbywhsv" path="res://autoload/shop_catalog.gd" id="2_hw8ha"]
-[ext_resource type="Resource" uid="uid://5h5eaa87qx2j" path="res://resources/shop_offers/black_patsan_offer.tres" id="2_jcyuh"]
-[ext_resource type="Resource" uid="uid://utvdl3ctj0ji" path="res://resources/shop_offers/ios_patsan_offer.tres" id="3_p4q8f"]
-[ext_resource type="Resource" uid="uid://nhcmoigu7qe2" path="res://resources/shop_offers/reimu_pigeon_offer.tres" id="4_r870y"]
-[ext_resource type="Resource" uid="uid://c1tgq4kpreri6" path="res://resources/shop_offers/skebob_offer.tres" id="5_w0gy7"]
+[ext_resource type="Resource" uid="uid://5h5eaa87qx2j" path="res://resources/shop_offers/upgrade_offers/backpack_upgrade_offer.tres" id="2_p4q8f"]
+[ext_resource type="Resource" uid="uid://utvdl3ctj0ji" path="res://resources/shop_offers/pigeon_offers/ios_patsan_offer.tres" id="3_r870y"]
+[ext_resource type="Resource" uid="uid://nhcmoigu7qe2" path="res://resources/shop_offers/pigeon_offers/reimu_pigeon_offer.tres" id="4_w0gy7"]
+[ext_resource type="Resource" uid="uid://c1tgq4kpreri6" path="res://resources/shop_offers/pigeon_offers/skebob_offer.tres" id="5_6w734"]
+[ext_resource type="Resource" uid="uid://cfthxk6lb8yi8" path="res://resources/shop_offers/upgrade_offers/eggbasket_upgrade_offer.tres" id="7_4ijf1"]
+[ext_resource type="Resource" uid="uid://c4lkfrmjt7ow6" path="res://resources/shop_offers/upgrade_offers/nests_upgrade_offer.tres" id="8_o4gwt"]
 
 [resource]
 script = ExtResource("2_hw8ha")
-offers = Array[ExtResource("1_bx62j")]([ExtResource("2_jcyuh"), ExtResource("2_jcyuh"), ExtResource("3_p4q8f"), ExtResource("4_r870y"), ExtResource("5_w0gy7")])
+offers = Array[ExtResource("1_bx62j")]([ExtResource("2_6w734"), ExtResource("2_6w734"), ExtResource("3_r870y"), ExtResource("4_w0gy7"), ExtResource("5_6w734"), ExtResource("2_p4q8f"), ExtResource("7_4ijf1"), ExtResource("8_o4gwt")])
 metadata/_custom_type_script = "uid://tciwmhbywhsv"
