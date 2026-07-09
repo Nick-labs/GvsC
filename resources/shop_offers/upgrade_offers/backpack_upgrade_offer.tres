@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_u5dvi")
-title = "Улучшение рюкзака +10"
+title = "увеличение рюкзака на 10 слотов"
 icon = ExtResource("2_yguy5")
 price = 5
 type = 2

@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_5dk01")
-title = "Улучшение корзины +20"
+title = "увеличение корзины на 10 слотов"
 icon = ExtResource("2_bix0e")
 price = 5
 type = 2

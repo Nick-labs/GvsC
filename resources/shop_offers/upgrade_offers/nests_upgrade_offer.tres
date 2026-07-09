@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_te7rp")
-title = "Улучшение гнезд +1"
+title = "улучшение вместимости гнезд"
 icon = ExtResource("2_2eqnu")
 price = 5
 type = 2
