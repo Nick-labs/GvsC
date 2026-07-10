@@ -38,6 +38,8 @@ func regenerate():
 func take_damage(damage:float):
 	health -= damage
 	health = max(health,0)
+	
+	AudioManager.play_sound("fox-attack")
 
 	hp_changed.emit(health)
 
@@ -46,4 +48,8 @@ func take_damage(damage:float):
 
 
 func destroy():
+	if health > 0:
+		return
+
+	set_process(false)
 	destroyed.emit()

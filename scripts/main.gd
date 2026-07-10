@@ -1,13 +1,38 @@
 extends Node2D
 
+@onready var intro: Intro = $Intro
+
 @onready var farm = $Farm
+@onready var farm_ui = $Farm/FarmUI
+
+
 @onready var defense = $Defense
 @onready var shop = $Shop
 
 
 func _ready():
-	_show_intro()
+	_start_game()
+
+
+func _start_game():
+	farm.hide()
+	farm_ui.hide()
+	shop.hide()
 	
+	TimeManager.pause()
+	
+	AudioManager.play_music_by_name("intro")
+	await intro.play()
+	
+	TimeManager.resume()
+
+	initialize()
+	
+	show_farm()
+	AudioManager.play_music_by_name("farm")
+	
+
+func initialize():
 	farm.farm_ui.shop_pressed.connect(show_shop)
 	farm.farm_ui.defense_pressed.connect(show_defense)
 	
@@ -16,12 +41,8 @@ func _ready():
 	shop.farm_pressed.connect(show_farm)
 	
 	PlayerData.victory.connect(_on_victory)
-
-	MusicPlayer.play_music(
-		preload("res://assets/audio/music/test4_OrganFluit.ogg")
-	)
 	
-	show_farm()
+	defense.farm_destroyed.connect(_on_farm_destroyed)
 
 
 func _show_intro():
@@ -97,3 +118,7 @@ func _on_victory():
 
 func _on_warning_requested(text, duration):
 	await UIManager.show_message(text, duration)
+
+
+func _on_farm_destroyed():
+	farm.loft.kill_pigeons()

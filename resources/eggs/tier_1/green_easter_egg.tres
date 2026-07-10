@@ -7,18 +7,18 @@
 [sub_resource type="Resource" id="Resource_glhhd"]
 script = ExtResource("1_ork0y")
 tier_offset = -1
-chance = 15.0
+chance = 20.0
 metadata/_custom_type_script = "uid://qaw1oeacb4qf"
 
 [sub_resource type="Resource" id="Resource_6rpr3"]
 script = ExtResource("1_ork0y")
-chance = 80.0
+chance = 70.0
 metadata/_custom_type_script = "uid://qaw1oeacb4qf"
 
 [sub_resource type="Resource" id="Resource_2fx06"]
 script = ExtResource("1_ork0y")
 tier_offset = 1
-chance = 5.0
+chance = 10.0
 metadata/_custom_type_script = "uid://qaw1oeacb4qf"
 
 [resource]

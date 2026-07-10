@@ -24,6 +24,11 @@ func _ready():
 
 
 func _on_hour_passed(_day,_hour):
+	if is_night() and TimeManager.hour == 22:
+		AudioManager.play_music_by_name("night")
+	elif TimeManager.hour == 6:
+		AudioManager.play_music_by_name("farm")
+	
 	if is_night() and not started:
 		await UIManager.show_warning(
 			"⚠ Чернобурки приближаются!",

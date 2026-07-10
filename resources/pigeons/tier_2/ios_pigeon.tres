@@ -8,7 +8,7 @@
 script = ExtResource("1_erj86")
 breed_name = "Ios pigeon"
 sprite = ExtResource("3_11rxw")
-price = 3
+price = 15
 egg_interval_minutes = 30
 egg_template = ExtResource("1_e8o0e")
 tier = 2

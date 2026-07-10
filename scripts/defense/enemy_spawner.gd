@@ -10,21 +10,23 @@ signal enemy_died
 
 @export var spawn_radius := 1000.0
 
+var enemies: Array[Fox] = []
 
 func spawn_enemy():
-
 	if not is_night():
 		return
-	
-	var enemy = enemy_scene.instantiate() as Fox
-	
+
+	var enemy := enemy_scene.instantiate() as Fox
+
 	enemy_container.add_child(enemy)
-	
+
 	enemy.global_position = _get_spawn_position()
 	enemy.target = base
-	
-	enemy.died.connect(_on_enemy_died)
-	
+
+	enemies.append(enemy)
+
+	enemy.died.connect(_on_enemy_died.bind(enemy))
+
 	enemy_spawned.emit(enemy)
 
 
@@ -37,9 +39,18 @@ func _get_spawn_position() -> Vector2:
 	) * spawn_radius
 
 
-func _on_enemy_died():
+func _on_enemy_died(enemy: Fox):
+	enemies.erase(enemy)
 	enemy_died.emit()
 
 
 func is_night() -> bool:
 	return TimeManager.hour >= 22 or TimeManager.hour < 6
+
+
+func remove_all_enemies():
+	for enemy in enemies:
+		if is_instance_valid(enemy):
+			enemy.queue_free()
+
+	enemies.clear()

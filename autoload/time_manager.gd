@@ -6,8 +6,10 @@ signal day_passed(day)
 
 @export var minutes_per_second: float = 5.0
 
-var _total_minutes: int = 360
+var _total_minutes: int = 1300
 var _minute_progress: float = 0.0
+
+var paused := false
 
 var minute: int:
 	get:
@@ -35,6 +37,9 @@ var total_hours: int:
 
 
 func _process(delta: float) -> void:
+	if paused:
+		return
+	
 	_minute_progress += delta * minutes_per_second
 
 	while _minute_progress >= 1.0:
@@ -65,3 +70,11 @@ func skip_hours(count: int) -> void:
 
 func skip_days(days: int):
 	advance_minutes(days * 24 * 60)
+
+
+func pause():
+	paused = true
+
+
+func resume():
+	paused = false
