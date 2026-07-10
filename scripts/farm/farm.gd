@@ -7,7 +7,7 @@ signal ready_ui(farm_ui)
 @onready var egg_basket: EggBasket = $EggBasket
 @onready var incubator: Incubator = $Incubator
 @onready var farm_ui: FarmUI = $FarmUI
-@onready var pigeon_inspector: PigeonInspector  = $FarmUI/MarginContainer/PigeonInspector
+@onready var pigeon_inspector: PigeonInspector  = $FarmUI/MarginContainer/VBoxContainer/PigeonInspector
 @onready var drag_manager: DragManager = $DragManager
 @onready var camera: Camera2D = $Camera2D
 
@@ -37,8 +37,6 @@ func _ready() -> void:
 	
 	pigeon_inspector.sell_pressed.connect(_on_sell_pressed)
 	
-	farm_ui.set_money(PlayerData.money)
-	
 	TimeManager.minute_passed.connect(_on_minute)
 	
 	ready_ui.emit(farm_ui)
@@ -47,8 +45,6 @@ func _ready() -> void:
 	PlayerData.upgrades_changed.connect(_on_upgrades_changed)
 	
 	_on_upgrades_changed()
-	
-	farm_ui.set_money(PlayerData.money)
 
 
 func _on_minute(day, hour, minute):
@@ -329,7 +325,7 @@ func set_active(value: bool):
 
 
 func _on_money_changed(value: int):
-	farm_ui.set_money(value)
+	UIManager.set_money(value)
 
 func _on_upgrades_changed():
 	loft.update_unlocked_cells()

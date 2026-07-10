@@ -2,7 +2,7 @@ extends Node
 
 #signal warning_requested(text: String, duration: float)
 
-@onready var warning_popup := $WarningPopup
+@onready var warning_popup := $MarginContainer/WarningPopup
 
 
 func show_message(text: String, duration := 3.0):

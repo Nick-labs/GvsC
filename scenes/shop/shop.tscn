@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bk4up0ekdx2nw" path="res://assets/sprites/shop/sunset/assistant-confused-sunset.png" id="5_ctpgp"]
 [ext_resource type="PackedScene" uid="uid://dri8ayokswgmw" path="res://scripts/shop/purchase_dialog.tscn" id="7_ge4d2"]
 [ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="9_vk20h"]
-[ext_resource type="Texture2D" uid="uid://brja54e30y7u8" path="res://assets/sprites/ui/window1.png" id="10_8qn5i"]
+[ext_resource type="Texture2D" uid="uid://brja54e30y7u8" path="res://assets/sprites/ui/windows/window1_st.png" id="10_8qn5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
 size = Vector2(514, 540.5)

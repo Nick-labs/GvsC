@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bc0qgdt1ggrry" path="res://scripts/shop/purchase_dialog.gd" id="1_vqv54"]
 [ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="2_ct3ww"]
-[ext_resource type="Texture2D" uid="uid://kibdh0p8lpkv" path="res://assets/sprites/ui/window3.png" id="3_c7mnk"]
+[ext_resource type="Texture2D" uid="uid://kibdh0p8lpkv" path="res://assets/sprites/ui/windows/window3.png" id="3_c7mnk"]
 
 [sub_resource type="Theme" id="Theme_wmk64"]
 default_font = ExtResource("2_ct3ww")

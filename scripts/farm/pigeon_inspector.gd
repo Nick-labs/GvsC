@@ -5,9 +5,12 @@ signal sell_pressed
 
 var pigeon: Pigeon
 
+@onready var content := $MarginContainer/VBoxContainer
+
 @onready var portrait: TextureRect = $MarginContainer/VBoxContainer/Portrait
 
 @onready var nickname_edit : LineEdit = $MarginContainer/VBoxContainer/HBoxContainer/NicknameEdit
+@onready var nickname_label : Label = $MarginContainer/VBoxContainer/HBoxContainer/NicknameLabel
 
 @onready var breed_label: Label = $MarginContainer/VBoxContainer/BreedLabel
 @onready var age_label: Label = $MarginContainer/VBoxContainer/AgeLabel
@@ -26,7 +29,9 @@ var pigeon: Pigeon
 
 
 func _ready():
-	hide()
+	nickname_edit.hide()
+	nickname_label.hide()
+	sell_button.hide()
 
 
 func show_pigeon(new_pigeon: Pigeon):
@@ -38,7 +43,7 @@ func show_pigeon(new_pigeon: Pigeon):
 	
 	nickname_edit.text = data.nickname
 	breed_label.text = "Порода: " + data.breed_name
-	age_label.text = "Возраст: " + str(data.age)
+	#age_label.text = "Возраст: " + str(data.age)
 	price_label.text = "Цена: " + str(data.price) + " грошей"
 	generation_label.text = "Поколение: " + str(data.generation)
 	
@@ -50,14 +55,18 @@ func show_pigeon(new_pigeon: Pigeon):
 	
 	eggs_counter_label.text = "Яиц снесено: " + str(data.eggs_laid)
 	
-	show()
+	content.show()
+	
+	nickname_edit.show()
+	nickname_label.show()
+	sell_button.show()
 
 
 func update_labels():
 	var data := pigeon.data
 	
 	breed_label.text = "Порода: " + data.breed_name
-	age_label.text = "Возраст: " + str(data.age)
+	#age_label.text = "Возраст: " + str(data.age)
 	price_label.text = "Цена: " + str(data.price) + " грошей"
 	eggs_counter_label.text = "Яиц снесено: " + str(data.eggs_laid)
 	generation_label.text = "Поколение: " + str(data.generation)
@@ -67,7 +76,7 @@ func update_labels():
 
 
 func clear():
-	hide()
+	content.hide()
 
 
 func _on_sell_button_pressed() -> void:
