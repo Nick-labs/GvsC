@@ -9,13 +9,40 @@
 [ext_resource type="Script" uid="uid://dl8yr1fcin3ay" path="res://scripts/defense/wave_manager.gd" id="6_ows6c"]
 [ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="7_wwjrr"]
 [ext_resource type="Texture2D" uid="uid://upjrybmw8foj" path="res://assets/sprites/field/night/trees.png" id="8_1jfis"]
+[ext_resource type="Texture2D" uid="uid://b1ompwtpeqyxa" path="res://assets/sprites/ui/windows/window1.png" id="8_d0c5w"]
+[ext_resource type="Texture2D" uid="uid://ryqgt3tpq7o0" path="res://assets/sprites/ui/windows/window1_pressed.png" id="9_3g4ua"]
+[ext_resource type="Texture2D" uid="uid://dtk7k36o8bsb1" path="res://assets/sprites/ui/windows/window1_hovered.png" id="10_3yu54"]
 
 [sub_resource type="Theme" id="Theme_f5vgk"]
 default_font = ExtResource("7_wwjrr")
 default_font_size = 40
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwjrr"]
+texture = ExtResource("8_d0c5w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lqwvk"]
+texture = ExtResource("9_3g4ua")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wmk64"]
+texture = ExtResource("10_3yu54")
+
 [node name="Defense" type="Node2D" unique_id=2122941706]
 script = ExtResource("1_ugpjw")
+
+[node name="BackButton" type="Button" parent="." unique_id=788568126]
+z_index = 999
+custom_minimum_size = Vector2(400, 0)
+offset_left = 547.0
+offset_top = 485.0
+offset_right = 947.0
+offset_bottom = 524.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = SubResource("Theme_f5vgk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wwjrr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lqwvk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wmk64")
+text = "Вернуться"
 
 [node name="World" type="Node2D" parent="." unique_id=1992813151]
 
@@ -41,15 +68,6 @@ enemy_container = NodePath("../World/Units/Foxes")
 [node name="WaveManager" type="Node" parent="." unique_id=209894844 node_paths=PackedStringArray("spawner")]
 script = ExtResource("6_ows6c")
 spawner = NodePath("../EnemySpawner")
-
-[node name="BackButton" type="Button" parent="." unique_id=788568126]
-offset_left = 803.0
-offset_top = -503.0
-offset_right = 920.0
-offset_bottom = -456.0
-theme = SubResource("Theme_f5vgk")
-theme_override_font_sizes/font_size = 16
-text = "Вернуться"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=379951036]
 
@@ -116,6 +134,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_7sasd")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1937433231]
 layout_mode = 0
@@ -126,5 +145,6 @@ offset_bottom = 558.0
 mouse_filter = 2
 texture = ExtResource("8_1jfis")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
