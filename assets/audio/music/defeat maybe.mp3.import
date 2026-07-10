@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://donf6iocsbkry"
+path="res://.godot/imported/defeat maybe.mp3-cd8be9f75667310f9e9c5741628de8ab.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/defeat maybe.mp3"
+dest_files=["res://.godot/imported/defeat maybe.mp3-cd8be9f75667310f9e9c5741628de8ab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
