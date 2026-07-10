@@ -12,7 +12,6 @@ var music = {
 }
 
 var sounds = {
-	"attention": preload("res://assets/audio/sfx/attention_.ogg"),
 	"fox-attack": preload("res://assets/audio/sfx/fox-attack.ogg"),
 	"shopkeeper": preload("res://assets/audio/sfx/voice.ogg"),
 }

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b1ompwtpeqyxa" path="res://assets/sprites/ui/windows/window1.png" id="8_d0c5w"]
 [ext_resource type="Texture2D" uid="uid://ryqgt3tpq7o0" path="res://assets/sprites/ui/windows/window1_pressed.png" id="9_3g4ua"]
 [ext_resource type="Texture2D" uid="uid://dtk7k36o8bsb1" path="res://assets/sprites/ui/windows/window1_hovered.png" id="10_3yu54"]
+[ext_resource type="PackedScene" uid="uid://b7vscbxrou7bs" path="res://scenes/defense/base_destroyed.tscn" id="13_3g4ua"]
 
 [sub_resource type="Theme" id="Theme_f5vgk"]
 default_font = ExtResource("7_wwjrr")
@@ -146,5 +147,7 @@ mouse_filter = 2
 texture = ExtResource("8_1jfis")
 expand_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="BaseDestroyed" parent="." unique_id=1524688112 instance=ExtResource("13_3g4ua")]
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

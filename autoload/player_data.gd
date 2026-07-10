@@ -15,7 +15,7 @@ const VICTORY_MONEY := 5000
 var has_won := false
 
 
-var money: int = 500:
+var money: int = 0:
 	set(value):
 		money = value
 		money_changed.emit(money)

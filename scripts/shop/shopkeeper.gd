@@ -32,6 +32,8 @@ func _on_clicked():
 func embarrassed():
 	sprite.texture = embarrassed_texture
 	
+	AudioManager.play_sound("shopkeeper")
+	
 	var tween := create_tween()
 
 	tween.tween_property(
