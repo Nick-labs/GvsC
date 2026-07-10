@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci4qjjcjjhiqo"
+path="res://.godot/imported/fox attack.mp3-36302928e761ed4f0ba15e7a97cf5c3a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/fox attack.mp3"
+dest_files=["res://.godot/imported/fox attack.mp3-36302928e761ed4f0ba15e7a97cf5c3a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

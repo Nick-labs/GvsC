@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dmcsfabbl6v1e" path="res://scripts/main.gd" id="1_rarhs"]
 [ext_resource type="PackedScene" uid="uid://deir46p1edu21" path="res://scenes/defense/defense.tscn" id="2_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://d03d067j2iyjj" path="res://scenes/shop/shop.tscn" id="3_rarhs"]
-[ext_resource type="PackedScene" uid="uid://t1qs03rbb0fi" path="res://scenes/clock_display.tscn" id="5_vcsgt"]
 
 [node name="Main" type="Node2D" unique_id=1107939694]
 script = ExtResource("1_rarhs")
@@ -14,7 +13,3 @@ script = ExtResource("1_rarhs")
 [node name="Defense" parent="." unique_id=2122941706 instance=ExtResource("2_0bbpv")]
 
 [node name="Shop" parent="." unique_id=1571493533 instance=ExtResource("3_rarhs")]
-
-[node name="ClockDisplay" parent="." unique_id=1609127357 instance=ExtResource("5_vcsgt")]
-offset = Vector2(0, 20)
-transform = Transform2D(1, 0, 0, 1, 0, 20)

@@ -14,15 +14,15 @@ func show_offer(
 		offer: ShopOffer,
 		world_position: Vector2
 	):
-
+	
 	current_offer = offer
 	
-	question_label.text = "Ты действительно хочешь купить " + offer.title + " за " + str(offer.price) + " грошей?"
+	question_label.text = "Хочешь купить " + offer.title + " за " + str(offer.get_price()) + " грошей?"
 	
 	show()
 	
 	await get_tree().process_frame
-
+	
 	#var screen_position = world_position
 	panel.position = world_position
 
@@ -30,9 +30,9 @@ func show_offer(
 func _on_buy_button_pressed():
 	if current_offer == null:
 		return
-
+	
 	buy_pressed.emit(current_offer)
-
+	
 	hide()
 
 

@@ -93,3 +93,7 @@ func _on_victory():
 	add_child(dialog)
 
 	dialog.popup_centered()
+
+
+func _on_warning_requested(text, duration):
+	await UIManager.show_message(text, duration)

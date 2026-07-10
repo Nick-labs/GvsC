@@ -9,9 +9,35 @@
 [ext_resource type="Texture2D" uid="uid://xnaa15w8xj3r" path="res://assets/sprites/shop/sunset/assistant-sunset.png" id="4_ge4d2"]
 [ext_resource type="Texture2D" uid="uid://bk4up0ekdx2nw" path="res://assets/sprites/shop/sunset/assistant-confused-sunset.png" id="5_ctpgp"]
 [ext_resource type="PackedScene" uid="uid://dri8ayokswgmw" path="res://scripts/shop/purchase_dialog.tscn" id="7_ge4d2"]
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="9_vk20h"]
+[ext_resource type="Texture2D" uid="uid://brja54e30y7u8" path="res://assets/sprites/ui/windows/window1_st.png" id="10_8qn5i"]
+[ext_resource type="Texture2D" uid="uid://ryqgt3tpq7o0" path="res://assets/sprites/ui/windows/window1_pressed.png" id="11_g6lcs"]
+[ext_resource type="Texture2D" uid="uid://dtk7k36o8bsb1" path="res://assets/sprites/ui/windows/window1_hovered.png" id="12_131kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
 size = Vector2(514, 540.5)
+
+[sub_resource type="Theme" id="Theme_lqwvk"]
+default_font = ExtResource("9_vk20h")
+default_font_size = 40
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7mnk"]
+texture = ExtResource("10_8qn5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6lcs"]
+texture = ExtResource("11_g6lcs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_131kw"]
+texture = ExtResource("12_131kw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1c7u"]
+texture = ExtResource("10_8qn5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lwald"]
+texture = ExtResource("11_g6lcs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u54yb"]
+texture = ExtResource("12_131kw")
 
 [node name="Shop" type="Node2D" unique_id=1571493533]
 script = ExtResource("1_ptf86")
@@ -37,31 +63,38 @@ normal_texture = ExtResource("4_ge4d2")
 embarrassed_texture = ExtResource("5_ctpgp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Shopkeeper" unique_id=608705451]
-position = Vector2(835.00006, 550)
+position = Vector2(888.00006, 550)
 scale = Vector2(0.76269525, 0.7666667)
 texture = ExtResource("4_ge4d2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper" unique_id=115237581]
-position = Vector2(491, 440)
+position = Vector2(535, 440)
 shape = SubResource("RectangleShape2D_7r02r")
 
 [node name="DialogPoint" type="Marker2D" parent="Shopkeeper" unique_id=2041131413]
-position = Vector2(888, 200)
+position = Vector2(800, 200)
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="." unique_id=463821339]
 offset_left = 1577.0
 offset_top = 152.0
 offset_right = 1791.0
 offset_bottom = 263.0
+theme = SubResource("Theme_lqwvk")
 
 [node name="BackButton" type="Button" parent="ButtonsContainer" unique_id=2036288464]
 z_index = 1000
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_c7mnk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g6lcs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_131kw")
 text = "Вернуться"
 
 [node name="SellAllButton" type="Button" parent="ButtonsContainer" unique_id=13122615]
 z_index = 1000
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_y1c7u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lwald")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u54yb")
 text = "Продать всё"
 
 [node name="CounterPoints" type="Node2D" parent="." unique_id=855976284]
@@ -97,6 +130,7 @@ position = Vector2(1200, 380)
 position = Vector2(1500, 380)
 
 [node name="PurchaseDialog" parent="." unique_id=1017263019 instance=ExtResource("7_ge4d2")]
+visible = false
 
 [connection signal="input_event" from="Shopkeeper" to="Shopkeeper" method="_on_input_event"]
 [connection signal="pressed" from="ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]

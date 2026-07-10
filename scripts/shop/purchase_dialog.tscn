@@ -1,6 +1,40 @@
 [gd_scene format=3 uid="uid://dri8ayokswgmw"]
 
 [ext_resource type="Script" uid="uid://bc0qgdt1ggrry" path="res://scripts/shop/purchase_dialog.gd" id="1_vqv54"]
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="2_ct3ww"]
+[ext_resource type="Texture2D" uid="uid://kibdh0p8lpkv" path="res://assets/sprites/ui/windows/window3.png" id="3_c7mnk"]
+[ext_resource type="Texture2D" uid="uid://b1ompwtpeqyxa" path="res://assets/sprites/ui/windows/window1.png" id="4_lwald"]
+[ext_resource type="Texture2D" uid="uid://ryqgt3tpq7o0" path="res://assets/sprites/ui/windows/window1_pressed.png" id="5_u54yb"]
+[ext_resource type="Texture2D" uid="uid://dtk7k36o8bsb1" path="res://assets/sprites/ui/windows/window1_hovered.png" id="6_wonet"]
+
+[sub_resource type="Theme" id="Theme_wmk64"]
+default_font = ExtResource("2_ct3ww")
+default_font_size = 30
+
+[sub_resource type="SystemFont" id="SystemFont_lwald"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_ct3ww"]
+default_font = SubResource("SystemFont_lwald")
+default_font_size = 21
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ys0pl"]
+texture = ExtResource("4_lwald")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41gmg"]
+texture = ExtResource("5_u54yb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6f8eb"]
+texture = ExtResource("6_wonet")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cpnvs"]
+texture = ExtResource("4_lwald")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tktnu"]
+texture = ExtResource("5_u54yb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_42lts"]
+texture = ExtResource("6_wonet")
 
 [node name="PurchaseDialog" type="CanvasLayer" unique_id=1017263019]
 script = ExtResource("1_vqv54")
@@ -11,10 +45,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_wmk64")
 
 [node name="Panel" type="Panel" parent="CenterContainer" unique_id=1190564165]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(800, 200)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel" unique_id=2014706668]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_c7mnk")
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel" unique_id=868309950]
 layout_mode = 1
@@ -31,6 +77,9 @@ theme_override_constants/margin_bottom = 50
 [node name="QuestionLabel" type="Label" parent="CenterContainer/Panel/MarginContainer" unique_id=128369298]
 layout_mode = 2
 size_flags_vertical = 0
+theme = SubResource("Theme_ct3ww")
+theme_override_colors/font_outline_color = Color(0.12156863, 0.011764706, 0.26666668, 1)
+theme_override_constants/outline_size = 6
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer" unique_id=1149815120]
@@ -43,6 +92,9 @@ custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_ys0pl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_41gmg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6f8eb")
 text = "Да"
 
 [node name="VSeparator" type="VSeparator" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=299131244]
@@ -54,6 +106,9 @@ custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_cpnvs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tktnu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_42lts")
 text = "Нет"
 
 [connection signal="pressed" from="CenterContainer/Panel/MarginContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

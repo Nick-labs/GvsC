@@ -24,6 +24,7 @@ PigeonFactory="*uid://cpewe02rkskak"
 SpeciesRegistry="*uid://cdic46le38iei"
 PlayerData="*uid://bg2yeyxn62x04"
 ShopManager="*uid://cyu06uxn36ucx"
+UIManager="*uid://v8is0yc4vv1y"
 
 [display]
 

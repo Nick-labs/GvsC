@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://v8is0yc4vv1y"]
+
+[ext_resource type="Script" uid="uid://bbowbtiog0au4" path="res://autoload/ui_manager.gd" id="1_o0d6g"]
+[ext_resource type="PackedScene" uid="uid://dikbeu3tfv1dd" path="res://scenes/ui/warning_popup.tscn" id="2_o5vi6"]
+[ext_resource type="PackedScene" uid="uid://t1qs03rbb0fi" path="res://scenes/ui/clock_display.tscn" id="3_icajm"]
+
+[node name="UiManager" type="Node" unique_id=2047718261]
+script = ExtResource("1_o0d6g")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=951443676]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="WarningPopup" parent="MarginContainer" unique_id=1712510301 instance=ExtResource("2_o5vi6")]
+
+[node name="ClockDisplay" parent="MarginContainer" unique_id=1796616206 instance=ExtResource("3_icajm")]
