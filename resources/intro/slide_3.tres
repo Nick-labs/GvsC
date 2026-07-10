@@ -8,4 +8,5 @@ script = ExtResource("1_217mw")
 image = ExtResource("1_sxakg")
 text = "Слайд 3
 "
+duration = 999.0
 metadata/_custom_type_script = "uid://dmjn35k24jf0n"

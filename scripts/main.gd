@@ -18,8 +18,12 @@ func _start_game():
 	farm.hide()
 	farm_ui.hide()
 	shop.hide()
+	
+	TimeManager.pause()
 
 	await intro.play()
+	
+	TimeManager.resume()
 
 	initialize()
 

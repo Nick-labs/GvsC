@@ -5,35 +5,61 @@
 [node name="Intro" type="CanvasLayer" unique_id=1334326431]
 script = ExtResource("1_45dpb")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=692391853]
-z_index = 4094
+[node name="Slide" type="Control" parent="." unique_id=2043755719]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1924282620]
-z_index = 4095
-custom_minimum_size = Vector2(1800, 200)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -900.0
-offset_top = -251.0
-offset_right = 900.0
-offset_bottom = -51.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1129585361]
-z_index = 4096
+[node name="TextureRect" type="TextureRect" parent="Slide" unique_id=692391853]
+z_index = 4094
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide" unique_id=893346459]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 60
+
+[node name="Panel" type="Panel" parent="Slide/MarginContainer" unique_id=489551614]
+z_index = 4095
+custom_minimum_size = Vector2(1800, 200)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide/MarginContainer/Panel" unique_id=1888585115]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Slide/MarginContainer/Panel/MarginContainer" unique_id=1129585361]
+z_index = 4096
+layout_mode = 2
+
+[node name="Fade" type="ColorRect" parent="." unique_id=13670717]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
