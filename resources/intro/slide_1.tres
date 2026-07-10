@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_h4uph")
 image = ExtResource("1_jwdtj")
-text = "Слайд 1"
+text = "Говорят, что мир рухнул из-за \"Белого Шума\". Но я знаю, что во всем виноваты лисы. До конца света их разводили ради шуб. И теперь они мстят. "
 duration = 999.0
 metadata/_custom_type_script = "uid://dmjn35k24jf0n"

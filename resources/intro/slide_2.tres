@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_x155e")
 image = ExtResource("1_4kglm")
-text = "Слайд 2"
+text = "Сначала они были просто дикими. Но каждая зима делала их свирепее. Но они научились и ждать. "
 duration = 999.0
 metadata/_custom_type_script = "uid://dmjn35k24jf0n"

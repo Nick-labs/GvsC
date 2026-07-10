@@ -4,7 +4,7 @@ extends CanvasLayer
 
 func play():
 	show()
-
-	await get_tree().create_timer(5.0).timeout
-
+	AudioManager.play_music_by_name("defeat")
+	await get_tree().create_timer(10.0).timeout
+	
 	hide()
