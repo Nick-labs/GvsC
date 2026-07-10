@@ -1,13 +1,30 @@
 extends Node2D
 
+@onready var intro: Intro = $Intro
+
 @onready var farm = $Farm
+@onready var farm_ui = $Farm/FarmUI
+
+
 @onready var defense = $Defense
 @onready var shop = $Shop
 
 
 func _ready():
-	_show_intro()
-	
+	_start_game()
+
+
+func _start_game():
+	farm.hide()
+	farm_ui.hide()
+	shop.hide()
+
+	await intro.play()
+
+	initialize()
+
+
+func initialize():
 	farm.farm_ui.shop_pressed.connect(show_shop)
 	farm.farm_ui.defense_pressed.connect(show_defense)
 	

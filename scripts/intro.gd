@@ -6,7 +6,7 @@ signal finished
 @export var slides: Array[IntroSlide]
 
 @onready var image = $TextureRect
-@onready var text = $RichTextLabel
+@onready var text = $ColorRect/RichTextLabel
 @onready var fade = $ColorRect
 
 

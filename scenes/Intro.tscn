@@ -6,6 +6,7 @@
 script = ExtResource("1_45dpb")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=692391853]
+z_index = 4094
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,6 +15,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1924282620]
+z_index = 4095
 custom_minimum_size = Vector2(1800, 200)
 anchors_preset = 7
 anchor_left = 0.5
@@ -27,6 +29,11 @@ offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1129585361]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1129585361]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
