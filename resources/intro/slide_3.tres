@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IntroSlide" format=3 uid="uid://ct5weve1qj7fi"]
+
+[ext_resource type="Script" uid="uid://dmjn35k24jf0n" path="res://scripts/intro_slide.gd" id="1_217mw"]
+[ext_resource type="Texture2D" uid="uid://1e5mk03wy0w0" path="res://assets/sprites/intro/cg-farm.png" id="1_sxakg"]
+
+[resource]
+script = ExtResource("1_217mw")
+image = ExtResource("1_sxakg")
+text = "Слайд 3
+"
+metadata/_custom_type_script = "uid://dmjn35k24jf0n"

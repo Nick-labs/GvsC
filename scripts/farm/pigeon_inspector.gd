@@ -13,7 +13,7 @@ var pigeon: Pigeon
 @onready var nickname_label : Label = $MarginContainer/VBoxContainer/HBoxContainer/NicknameLabel
 
 @onready var breed_label: Label = $MarginContainer/VBoxContainer/BreedLabel
-@onready var age_label: Label = $MarginContainer/VBoxContainer/AgeLabel
+#@onready var age_label: Label = $MarginContainer/VBoxContainer/AgeLabel
 @onready var price_label: Label = $MarginContainer/VBoxContainer/PriceLabel
 @onready var generation_label: Label = $MarginContainer/VBoxContainer/GenerationLabel
 

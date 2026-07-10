@@ -43,7 +43,10 @@ layout_mode = 2
 
 [node name="NicknameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1043838563]
 layout_mode = 2
-text = "Имя: "
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Имя:"
+horizontal_alignment = 1
 
 [node name="NicknameEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=358285975]
 custom_minimum_size = Vector2(300, 0)
@@ -53,14 +56,23 @@ caret_blink = true
 
 [node name="BreedLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=13143645]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=613884599]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="GenerationLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=412487825]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="EggContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1305080417]
@@ -75,25 +87,35 @@ stretch_mode = 5
 
 [node name="EggLabel" type="Label" parent="MarginContainer/VBoxContainer/EggContainer" unique_id=2026613819]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
 
 [node name="EggPriceLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1552220481]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="IntervalLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2044374666]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="EggsCounterLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1398975748]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
-
-[node name="Space2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1927456541]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
 
 [node name="SellButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1844214244]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "На продажу"
 
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer/NicknameEdit" to="." method="_on_nickname_edit_text_changed"]

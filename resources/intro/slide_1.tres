@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="IntroSlide" format=3 uid="uid://bl7y244silupl"]
+
+[ext_resource type="Script" uid="uid://dmjn35k24jf0n" path="res://scripts/intro_slide.gd" id="1_h4uph"]
+[ext_resource type="Texture2D" uid="uid://15n0f48dpjgi" path="res://assets/sprites/intro/cg-apocalypse.png" id="1_jwdtj"]
+
+[resource]
+script = ExtResource("1_h4uph")
+image = ExtResource("1_jwdtj")
+text = "Слайд 1"
+metadata/_custom_type_script = "uid://dmjn35k24jf0n"
