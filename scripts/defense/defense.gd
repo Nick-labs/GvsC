@@ -55,6 +55,10 @@ func set_active(value:bool):
 func _on_base_destroyed():
 	TimeManager.pause()
 	
+	PlayerData.money *= 0.2
+	
+	farm_destroyed.emit()
+	
 	enemy_spawner.remove_all_enemies()
 	await base_destroyed.play()
 	

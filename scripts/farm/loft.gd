@@ -66,6 +66,13 @@ func get_free_cell() -> Cell:
 	return null
 
 
+func kill_pigeons():
+	for cell in cells:
+		var pigeon := cell.take_pigeon()
+		if pigeon != null:
+			pigeon.queue_free()
+
+
 func add_pigeon(pigeon: Pigeon) -> bool:
 	var cell := get_free_cell()
 	

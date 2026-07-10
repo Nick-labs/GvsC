@@ -41,6 +41,8 @@ func initialize():
 	shop.farm_pressed.connect(show_farm)
 	
 	PlayerData.victory.connect(_on_victory)
+	
+	defense.farm_destroyed.connect(_on_farm_destroyed)
 
 
 func _show_intro():
@@ -116,3 +118,7 @@ func _on_victory():
 
 func _on_warning_requested(text, duration):
 	await UIManager.show_message(text, duration)
+
+
+func _on_farm_destroyed():
+	farm.loft.kill_pigeons()

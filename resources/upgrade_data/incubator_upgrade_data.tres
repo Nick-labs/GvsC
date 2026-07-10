@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_qhmb4")
 type = 4
+price_step = 200
 metadata/_custom_type_script = "uid://bdtlrvduouae5"
