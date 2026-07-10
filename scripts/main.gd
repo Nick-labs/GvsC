@@ -20,13 +20,17 @@ func _start_game():
 	shop.hide()
 	
 	TimeManager.pause()
-
+	
+	AudioManager.play_music_by_name("intro")
 	await intro.play()
 	
 	TimeManager.resume()
 
 	initialize()
-
+	
+	show_farm()
+	AudioManager.play_music_by_name("farm")
+	
 
 func initialize():
 	farm.farm_ui.shop_pressed.connect(show_shop)
@@ -37,12 +41,6 @@ func initialize():
 	shop.farm_pressed.connect(show_farm)
 	
 	PlayerData.victory.connect(_on_victory)
-
-	MusicPlayer.play_music(
-		preload("res://assets/audio/music/test4_OrganFluit.ogg")
-	)
-	
-	show_farm()
 
 
 func _show_intro():
