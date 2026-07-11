@@ -31,7 +31,7 @@ func _on_hour_passed(_day,_hour):
 	
 	if is_night() and not started:
 		await UIManager.show_warning(
-			"⚠ Чернобурки приближаются!",
+			"⚠ Silverfoxes Attack!",
 			5.0
 		)
 		
