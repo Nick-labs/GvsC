@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IntroSlide" format=3 uid="uid://ch0h8hkfcksye"]
+
+[ext_resource type="Script" uid="uid://dmjn35k24jf0n" path="res://scripts/intro_slide.gd" id="1_ut5ph"]
+[ext_resource type="Texture2D" uid="uid://bbpbmv38volur" path="res://assets/sprites/intro/poster.png" id="1_ycay8"]
+
+[resource]
+script = ExtResource("1_ut5ph")
+image = ExtResource("1_ycay8")
+duration = 999.0
+show_text = false
+metadata/_custom_type_script = "uid://dmjn35k24jf0n"
