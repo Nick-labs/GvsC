@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cdic46le38iei"]
+
+[ext_resource type="Script" uid="uid://ewcmxx5fs2br" path="res://autoload/species_registry.gd" id="1_ward7"]
+[ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="2_is2xj"]
+[ext_resource type="Resource" uid="uid://brbixvnswwcwa" path="res://resources/pigeons/tier_0/grey_pigeon.tres" id="3_xvof3"]
+[ext_resource type="Resource" uid="uid://r2x0ipbkn3u7" path="res://resources/pigeons/tier_0/white_pigeon.tres" id="4_qdoy8"]
+[ext_resource type="Resource" uid="uid://dfayk3e0r332e" path="res://resources/pigeons/tier_1/white_patsan_pigeon.tres" id="5_unxyw"]
+[ext_resource type="Resource" uid="uid://dwit8dif5gk5j" path="res://resources/pigeons/tier_1/grey_patsan_pigeon.tres" id="6_2b4ov"]
+[ext_resource type="Resource" uid="uid://bqxcljallr6aq" path="res://resources/pigeons/tier_2/creepy_pigeon.tres" id="7_auei3"]
+[ext_resource type="Resource" uid="uid://do36pe7wq3aae" path="res://resources/pigeons/tier_3/emo_pigeon.tres" id="8_ucmrf"]
+[ext_resource type="Resource" uid="uid://dioln16mx4n4j" path="res://resources/pigeons/tier_3/dsbm_patsan_pigeon.tres" id="9_56tbk"]
+[ext_resource type="Resource" uid="uid://dvheiqa3a2x25" path="res://resources/pigeons/tier_4/skebob_pigeon.tres" id="10_vjbb3"]
+[ext_resource type="Resource" uid="uid://dfqwqr7wnv3ut" path="res://resources/pigeons/tier_5/tjoy_pigeon.tres" id="11_wgrpf"]
+[ext_resource type="Resource" uid="uid://dxh5v1w3ny6yq" path="res://resources/pigeons/tier_1/black_patsan_pigeon.tres" id="12_i4h4g"]
+[ext_resource type="Resource" uid="uid://cqhdb4h7wpgx3" path="res://resources/pigeons/tier_2/ios_pigeon.tres" id="13_iuvqe"]
+[ext_resource type="Resource" uid="uid://rxg35cypdggv" path="res://resources/pigeons/tier_3/reimu_pigeon.tres" id="14_x1pom"]
+
+[node name="SpeicesRegistry" type="Node" unique_id=1657120194]
+script = ExtResource("1_ward7")
+hatchable_species = Array[ExtResource("2_is2xj")]([ExtResource("3_xvof3"), ExtResource("4_qdoy8"), ExtResource("5_unxyw"), ExtResource("6_2b4ov"), ExtResource("7_auei3"), ExtResource("8_ucmrf"), ExtResource("9_56tbk"), ExtResource("10_vjbb3"), ExtResource("11_wgrpf")])
+shop_species = Array[ExtResource("2_is2xj")]([ExtResource("12_i4h4g"), ExtResource("13_iuvqe"), ExtResource("14_x1pom")])

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EggData" format=3 uid="uid://b861jjvs4v8ti"]
+
+[ext_resource type="Script" uid="uid://qaw1oeacb4qf" path="res://scripts/farm/hatch_chance.gd" id="1_lkbuh"]
+[ext_resource type="Script" uid="uid://bju6ideq3gslp" path="res://scripts/farm/egg_data.gd" id="2_4mw1x"]
+[ext_resource type="Texture2D" uid="uid://crwq1kbxouvkt" path="res://assets/sprites/eggs/white-egg.png" id="3_4mw1x"]
+
+[sub_resource type="Resource" id="Resource_6rpr3"]
+script = ExtResource("1_lkbuh")
+chance = 60.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[sub_resource type="Resource" id="Resource_2fx06"]
+script = ExtResource("1_lkbuh")
+tier_offset = 1
+chance = 40.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[resource]
+script = ExtResource("2_4mw1x")
+name = "White egg"
+texture = ExtResource("3_4mw1x")
+hatch_time_minutes = 30.0
+hatch_chances = Array[ExtResource("1_lkbuh")]([SubResource("Resource_6rpr3"), SubResource("Resource_2fx06")])
+metadata/_custom_type_script = "uid://bju6ideq3gslp"

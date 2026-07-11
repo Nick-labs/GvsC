@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cl4oy8r5r6k7y"]
+
+[ext_resource type="Script" uid="uid://doc2k2yvug2w5" path="res://scripts/defense/fox.gd" id="1_513aj"]
+[ext_resource type="Texture2D" uid="uid://75gycylbayhm" path="res://assets/sprites/foxes/default/fox-default.png" id="2_5bjd6"]
+[ext_resource type="Texture2D" uid="uid://ck1s50pejc444" path="res://assets/sprites/foxes/default/fox-moving.png" id="2_d231h"]
+[ext_resource type="Texture2D" uid="uid://ddgo3mn46ro8l" path="res://assets/sprites/foxes/default/fox-attacking.png" id="3_rob6d"]
+[ext_resource type="Texture2D" uid="uid://dr5ml41gu2ohd" path="res://assets/sprites/foxes/default/fox-defeat.png" id="4_e0lkv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybmor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5bjd6")
+}, {
+"duration": 2.6,
+"texture": ExtResource("3_rob6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bjd6")
+}],
+"loop": 2,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5bjd6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e0lkv")
+}],
+"loop": 1,
+"name": &"defeat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d231h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bjd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d231h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bjd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d231h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d231h")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d231h"]
+size = Vector2(106, 50)
+
+[node name="Fox" type="CharacterBody2D" unique_id=301998062]
+script = ExtResource("1_513aj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=303326908]
+position = Vector2(-0.82812464, 2.1457672e-06)
+scale = Vector2(0.1418396, 0.1396648)
+sprite_frames = SubResource("SpriteFrames_ybmor")
+animation = &"defeat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104450122]
+shape = SubResource("RectangleShape2D_d231h")
+
+[node name="HPBar" type="ProgressBar" parent="." unique_id=939448859]
+offset_left = 42.467834
+offset_top = -36.0
+offset_right = 50.521744
+offset_bottom = 49.016716
+rotation = 1.5707964
+fill_mode = 3
+show_percentage = false

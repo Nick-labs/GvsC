@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IntroSlide" format=3 uid="uid://bxg37hl1qwwcj"]
+
+[ext_resource type="Texture2D" uid="uid://chr55uy34kn8p" path="res://assets/sprites/intro/cg-post.png" id="1_4kglm"]
+[ext_resource type="Script" uid="uid://dmjn35k24jf0n" path="res://scripts/intro_slide.gd" id="1_x155e"]
+
+[resource]
+script = ExtResource("1_x155e")
+image = ExtResource("1_4kglm")
+text = "At first they were just wild. But every winter made them fiercer. But they know how to wait."
+duration = 999.0
+metadata/_custom_type_script = "uid://dmjn35k24jf0n"

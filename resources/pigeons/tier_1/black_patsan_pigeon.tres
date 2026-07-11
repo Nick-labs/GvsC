@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://dxh5v1w3ny6yq"]
+
+[ext_resource type="Resource" uid="uid://bajt1jjpnp7n2" path="res://resources/eggs/tier_1/green_easter_egg.tres" id="1_65nmk"]
+[ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="1_kasvb"]
+[ext_resource type="Texture2D" uid="uid://cdyw1hgwvj34m" path="res://assets/sprites/pigeons/black-patsan.png" id="3_b41rl"]
+
+[resource]
+script = ExtResource("1_kasvb")
+breed_name = "Black patsan"
+sprite = ExtResource("3_b41rl")
+price = 10
+egg_interval_minutes = 12
+egg_template = ExtResource("1_65nmk")
+tier = 1
+metadata/_custom_type_script = "uid://bmosjtxnab5ud"

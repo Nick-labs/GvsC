@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://7w326qxatf0"]
+
+[ext_resource type="Script" uid="uid://cs5aprbok82mg" path="res://scripts/farm/egg.gd" id="1_koaw8"]
+[ext_resource type="Texture2D" uid="uid://crwq1kbxouvkt" path="res://assets/sprites/eggs/white-egg.png" id="2_koaw8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_camgg"]
+radius = 20.09975
+
+[node name="Egg" type="Area2D" unique_id=1368375673]
+z_index = -100
+z_as_relative = false
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_koaw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=110212041]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_koaw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334054719]
+shape = SubResource("CircleShape2D_camgg")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

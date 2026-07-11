@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopCatalog" format=3 uid="uid://csgw1nwlegj0s"]
+
+[ext_resource type="Script" uid="uid://bbq16g04eaq8d" path="res://scripts/shop/shop_offer.gd" id="1_bx62j"]
+[ext_resource type="Script" uid="uid://tciwmhbywhsv" path="res://autoload/shop_catalog.gd" id="2_hw8ha"]
+[ext_resource type="Resource" uid="uid://5h5eaa87qx2j" path="res://resources/shop_offers/upgrade_offers/backpack_upgrade_offer.tres" id="2_p4q8f"]
+[ext_resource type="Resource" uid="uid://cfthxk6lb8yi8" path="res://resources/shop_offers/upgrade_offers/eggbasket_upgrade_offer.tres" id="7_4ijf1"]
+[ext_resource type="Resource" uid="uid://c4lkfrmjt7ow6" path="res://resources/shop_offers/upgrade_offers/nest_upgrade_offer.tres" id="8_o4gwt"]
+[ext_resource type="Resource" uid="uid://bgvpwrxd3pn1c" path="res://resources/shop_offers/upgrade_offers/loft_upgrade_offer.tres" id="9_cf1yk"]
+[ext_resource type="Resource" uid="uid://b36o8i3xxguw2" path="res://resources/shop_offers/upgrade_offers/incubator_upgrade_offer.tres" id="10_wc4hl"]
+
+[resource]
+script = ExtResource("2_hw8ha")
+offers = Array[ExtResource("1_bx62j")]([ExtResource("2_p4q8f"), ExtResource("7_4ijf1"), ExtResource("8_o4gwt"), ExtResource("9_cf1yk"), ExtResource("10_wc4hl")])
+metadata/_custom_type_script = "uid://tciwmhbywhsv"

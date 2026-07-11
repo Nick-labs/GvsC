@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dk3xjxyovwybq"]
+
+[ext_resource type="Script" uid="uid://c1hgrxdx61h37" path="res://scripts/shop/shop_item.gd" id="1_3rqce"]
+[ext_resource type="Texture2D" uid="uid://b1ompwtpeqyxa" path="res://assets/sprites/ui/windows/window1.png" id="2_35nb3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_camgg"]
+size = Vector2(200, 200)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_camgg"]
+texture = ExtResource("2_35nb3")
+
+[node name="ShopItem" type="Area2D" unique_id=1695072338]
+z_index = 100
+script = ExtResource("1_3rqce")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=13428175]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1267680543]
+shape = SubResource("RectangleShape2D_camgg")
+
+[node name="PriceLabel" type="Label" parent="." unique_id=1643156207]
+z_index = 4096
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 109.0
+offset_right = 20.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "0"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1528743053]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = 101.0
+offset_right = 64.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_camgg")
+metadata/_edit_lock_ = true

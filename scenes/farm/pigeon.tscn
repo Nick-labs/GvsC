@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://0vqpv2qnkwkc"]
+
+[ext_resource type="Script" uid="uid://bxk06ek07qgkh" path="res://scripts/farm/pigeon.gd" id="1_ltfnt"]
+[ext_resource type="Resource" uid="uid://brbixvnswwcwa" path="res://resources/pigeons/tier_0/grey_pigeon.tres" id="2_q2ogf"]
+[ext_resource type="Texture2D" uid="uid://clkwuu48ohvi3" path="res://assets/sprites/pigeons/test_pigeon.png" id="3_q2ogf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2ogf"]
+size = Vector2(200, 200)
+
+[node name="Pigeon" type="Area2D" unique_id=1765929669]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_ltfnt")
+data = ExtResource("2_q2ogf")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=545107183]
+position = Vector2(-20, -85)
+texture = ExtResource("3_q2ogf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1583731603]
+position = Vector2(0, -85)
+shape = SubResource("RectangleShape2D_q2ogf")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

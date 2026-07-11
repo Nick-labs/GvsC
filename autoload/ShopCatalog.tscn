@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://sy74eoj5plvc"]
+
+[ext_resource type="Script" uid="uid://tciwmhbywhsv" path="res://autoload/shop_catalog.gd" id="1_fypts"]
+[ext_resource type="Script" uid="uid://bbq16g04eaq8d" path="res://scripts/shop/shop_offer.gd" id="2_qr2dn"]
+[ext_resource type="Resource" uid="uid://5h5eaa87qx2j" path="res://resources/shop_offers/upgrade_offers/backpack_upgrade_offer.tres" id="3_opi8u"]
+
+[node name="ShopCatalog" type="Node" unique_id=836580248]
+script = ExtResource("1_fypts")
+offers = Array[ExtResource("2_qr2dn")]([ExtResource("3_opi8u")])

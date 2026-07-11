@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EggData" format=3 uid="uid://bajt1jjpnp7n2"]
+
+[ext_resource type="Script" uid="uid://qaw1oeacb4qf" path="res://scripts/farm/hatch_chance.gd" id="1_ork0y"]
+[ext_resource type="Script" uid="uid://bju6ideq3gslp" path="res://scripts/farm/egg_data.gd" id="2_amnpq"]
+[ext_resource type="Texture2D" uid="uid://un1x08wtkvmy" path="res://assets/sprites/eggs/green-egg.png" id="3_buhej"]
+
+[sub_resource type="Resource" id="Resource_glhhd"]
+script = ExtResource("1_ork0y")
+tier_offset = -1
+chance = 20.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[sub_resource type="Resource" id="Resource_6rpr3"]
+script = ExtResource("1_ork0y")
+chance = 70.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[sub_resource type="Resource" id="Resource_2fx06"]
+script = ExtResource("1_ork0y")
+tier_offset = 1
+chance = 10.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[resource]
+script = ExtResource("2_amnpq")
+name = "Green Easter egg"
+price = 2
+texture = ExtResource("3_buhej")
+hatch_time_minutes = 40.0
+tier = 1
+hatch_chances = Array[ExtResource("1_ork0y")]([SubResource("Resource_glhhd"), SubResource("Resource_6rpr3"), SubResource("Resource_2fx06")])
+metadata/_custom_type_script = "uid://bju6ideq3gslp"

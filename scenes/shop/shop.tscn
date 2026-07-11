@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://d03d067j2iyjj"]
+
+[ext_resource type="Texture2D" uid="uid://ba3clmm8jsgtx" path="res://assets/sprites/shop/sunset/shop-back-sunset.png" id="1_jp048"]
+[ext_resource type="Script" uid="uid://cdrmawgkd7mh4" path="res://scripts/shop/shop.gd" id="1_ptf86"]
+[ext_resource type="Texture2D" uid="uid://eagr0t7l63xe" path="res://assets/sprites/shop/sunset/shop-sunset.png" id="2_ctpgp"]
+[ext_resource type="Resource" uid="uid://csgw1nwlegj0s" path="res://resources/shop_catalog/default_catalog.tres" id="2_tp26b"]
+[ext_resource type="PackedScene" uid="uid://dk3xjxyovwybq" path="res://scenes/shop/shop_item.tscn" id="2_xcdpw"]
+[ext_resource type="Script" uid="uid://bomkkytlaf3uk" path="res://scripts/shop/shopkeeper.gd" id="3_ptf86"]
+[ext_resource type="Texture2D" uid="uid://xnaa15w8xj3r" path="res://assets/sprites/shop/sunset/assistant-sunset.png" id="4_ge4d2"]
+[ext_resource type="Texture2D" uid="uid://bk4up0ekdx2nw" path="res://assets/sprites/shop/sunset/assistant-confused-sunset.png" id="5_ctpgp"]
+[ext_resource type="PackedScene" uid="uid://dri8ayokswgmw" path="res://scripts/shop/purchase_dialog.tscn" id="7_ge4d2"]
+[ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="9_vk20h"]
+[ext_resource type="Texture2D" uid="uid://brja54e30y7u8" path="res://assets/sprites/ui/windows/window1_st.png" id="10_8qn5i"]
+[ext_resource type="Texture2D" uid="uid://ryqgt3tpq7o0" path="res://assets/sprites/ui/windows/window1_pressed.png" id="11_g6lcs"]
+[ext_resource type="Texture2D" uid="uid://dtk7k36o8bsb1" path="res://assets/sprites/ui/windows/window1_hovered.png" id="12_131kw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
+size = Vector2(514, 540.5)
+
+[sub_resource type="Theme" id="Theme_lqwvk"]
+default_font = ExtResource("9_vk20h")
+default_font_size = 40
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7mnk"]
+texture = ExtResource("10_8qn5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6lcs"]
+texture = ExtResource("11_g6lcs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_131kw"]
+texture = ExtResource("12_131kw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1c7u"]
+texture = ExtResource("10_8qn5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lwald"]
+texture = ExtResource("11_g6lcs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u54yb"]
+texture = ExtResource("12_131kw")
+
+[node name="Shop" type="Node2D" unique_id=1571493533]
+script = ExtResource("1_ptf86")
+catalog = ExtResource("2_tp26b")
+shop_item_scene = ExtResource("2_xcdpw")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=926839609]
+position = Vector2(956.99994, 536)
+scale = Vector2(0.7546874, 0.75972223)
+texture = ExtResource("1_jp048")
+metadata/_edit_lock_ = true
+
+[node name="Counter" type="Sprite2D" parent="." unique_id=2000563239]
+z_index = 2
+position = Vector2(959.99994, 538)
+scale = Vector2(0.759375, 0.7583334)
+texture = ExtResource("2_ctpgp")
+
+[node name="Shopkeeper" type="Area2D" parent="." unique_id=4643410]
+z_index = 1
+script = ExtResource("3_ptf86")
+normal_texture = ExtResource("4_ge4d2")
+embarrassed_texture = ExtResource("5_ctpgp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shopkeeper" unique_id=608705451]
+position = Vector2(888.00006, 550)
+scale = Vector2(0.76269525, 0.7666667)
+texture = ExtResource("4_ge4d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper" unique_id=115237581]
+position = Vector2(535, 440)
+shape = SubResource("RectangleShape2D_7r02r")
+
+[node name="DialogPoint" type="Marker2D" parent="Shopkeeper" unique_id=2041131413]
+position = Vector2(800, 200)
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="." unique_id=463821339]
+offset_left = 1577.0
+offset_top = 152.0
+offset_right = 1791.0
+offset_bottom = 263.0
+theme = SubResource("Theme_lqwvk")
+
+[node name="BackButton" type="Button" parent="ButtonsContainer" unique_id=2036288464]
+z_index = 1000
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_c7mnk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g6lcs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_131kw")
+text = "Back"
+
+[node name="SellAllButton" type="Button" parent="ButtonsContainer" unique_id=13122615]
+z_index = 1000
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_y1c7u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lwald")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u54yb")
+text = "Sell"
+
+[node name="CounterPoints" type="Node2D" parent="." unique_id=855976284]
+
+[node name="Marker1" type="Marker2D" parent="CounterPoints" unique_id=2143249321]
+position = Vector2(300, 820)
+
+[node name="Marker2" type="Marker2D" parent="CounterPoints" unique_id=865246090]
+position = Vector2(600, 820)
+
+[node name="Marker3" type="Marker2D" parent="CounterPoints" unique_id=1701453180]
+position = Vector2(900, 820)
+
+[node name="Marker4" type="Marker2D" parent="CounterPoints" unique_id=40018259]
+position = Vector2(1200, 820)
+
+[node name="Marker5" type="Marker2D" parent="CounterPoints" unique_id=137998077]
+position = Vector2(1500, 820)
+
+[node name="Marker6" type="Marker2D" parent="CounterPoints" unique_id=863317777]
+position = Vector2(900, 600)
+
+[node name="Marker7" type="Marker2D" parent="CounterPoints" unique_id=884370736]
+position = Vector2(1200, 600)
+
+[node name="Marker8" type="Marker2D" parent="CounterPoints" unique_id=1610975447]
+position = Vector2(1500, 600)
+
+[node name="Marker9" type="Marker2D" parent="CounterPoints" unique_id=1265035747]
+position = Vector2(1200, 380)
+
+[node name="Marker10" type="Marker2D" parent="CounterPoints" unique_id=1253147293]
+position = Vector2(1500, 380)
+
+[node name="PurchaseDialog" parent="." unique_id=1017263019 instance=ExtResource("7_ge4d2")]
+visible = false
+
+[connection signal="input_event" from="Shopkeeper" to="Shopkeeper" method="_on_input_event"]
+[connection signal="pressed" from="ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/SellAllButton" to="." method="_on_sell_all_button_pressed"]

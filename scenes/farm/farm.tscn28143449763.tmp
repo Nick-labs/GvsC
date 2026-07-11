@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c6go4j3hutskp"]
+
+[ext_resource type="Script" uid="uid://bj3tejodjtglo" path="res://scripts/farm/farm.gd" id="1_a4t06"]
+[ext_resource type="PackedScene" uid="uid://bmejj6a5xgtxu" path="res://scenes/farm/loft.tscn" id="2_wgrn4"]
+[ext_resource type="PackedScene" uid="uid://ba66ct4755evq" path="res://scenes/farm/farm_ui.tscn" id="3_fev0l"]
+[ext_resource type="PackedScene" uid="uid://c015lfotxq3w4" path="res://autoload/MusicPlayer.tscn" id="4_36fi7"]
+[ext_resource type="AudioStream" uid="uid://ccrpjc02bb054" path="res://assets/audio/music/test4_OrganFluit.ogg" id="5_36fi7"]
+[ext_resource type="PackedScene" uid="uid://dlnktbeh75sqr" path="res://scenes/farm/egg_basket.tscn" id="6_fhtoc"]
+[ext_resource type="PackedScene" uid="uid://cpewe02rkskak" path="res://scenes/farm/pigeon_factory.tscn" id="7_f0ucu"]
+[ext_resource type="Script" uid="uid://dngphhg4b2ddo" path="res://scripts/farm/incubator.gd" id="8_eed4j"]
+[ext_resource type="PackedScene" uid="uid://dgik247pn2v6w" path="res://scenes/farm/incubator_slot.tscn" id="9_k484s"]
+[ext_resource type="Script" uid="uid://11aeoapobylm" path="res://scripts/farm/drag_manager.gd" id="10_51x8p"]
+
+[node name="Farm" type="Node2D" unique_id=1015373910]
+script = ExtResource("1_a4t06")
+
+[node name="Loft" parent="." unique_id=1552193297 instance=ExtResource("2_wgrn4")]
+
+[node name="PigeonFactory" parent="." unique_id=208138106 instance=ExtResource("7_f0ucu")]
+
+[node name="EggBasket" parent="." unique_id=218532551 instance=ExtResource("6_fhtoc")]
+position = Vector2(249, 881)
+scale = Vector2(0.8, 0.8)
+
+[node name="Incubator" type="Node2D" parent="." unique_id=519888172]
+position = Vector2(200, 200)
+script = ExtResource("8_eed4j")
+slot_scene = ExtResource("9_k484s")
+
+[node name="DragManager" type="Node" parent="." unique_id=1368010249]
+script = ExtResource("10_51x8p")
+
+[node name="MusicPlayer" parent="." unique_id=1334423811 instance=ExtResource("4_36fi7")]
+stream = ExtResource("5_36fi7")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2044596886]
+anchor_mode = 0
+
+[node name="FarmUI" parent="." unique_id=1160712630 instance=ExtResource("3_fev0l")]

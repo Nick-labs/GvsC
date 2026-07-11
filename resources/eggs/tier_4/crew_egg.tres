@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EggData" format=3 uid="uid://bt24vuukia4e5"]
+
+[ext_resource type="Script" uid="uid://qaw1oeacb4qf" path="res://scripts/farm/hatch_chance.gd" id="1_b63wr"]
+[ext_resource type="Script" uid="uid://bju6ideq3gslp" path="res://scripts/farm/egg_data.gd" id="2_o1jy1"]
+[ext_resource type="Texture2D" uid="uid://b7a2m0pgccw0i" path="res://assets/sprites/eggs/notkinder-egg.png" id="3_o1jy1"]
+
+[sub_resource type="Resource" id="Resource_85swq"]
+script = ExtResource("1_b63wr")
+tier_offset = -1
+chance = 90.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[sub_resource type="Resource" id="Resource_m2ium"]
+script = ExtResource("1_b63wr")
+chance = 7.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[sub_resource type="Resource" id="Resource_0vcnt"]
+script = ExtResource("1_b63wr")
+tier_offset = 1
+chance = 3.0
+metadata/_custom_type_script = "uid://qaw1oeacb4qf"
+
+[resource]
+script = ExtResource("2_o1jy1")
+name = "Crew egg"
+price = 10
+texture = ExtResource("3_o1jy1")
+hatch_time_minutes = 70.0
+tier = 4
+hatch_chances = Array[ExtResource("1_b63wr")]([SubResource("Resource_85swq"), SubResource("Resource_m2ium"), SubResource("Resource_0vcnt")])
+metadata/_custom_type_script = "uid://bju6ideq3gslp"

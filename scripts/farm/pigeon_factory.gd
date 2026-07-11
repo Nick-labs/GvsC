@@ -1,0 +1,26 @@
+extends Node
+
+@export var pigeon_scene: PackedScene
+
+
+func create_from_template(template: PigeonData) -> Pigeon:
+	var pigeon := pigeon_scene.instantiate() as Pigeon
+	pigeon.data = template.duplicate(true)
+	return pigeon
+
+
+func create_egg(parent: PigeonData) -> EggData:
+	var egg := parent.egg_template.duplicate(true)
+	egg.parent_data = parent
+	return egg
+
+
+func create_from_egg(egg: EggData) -> Pigeon:
+	var template: PigeonData = SpeciesRegistry.get_random_hatchable_by_egg(egg)
+	
+	var pigeon := pigeon_scene.instantiate() as Pigeon
+	pigeon.data = template.duplicate(true)
+	
+	pigeon.data.generation = egg.parent_data.generation + 1
+	
+	return pigeon

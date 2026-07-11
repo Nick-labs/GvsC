@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PigeonData" format=3 uid="uid://dvheiqa3a2x25"]
+
+[ext_resource type="Resource" uid="uid://bt24vuukia4e5" path="res://resources/eggs/tier_4/crew_egg.tres" id="1_v7tiv"]
+[ext_resource type="Script" uid="uid://bmosjtxnab5ud" path="res://scripts/farm/pigeon_data.gd" id="2_jn73l"]
+[ext_resource type="Texture2D" uid="uid://uknk72ttf6e5" path="res://assets/sprites/pigeons/skebob.png" id="3_6udpq"]
+
+[resource]
+script = ExtResource("2_jn73l")
+breed_name = "Skebob"
+sprite = ExtResource("3_6udpq")
+price = 100
+egg_interval_minutes = 5
+egg_template = ExtResource("1_v7tiv")
+tier = 4
+metadata/_custom_type_script = "uid://bmosjtxnab5ud"
