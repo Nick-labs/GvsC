@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="IntroSlide" format=3 uid="uid://ch0h8hkfcksye"]
-
-[ext_resource type="Script" uid="uid://dmjn35k24jf0n" path="res://scripts/intro_slide.gd" id="1_ut5ph"]
-
-[resource]
-script = ExtResource("1_ut5ph")
-metadata/_custom_type_script = "uid://dmjn35k24jf0n"

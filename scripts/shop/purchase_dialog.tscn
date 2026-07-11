@@ -95,7 +95,7 @@ size_flags_vertical = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_ys0pl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_41gmg")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6f8eb")
-text = "Да"
+text = "Yes"
 
 [node name="VSeparator" type="VSeparator" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=299131244]
 custom_minimum_size = Vector2(80, 0)
@@ -109,7 +109,7 @@ size_flags_vertical = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_cpnvs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tktnu")
 theme_override_styles/hover = SubResource("StyleBoxTexture_42lts")
-text = "Нет"
+text = "No"
 
 [connection signal="pressed" from="CenterContainer/Panel/MarginContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/MarginContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

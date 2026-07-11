@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_66pss")
-title = "инкубатор"
+title = "incubator"
 icon = ExtResource("2_10hag")
 type = 2
 tier = 1

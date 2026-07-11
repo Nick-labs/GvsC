@@ -31,6 +31,7 @@ func _start_game():
 	show_farm()
 	AudioManager.play_music_by_name("farm")
 	
+	_show_welcome()
 
 func initialize():
 	farm.farm_ui.shop_pressed.connect(show_shop)
@@ -45,21 +46,19 @@ func initialize():
 	defense.farm_destroyed.connect(_on_farm_destroyed)
 
 
-func _show_intro():
+func _show_welcome():
 	var dialog := AcceptDialog.new()
 
-	dialog.title = "Добро пожаловать!"
+	dialog.title = "Welcome to the game!"
 	dialog.dialog_text = \
-		"Ваша цель — накопить 5000 грошей.\n\n" + \
-		"Разводите голубей, выводя более редкие виды,\nсобирайте более редкие и дорогие яйца, " + \
-		"продавайте и то, и другое."
+		"Your goal is to accumulate 5,000 pennies.\n\n" + \
+		"Breed rarer pigeon species,\ncollect eggs, and sell them."
 
 	add_child(dialog)
 	dialog.popup_centered()
 
 
 func _connect_farm_ui(ui):
-	print("connect")
 	ui.shop_pressed.connect(show_shop)
 	ui.defense_pressed.connect(show_defense)
 
@@ -109,7 +108,7 @@ func show_shop():
 func _on_victory():
 	var dialog := AcceptDialog.new()
 
-	dialog.dialog_text = "Победа! Вы накопили 5000 грошей!"
+	dialog.dialog_text = "Win!"
 
 	add_child(dialog)
 

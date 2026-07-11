@@ -60,7 +60,7 @@ layout_mode = 2
 [node name="DayLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=733163488]
 layout_mode = 2
 size_flags_vertical = 1
-text = "День"
+text = "Day"
 
 [node name="TimeLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1690426091]
 layout_mode = 2
@@ -74,4 +74,4 @@ theme_override_constants/separation = 60
 [node name="MoneyLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=992358589]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Грошей"
+text = "pennies"
