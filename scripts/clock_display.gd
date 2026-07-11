@@ -22,8 +22,8 @@ func _on_minute_passed(day: int, hour: int, minute: int) -> void:
 func _update_labels() -> void:
 	day_label.text = "Day %d" % TimeManager.day
 	time_label.text = "%02d:%02d" % [TimeManager.hour, TimeManager.minute]
-	money_label.text = "%d грошей" % PlayerData.money
+	money_label.text = "%d pennies" % PlayerData.money
 
 
 func set_money(money: int):
-	money_label.text = "%d грошей" % money
+	money_label.text = "%d pennies" % money

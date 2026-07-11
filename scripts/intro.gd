@@ -10,6 +10,8 @@ signal next_slide
 @onready var slide: Control = $Slide
 @onready var image: TextureRect = $Slide/TextureRect
 @onready var text: RichTextLabel = $Slide/MarginContainer/Panel/MarginContainer/RichTextLabel
+@onready var text_panel: Panel = $Slide/MarginContainer/Panel
+
 
 var waiting := false
 
@@ -24,8 +26,8 @@ func play():
 	for data in slides:
 		image.texture = data.image
 		text.text = data.text
-
-		await _show_slide()
+		
+		await _show_slide(data.show_text)
 
 		await _wait_for_next_slide(data.duration)
 
@@ -35,7 +37,7 @@ func play():
 	finished.emit()
 
 
-func _show_slide():
+func _show_slide(show_text: bool):
 	slide.modulate.a = 0
 	slide.position.y = 20
 
@@ -48,6 +50,8 @@ func _show_slide():
 		1.0,
 		transition_time
 	)
+	
+	text_panel.visible = show_text
 
 	tween.tween_property(
 		slide,
@@ -55,7 +59,7 @@ func _show_slide():
 		0.0,
 		transition_time
 	)
-
+	
 	await tween.finished
 
 

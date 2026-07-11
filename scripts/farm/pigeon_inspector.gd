@@ -42,18 +42,18 @@ func show_pigeon(new_pigeon: Pigeon):
 	portrait.texture = data.sprite
 	
 	nickname_edit.text = data.nickname
-	breed_label.text = "Порода: " + data.breed_name
+	breed_label.text = "Breed: " + data.breed_name
 	#age_label.text = "Возраст: " + str(data.age)
-	price_label.text = "Цена: " + str(data.price) + " грошей"
-	generation_label.text = "Поколение: " + str(data.generation)
+	price_label.text = "Price: " + str(data.price) + " pennies"
+	generation_label.text = "Generation: " + str(data.generation)
 	
 	egg_portrait.texture = data.egg_template.texture
 	egg_label.text = data.egg_template.name
 	
-	egg_price_label.text = "Цена яиц: " + str(data.egg_template.price)
-	interval_label.text = "Яйценоскость: %.2f яиц в час" % (60.0 / data.egg_interval_minutes)
+	egg_price_label.text = "Egg price: " + str(data.egg_template.price)
+	interval_label.text = "Egg production: %.2f eggs per hour" % (60.0 / data.egg_interval_minutes)
 	
-	eggs_counter_label.text = "Яиц снесено: " + str(data.eggs_laid)
+	eggs_counter_label.text = "Eggs produced: " + str(data.eggs_laid)
 	
 	content.show()
 	
@@ -65,14 +65,14 @@ func show_pigeon(new_pigeon: Pigeon):
 func update_labels():
 	var data := pigeon.data
 	
-	breed_label.text = "Порода: " + data.breed_name
+	breed_label.text = "Breed: " + data.breed_name
 	#age_label.text = "Возраст: " + str(data.age)
-	price_label.text = "Цена: " + str(data.price) + " грошей"
-	eggs_counter_label.text = "Яиц снесено: " + str(data.eggs_laid)
-	generation_label.text = "Поколение: " + str(data.generation)
-	egg_price_label.text = "Цена яйца: " + str(data.egg_template.price)
-	interval_label.text = "Яйценоскость: %.2f яиц в час" % (60.0 / data.egg_interval_minutes)
-	eggs_counter_label.text = "Яиц снесено: " + str(data.eggs_laid)
+	price_label.text = "Price: " + str(data.price) + " pennies"
+	eggs_counter_label.text = "Eggs produced: " + str(data.eggs_laid)
+	generation_label.text = "Generation: " + str(data.generation)
+	egg_price_label.text = "Egg price: " + str(data.egg_template.price)
+	interval_label.text = "Egg production: %.2f eggs per hour" % (60.0 / data.egg_interval_minutes)
+	eggs_counter_label.text = "Eggs produced: " + str(data.eggs_laid)
 
 
 func clear():

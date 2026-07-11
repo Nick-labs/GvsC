@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bb0a2sh7vdqng" path="res://scenes/Intro.tscn" id="5_vcsgt"]
 [ext_resource type="Script" uid="uid://dmjn35k24jf0n" path="res://scripts/intro_slide.gd" id="6_q8u5g"]
 [ext_resource type="Resource" uid="uid://bl7y244silupl" path="res://resources/intro/slide_1.tres" id="7_lhr70"]
+[ext_resource type="Resource" uid="uid://ch0h8hkfcksye" path="res://resources/intro/slide_0.tres" id="7_wp0k4"]
 [ext_resource type="Resource" uid="uid://bxg37hl1qwwcj" path="res://resources/intro/slide_2.tres" id="8_wp0k4"]
 [ext_resource type="Resource" uid="uid://ct5weve1qj7fi" path="res://resources/intro/slide_3.tres" id="9_bjd11"]
 
@@ -20,4 +21,4 @@ script = ExtResource("1_rarhs")
 [node name="Shop" parent="." unique_id=1571493533 instance=ExtResource("3_rarhs")]
 
 [node name="Intro" parent="." unique_id=1334326431 instance=ExtResource("5_vcsgt")]
-slides = Array[ExtResource("6_q8u5g")]([ExtResource("7_lhr70"), ExtResource("8_wp0k4"), ExtResource("9_bjd11")])
+slides = Array[ExtResource("6_q8u5g")]([ExtResource("7_wp0k4"), ExtResource("7_lhr70"), ExtResource("8_wp0k4"), ExtResource("9_bjd11")])

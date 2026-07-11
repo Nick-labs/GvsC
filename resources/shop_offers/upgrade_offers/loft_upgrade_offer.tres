@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_cso1x")
-title = "купить гнездо из медной проволоки"
+title = "copper wire nest"
 icon = ExtResource("2_g7x57")
 type = 2
 tier = 1
