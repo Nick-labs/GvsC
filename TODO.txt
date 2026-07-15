@@ -50,7 +50,9 @@ TODO на 15.07:
 	[x] Localize Farm scene
 	[x] Localize Shop scene
 	[x] Localize Defense scene
-	[ ] Localize Intro scene
+	[X] Localize Intro scene
 	[x] Localize eggs
 	[x] Localize pigeons
+	[ ] Localize upgrades
+	[ ] Localize attack warning
 	[ ] Translate en to ru

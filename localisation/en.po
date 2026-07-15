@@ -3,6 +3,17 @@ msgstr ""
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
+# Intro
+
+msgid "intro.slide_1"
+msgstr "They say that the world collapsed because of the \"White Noise\". But I know it's all the foxes' fault. Until the end of the world, they were bred for fur coats. And now they're taking revenge."
+
+msgid "intro.slide_2"
+msgstr "At first they were just wild. But every winter made them fiercer. But they know how to wait."
+
+msgid "intro.slide_3"
+msgstr "I built my farm out of blue wood. They say foxes can't stand this color. But I still see them watching me. They're just waiting for me to fall asleep. Every night they come to the fence. They need my eggs and my birds. I have an old crossbow on the roof to keep them away from the gate. Let's see if I can hold out for another day..."
+
 # Clock display
 
 msgid "clock.day"

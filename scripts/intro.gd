@@ -31,7 +31,7 @@ func play():
 
 	for data in slides:
 		image.texture = data.image
-		text.text = data.text
+		text.text = tr(data.text_key)
 		
 		await _show_slide(data.show_text)
 
