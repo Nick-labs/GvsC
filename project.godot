@@ -67,6 +67,10 @@ shoot={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localisation/en.po", "res://localisation/ru.po")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://qaw1oeacb4qf"
 
 [resource]
 script = ExtResource("2_4mw1x")
-name = "White egg"
+name_key = "egg.white.name"
 texture = ExtResource("3_4mw1x")
 hatch_time_minutes = 30.0
 hatch_chances = Array[ExtResource("1_lkbuh")]([SubResource("Resource_6rpr3"), SubResource("Resource_2fx06")])

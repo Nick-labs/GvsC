@@ -9,6 +9,7 @@ default_font_size = 48
 
 [node name="Intro" type="CanvasLayer" unique_id=1334326431]
 script = ExtResource("1_45dpb")
+skip_intro = true
 
 [node name="Slide" type="Control" parent="." unique_id=2043755719]
 layout_mode = 3

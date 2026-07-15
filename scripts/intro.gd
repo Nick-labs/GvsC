@@ -15,12 +15,18 @@ signal next_slide
 
 var waiting := false
 
+@export var skip_intro := false
+
 
 func _ready():
 	hide()
 
 
 func play():
+	if skip_intro:
+		finished.emit()
+		return
+	
 	show()
 
 	for data in slides:

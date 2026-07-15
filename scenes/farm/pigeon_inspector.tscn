@@ -3,6 +3,8 @@
 [ext_resource type="FontFile" uid="uid://dvw6yq4oggpu" path="res://assets/fonts/Tsap-Tsarap.ttf" id="1_i5hwu"]
 [ext_resource type="Script" uid="uid://bdmhlmfwai2v8" path="res://scripts/farm/pigeon_inspector.gd" id="1_pjm7s"]
 [ext_resource type="Texture2D" uid="uid://c78ge3sxntmtp" path="res://assets/sprites/ui/windows/window2.png" id="2_jxvaq"]
+[ext_resource type="Script" uid="uid://wi7cmxhwrwva" path="res://localisation/localized_controls/localized_label.gd" id="4_ag2dr"]
+[ext_resource type="Script" uid="uid://cc0vj1unjojuj" path="res://localisation/localized_controls/localized_button.gd" id="4_jxvaq"]
 
 [sub_resource type="Theme" id="Theme_8qn5i"]
 default_font = ExtResource("1_i5hwu")
@@ -41,12 +43,15 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1887897250]
 layout_mode = 2
 
-[node name="NicknameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1043838563]
+[node name="NicknameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=735251213]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "Name:"
 horizontal_alignment = 1
+script = ExtResource("4_ag2dr")
+text_key = "pigeon_inspector.nickname"
+metadata/_custom_type_script = "uid://wi7cmxhwrwva"
 
 [node name="NicknameEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=358285975]
 custom_minimum_size = Vector2(300, 0)
@@ -113,10 +118,13 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
-[node name="SellButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1844214244]
+[node name="SellButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1054916245]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "To sell"
+text = "pigeon_inspector.sell"
+script = ExtResource("4_jxvaq")
+text_key = "pigeon_inspector.sell"
+metadata/_custom_type_script = "uid://cc0vj1unjojuj"
 
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer/NicknameEdit" to="." method="_on_nickname_edit_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]

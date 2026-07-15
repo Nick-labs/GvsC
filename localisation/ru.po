@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "BTN_EXIT_THE_GAME"
+msgstr "Выйти из игры"
+
+msgid "BTN_TO_SHOP"
+msgstr "Магазин"
+
+msgid "BTN_TO_DEFENSE"
+msgstr "Оборона!"
+
+msgid "BTN_SELL"
+msgstr "На продажу"
+

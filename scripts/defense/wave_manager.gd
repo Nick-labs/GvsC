@@ -4,7 +4,7 @@ extends Node
 signal wave_finished(wave:int)
 signal all_waves_finished
 
-@export var spawner:EnemySpawner
+@export var spawner: EnemySpawner
 @export var max_waves := 5
 
 var current_wave := 0
