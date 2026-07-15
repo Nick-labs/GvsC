@@ -22,4 +22,3 @@ script = ExtResource("1_rarhs")
 
 [node name="Intro" parent="." unique_id=1334326431 instance=ExtResource("5_vcsgt")]
 slides = Array[ExtResource("6_q8u5g")]([ExtResource("7_wp0k4"), ExtResource("7_lhr70"), ExtResource("8_wp0k4"), ExtResource("9_bjd11")])
-skip_intro = true
