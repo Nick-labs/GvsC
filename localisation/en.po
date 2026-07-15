@@ -3,6 +3,27 @@ msgstr ""
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
+##############
+# GENERAL UI #
+##############
+
+# Clock display
+
+msgid "clock.day"
+msgstr "Day %d"
+
+msgid "clock.money"
+msgstr "%d pennies"
+
+# Warning popup
+
+msgid "warning.foxes_attack"
+msgstr "Silverfoxes Attack!"
+
+##########
+# SCENES #
+##########
+
 # Intro
 
 msgid "intro.slide_1"
@@ -13,14 +34,6 @@ msgstr "At first they were just wild. But every winter made them fiercer. But th
 
 msgid "intro.slide_3"
 msgstr "I built my farm out of blue wood. They say foxes can't stand this color. But I still see them watching me. They're just waiting for me to fall asleep. Every night they come to the fence. They need my eggs and my birds. I have an old crossbow on the roof to keep them away from the gate. Let's see if I can hold out for another day..."
-
-# Clock display
-
-msgid "clock.day"
-msgstr "Day %d"
-
-msgid "clock.money"
-msgstr "%d pennies"
 
 # Farm scene
 
@@ -82,6 +95,10 @@ msgstr "No"
 
 msgid "shop_dialog.question"
 msgstr "Do you want to buy %s for %d pennies?"
+
+#############
+# RESOURCES #
+#############
 
 # Eggs
 

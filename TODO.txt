@@ -54,5 +54,5 @@ TODO на 15.07:
 	[x] Localize eggs
 	[x] Localize pigeons
 	[ ] Localize upgrades
-	[ ] Localize attack warning
+	[x] Localize attack warning
 	[ ] Translate en to ru
