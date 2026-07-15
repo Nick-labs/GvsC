@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_66pss")
-title = "incubator"
+title_key = "offer.upgrade_incubator.title"
 icon = ExtResource("2_10hag")
 type = 2
 tier = 1

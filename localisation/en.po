@@ -157,3 +157,22 @@ msgstr "Skebob"
 
 msgid "breed.tijoe.name"
 msgstr "Tijoe"
+
+##########
+# OFFERS #
+##########
+
+msgid "offer.upgrade_backpack.title"
+msgstr "backpack upgrade (+5 slots)"
+
+msgid "offer.upgrade_eggbasket.title"
+msgstr "eggbasket upgrade (+10 slots)"
+
+msgid "offer.upgrade_incubator.title"
+msgstr "incubator"
+
+msgid "offer.upgrade_loft.title"
+msgstr "copper wire nest"
+
+msgid "offer.upgrade_nest.title"
+msgstr "nest capacity upgrade"

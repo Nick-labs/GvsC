@@ -157,3 +157,22 @@ msgstr "Скебоб"
 
 msgid "breed.tijoe.name"
 msgstr "Тиджой"
+
+##########
+# OFFERS #
+##########
+
+msgid "offer.upgrade_backpack.title"
+msgstr "улучшение рюкзака (+5 слотов)"
+
+msgid "offer.upgrade_eggbasket.title"
+msgstr "улучшение корзины (+10 слотов)"
+
+msgid "offer.upgrade_incubator.title"
+msgstr "инкубатор"
+
+msgid "offer.upgrade_loft.title"
+msgstr "гнездо из медной проволоки"
+
+msgid "offer.upgrade_nest.title"
+msgstr "улучшение вместимости гнезд"
