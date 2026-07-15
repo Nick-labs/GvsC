@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+##############
+# GENERAL UI #
+##############
+
+# Clock display
+
+msgid "clock.day"
+msgstr "День %d"
+
+msgid "clock.money"
+msgstr "%d грошей"
+
+# Warning popup
+
+msgid "warning.foxes_attack"
+msgstr "Чернобурки атакуют!"
+
+##########
+# SCENES #
+##########
+
+# Intro
+
+msgid "intro.slide_1"
+msgstr "Говорят, что мир рухнул из-за \"Белого Шума\". Но я знаю, что во всем виноваты лисы. До конца света их разводили ради шуб. И теперь они мстят."
+
+msgid "intro.slide_2"
+msgstr "Сначала они были просто дикими. Но каждая зима делала их свирепее. Но они научились и ждать."
+
+msgid "intro.slide_3"
+msgstr "Я построил свою ферму из синего дерева. Говорят, лисы не переносят этот цвет. Но все равно я вижу их, наблюдающих за мной. Они просто ждут, когда я усну. Каждую ночь они подходят к забору. Им нужны мои яйца и мои пернатые. У меня есть старый арбалет на крыше, чтобы отгонять их от ворот. Посмотрим, смогу ли я продержаться еще один день..."
+
+# Farm scene
+
+msgid "farm.shop"
+msgstr "Магазин"
+
+msgid "farm.defense"
+msgstr "Оборона!"
+
+msgid "farm.exit_game"
+msgstr "Выйти из игры"
+
+# Pigeon Inspector
+
+msgid "pigeon_inspector.nickname"
+msgstr "Имя"
+
+msgid "pigeon_inspector.breed"
+msgstr "Порода: %s"
+
+msgid "pigeon_inspector.price"
+msgstr "Цена: %d грошей"
+
+msgid "pigeon_inspector.generation"
+msgstr "Поколение: %d"
+
+msgid "pigeon_inspector.egg_price"
+msgstr "Цена яйца: %d"
+
+msgid "pigeon_inspector.production_rate"
+msgstr "Яйценоскость: %.2f яиц в час"
+
+msgid "pigeon_inspector.eggs_produced"
+msgstr "Яиц произведено: %d"
+
+msgid "pigeon_inspector.sell"
+msgstr "Продать"
+
+# Defense scene
+
+msgid "defense.back"
+msgstr "Вернуться"
+
+# Shop scene
+
+msgid "shop.back"
+msgstr "Вернуться"
+
+msgid "shop.sell"
+msgstr "Продать"
+
+# Shop dialogue
+
+msgid "shop_dialog.yes"
+msgstr "Да"
+
+msgid "shop_dialog.no"
+msgstr "Нет"
+
+msgid "shop_dialog.question"
+msgstr "Ты хочешь купить %s за %d грошей?"
+
+#############
+# RESOURCES #
+#############
+
+# Eggs
+
+msgid "egg.white.name"
+msgstr "Белое яйцо"
+
+msgid "egg.green_easter.name"
+msgstr "Зеленое пасхальное яйцо"
+
+msgid "egg.golden.name"
+msgstr "Золотое яйцо"
+
+msgid "egg.informal.name"
+msgstr "Неформальное яйцо"
+
+msgid "egg.crew.name"
+msgstr "Crew яйцо"
+
+msgid "egg.cursed.name"
+msgstr "Проклятое яйцо"
+
+# Pigeons
+
+msgid "breed.grey.name"
+msgstr "Серый голубь"
+
+msgid "breed.white.name"
+msgstr "Белый голубь"
+
+msgid "breed.black_patsan.name"
+msgstr "Черный пацан"
+
+msgid "breed.grey_patsan.name"
+msgstr "Серый пацан"
+
+msgid "breed.white_patsan.name"
+msgstr "Белый пацан"
+
+msgid "breed.creepy.name"
+msgstr "Криповый голубь"
+
+msgid "breed.ios.name"
+msgstr "IOS голубь"
+
+msgid "breed.dsbm.name"
+msgstr "DSBM голубь"
+
+msgid "breed.emo.name"
+msgstr "Эмо голубь"
+
+msgid "breed.reimu.name"
+msgstr "Рейму"
+
+msgid "breed.skebob.name"
+msgstr "Скебоб"
+
+msgid "breed.tijoe.name"
+msgstr "Тиджой"
+
+##########
+# OFFERS #
+##########
+
+msgid "offer.upgrade_backpack.title"
+msgstr "улучшение рюкзака (+5 слотов)"
+
+msgid "offer.upgrade_eggbasket.title"
+msgstr "улучшение корзины (+10 слотов)"
+
+msgid "offer.upgrade_incubator.title"
+msgstr "инкубатор"
+
+msgid "offer.upgrade_loft.title"
+msgstr "гнездо из медной проволоки"
+
+msgid "offer.upgrade_nest.title"
+msgstr "улучшение вместимости гнезд"

@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+##############
+# GENERAL UI #
+##############
+
+# Clock display
+
+msgid "clock.day"
+msgstr "Day %d"
+
+msgid "clock.money"
+msgstr "%d pennies"
+
+# Warning popup
+
+msgid "warning.foxes_attack"
+msgstr "Silverfoxes Attack!"
+
+##########
+# SCENES #
+##########
+
+# Intro
+
+msgid "intro.slide_1"
+msgstr "They say that the world collapsed because of the \"White Noise\". But I know it's all the foxes' fault. Until the end of the world, they were bred for fur coats. And now they're taking revenge."
+
+msgid "intro.slide_2"
+msgstr "At first they were just wild. But every winter made them fiercer. But they know how to wait."
+
+msgid "intro.slide_3"
+msgstr "I built my farm out of blue wood. They say foxes can't stand this color. But I still see them watching me. They're just waiting for me to fall asleep. Every night they come to the fence. They need my eggs and my birds. I have an old crossbow on the roof to keep them away from the gate. Let's see if I can hold out for another day..."
+
+# Farm scene
+
+msgid "farm.shop"
+msgstr "Shop"
+
+msgid "farm.defense"
+msgstr "Defense!"
+
+msgid "farm.exit_game"
+msgstr "Exit game"
+
+# Pigeon Inspector
+
+msgid "pigeon_inspector.nickname"
+msgstr "Name"
+
+msgid "pigeon_inspector.breed"
+msgstr "Breed: %s"
+
+msgid "pigeon_inspector.price"
+msgstr "Price: %d pennies"
+
+msgid "pigeon_inspector.generation"
+msgstr "Generation: %d"
+
+msgid "pigeon_inspector.egg_price"
+msgstr "Egg price: %d"
+
+msgid "pigeon_inspector.production_rate"
+msgstr "Egg production: %.2f eggs per hour"
+
+msgid "pigeon_inspector.eggs_produced"
+msgstr "Egg produced: %d"
+
+msgid "pigeon_inspector.sell"
+msgstr "Sell"
+
+# Defense scene
+
+msgid "defense.back"
+msgstr "Back"
+
+# Shop scene
+
+msgid "shop.back"
+msgstr "Back"
+
+msgid "shop.sell"
+msgstr "Sell"
+
+# Shop dialogue
+
+msgid "shop_dialog.yes"
+msgstr "Yes"
+
+msgid "shop_dialog.no"
+msgstr "No"
+
+msgid "shop_dialog.question"
+msgstr "Do you want to buy %s for %d pennies?"
+
+#############
+# RESOURCES #
+#############
+
+# Eggs
+
+msgid "egg.white.name"
+msgstr "White egg"
+
+msgid "egg.green_easter.name"
+msgstr "Green easter egg"
+
+msgid "egg.golden.name"
+msgstr "Golden egg"
+
+msgid "egg.informal.name"
+msgstr "Informal egg"
+
+msgid "egg.crew.name"
+msgstr "Crew egg"
+
+msgid "egg.cursed.name"
+msgstr "Cursed egg"
+
+# Pigeons
+
+msgid "breed.grey.name"
+msgstr "Grey pigeon"
+
+msgid "breed.white.name"
+msgstr "White pigeon"
+
+msgid "breed.black_patsan.name"
+msgstr "Black patsan"
+
+msgid "breed.grey_patsan.name"
+msgstr "Grey patsan"
+
+msgid "breed.white_patsan.name"
+msgstr "White patsan"
+
+msgid "breed.creepy.name"
+msgstr "Creepy pigeon"
+
+msgid "breed.ios.name"
+msgstr "IOS pigeon"
+
+msgid "breed.dsbm.name"
+msgstr "DSBM pigeon"
+
+msgid "breed.emo.name"
+msgstr "Emo pigeon"
+
+msgid "breed.reimu.name"
+msgstr "Reimu pigeon"
+
+msgid "breed.skebob.name"
+msgstr "Skebob"
+
+msgid "breed.tijoe.name"
+msgstr "Tijoe"
+
+##########
+# OFFERS #
+##########
+
+msgid "offer.upgrade_backpack.title"
+msgstr "backpack upgrade (+5 slots)"
+
+msgid "offer.upgrade_eggbasket.title"
+msgstr "eggbasket upgrade (+10 slots)"
+
+msgid "offer.upgrade_incubator.title"
+msgstr "incubator"
+
+msgid "offer.upgrade_loft.title"
+msgstr "copper wire nest"
+
+msgid "offer.upgrade_nest.title"
+msgstr "nest capacity upgrade"

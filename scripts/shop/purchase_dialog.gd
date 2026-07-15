@@ -17,13 +17,12 @@ func show_offer(
 	
 	current_offer = offer
 	
-	question_label.text = "Do you want to buy " + offer.title + " for " + str(offer.get_price()) + " pennies?"
+	question_label.text = tr("shop_dialog.question") % [tr(offer.title_key), offer.get_price()]
 	
 	show()
 	
 	await get_tree().process_frame
 	
-	#var screen_position = world_position
 	panel.position = world_position
 
 

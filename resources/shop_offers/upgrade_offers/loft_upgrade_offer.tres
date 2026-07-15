@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_cso1x")
-title = "copper wire nest"
+title_key = "offer.upgrade_loft.title"
 icon = ExtResource("2_g7x57")
 type = 2
 tier = 1

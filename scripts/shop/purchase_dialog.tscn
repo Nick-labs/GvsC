@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b1ompwtpeqyxa" path="res://assets/sprites/ui/windows/window1.png" id="4_lwald"]
 [ext_resource type="Texture2D" uid="uid://ryqgt3tpq7o0" path="res://assets/sprites/ui/windows/window1_pressed.png" id="5_u54yb"]
 [ext_resource type="Texture2D" uid="uid://dtk7k36o8bsb1" path="res://assets/sprites/ui/windows/window1_hovered.png" id="6_wonet"]
+[ext_resource type="Script" uid="uid://cc0vj1unjojuj" path="res://localisation/localized_controls/localized_button.gd" id="7_u54yb"]
 
 [sub_resource type="Theme" id="Theme_wmk64"]
 default_font = ExtResource("2_ct3ww")
@@ -26,6 +27,8 @@ texture = ExtResource("5_u54yb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6f8eb"]
 texture = ExtResource("6_wonet")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wonet"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cpnvs"]
 texture = ExtResource("4_lwald")
@@ -87,7 +90,7 @@ layout_mode = 2
 size_flags_vertical = 8
 alignment = 1
 
-[node name="BuyButton" type="Button" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=1072960789]
+[node name="BuyButton" type="Button" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=1108953150]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -95,13 +98,17 @@ size_flags_vertical = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_ys0pl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_41gmg")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6f8eb")
-text = "Yes"
+text = "shop_dialog.yes"
+script = ExtResource("7_u54yb")
+text_key = "shop_dialog.yes"
+metadata/_custom_type_script = "uid://cc0vj1unjojuj"
 
 [node name="VSeparator" type="VSeparator" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=299131244]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wonet")
 
-[node name="CancelButton" type="Button" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=1241264057]
+[node name="CancelButton" type="Button" parent="CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=897793827]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -109,7 +116,10 @@ size_flags_vertical = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_cpnvs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tktnu")
 theme_override_styles/hover = SubResource("StyleBoxTexture_42lts")
-text = "No"
+text = "shop_dialog.no"
+script = ExtResource("7_u54yb")
+text_key = "shop_dialog.no"
+metadata/_custom_type_script = "uid://cc0vj1unjojuj"
 
 [connection signal="pressed" from="CenterContainer/Panel/MarginContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/MarginContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

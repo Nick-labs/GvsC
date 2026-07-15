@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_b07yd")
-breed_name = "White patsan"
+breed_name_key = "breed.white_patsan.name"
 sprite = ExtResource("3_3dovb")
 price = 10
 egg_interval_minutes = 15

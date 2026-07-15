@@ -41,7 +41,18 @@ TODO на 10.07:
 TODO на 11.07:
 	[ ] Вынести весь текст в файлы локализации
 	[ ] Пофиксить баг с болтами, летящими на экране фермы
-	[ ] Пофиксить баг с некорректным поведением яиц (скорее всего стоит переделать систему систему)
+	[ ] Пофиксить баг с некорректным поведением яиц (скорее всего стоит переделать систему Drag&Drop)
 	[ ] Улучшить управление
 	[ ] Улучшить приветственное сообщение (+ добавить подсказки по управлению)
 	[ ] Добавить рюкзак:
+
+TODO на 15.07:
+	[x] Localize Farm scene
+	[x] Localize Shop scene
+	[x] Localize Defense scene
+	[X] Localize Intro scene
+	[x] Localize eggs
+	[x] Localize pigeons
+	[ ] Localize upgrades
+	[x] Localize attack warning
+	[ ] Translate en to ru

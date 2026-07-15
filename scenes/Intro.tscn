@@ -41,7 +41,7 @@ theme_override_constants/margin_bottom = 60
 
 [node name="Panel" type="Panel" parent="Slide/MarginContainer" unique_id=489551614]
 z_index = 4095
-custom_minimum_size = Vector2(1800, 200)
+custom_minimum_size = Vector2(1800, 250)
 layout_mode = 2
 size_flags_vertical = 8
 

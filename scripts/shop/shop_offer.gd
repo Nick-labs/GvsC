@@ -7,8 +7,8 @@ enum OfferType {
 	UPGRADE,
 }
 
-@export var title: String
-@export_multiline var description: String
+@export var title_key: String
+@export_multiline var description_key: String
 
 @export var icon: Texture2D
 @export var price: int

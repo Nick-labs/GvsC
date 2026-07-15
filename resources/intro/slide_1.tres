@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_h4uph")
 image = ExtResource("1_jwdtj")
-text = "They say that the world collapsed because of the \"White Noise\". But I know it's all the foxes' fault. Until the end of the world, they were bred for fur coats. And now they're taking revenge."
+text_key = "intro.slide_1"
 duration = 999.0
 metadata/_custom_type_script = "uid://dmjn35k24jf0n"

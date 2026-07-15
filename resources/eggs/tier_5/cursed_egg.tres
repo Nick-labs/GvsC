@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://qaw1oeacb4qf"
 
 [resource]
 script = ExtResource("2_osdo5")
-name = "Cursed egg"
+name_key = "egg.cursed.name"
 price = 25
 texture = ExtResource("3_2p54e")
 hatch_time_minutes = 5.0

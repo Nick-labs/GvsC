@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_u5dvi")
-title = "backpack capacity upgrade (+10)"
+title_key = "offer.upgrade_backpack.title"
 icon = ExtResource("2_v1nnw")
 type = 2
 tier = 1

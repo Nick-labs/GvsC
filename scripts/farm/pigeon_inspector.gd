@@ -41,19 +41,7 @@ func show_pigeon(new_pigeon: Pigeon):
 	
 	portrait.texture = data.sprite
 	
-	nickname_edit.text = data.nickname
-	breed_label.text = "Breed: " + data.breed_name
-	#age_label.text = "Возраст: " + str(data.age)
-	price_label.text = "Price: " + str(data.price) + " pennies"
-	generation_label.text = "Generation: " + str(data.generation)
-	
-	egg_portrait.texture = data.egg_template.texture
-	egg_label.text = data.egg_template.name
-	
-	egg_price_label.text = "Egg price: " + str(data.egg_template.price)
-	interval_label.text = "Egg production: %.2f eggs per hour" % (60.0 / data.egg_interval_minutes)
-	
-	eggs_counter_label.text = "Eggs produced: " + str(data.eggs_laid)
+	update_labels(data)
 	
 	content.show()
 	
@@ -62,17 +50,28 @@ func show_pigeon(new_pigeon: Pigeon):
 	sell_button.show()
 
 
-func update_labels():
-	var data := pigeon.data
+func update_labels(data: PigeonData):
+	if data == null:
+		return
 	
-	breed_label.text = "Breed: " + data.breed_name
-	#age_label.text = "Возраст: " + str(data.age)
-	price_label.text = "Price: " + str(data.price) + " pennies"
-	eggs_counter_label.text = "Eggs produced: " + str(data.eggs_laid)
-	generation_label.text = "Generation: " + str(data.generation)
-	egg_price_label.text = "Egg price: " + str(data.egg_template.price)
-	interval_label.text = "Egg production: %.2f eggs per hour" % (60.0 / data.egg_interval_minutes)
-	eggs_counter_label.text = "Eggs produced: " + str(data.eggs_laid)
+	breed_label.text = tr("pigeon_inspector.breed") % tr(data.breed_name_key)
+
+	price_label.text = tr("pigeon_inspector.price") % data.price
+
+	generation_label.text = tr("pigeon_inspector.generation") % data.generation
+
+	egg_price_label.text = tr("pigeon_inspector.egg_price")
+
+	egg_portrait.texture = data.egg_template.texture
+	egg_label.text = tr(data.egg_template.name_key)
+
+	egg_price_label.text = tr("pigeon_inspector.egg_price") % data.egg_template.price
+
+	interval_label.text = tr("pigeon_inspector.production_rate") % (
+		60.0 / data.egg_interval_minutes
+	)
+
+	eggs_counter_label.text = tr("pigeon_inspector.eggs_produced") % data.eggs_laid
 
 
 func clear():
@@ -88,3 +87,9 @@ func _on_nickname_edit_text_changed(new_text: String):
 		return
 
 	pigeon.data.nickname = new_text
+
+
+func _notification(what):
+	if what == NOTIFICATION_TRANSLATION_CHANGED:
+		if pigeon != null:
+			update_labels(pigeon.data)

@@ -11,6 +11,7 @@ extends Node2D
 
 
 func _ready():
+	set_language()
 	_start_game()
 
 
@@ -121,3 +122,10 @@ func _on_warning_requested(text, duration):
 
 func _on_farm_destroyed():
 	farm.loft.kill_pigeons()
+
+
+func set_language(language = "automatic"):
+	if language == "automatic":
+		language = OS.get_locale_language()
+
+	TranslationServer.set_locale(language)

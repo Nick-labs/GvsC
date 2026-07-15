@@ -4,7 +4,7 @@ extends Node
 signal wave_finished(wave:int)
 signal all_waves_finished
 
-@export var spawner:EnemySpawner
+@export var spawner: EnemySpawner
 @export var max_waves := 5
 
 var current_wave := 0
@@ -31,7 +31,7 @@ func _on_hour_passed(_day,_hour):
 	
 	if is_night() and not started:
 		await UIManager.show_warning(
-			"⚠ Silverfoxes Attack!",
+			tr("warning.foxes_attack"),
 			5.0
 		)
 		
