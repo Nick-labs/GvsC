@@ -3,6 +3,14 @@ msgstr ""
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
+# Clock display
+
+msgid "clock.day"
+msgstr "Day %d"
+
+msgid "clock.money"
+msgstr "%d pennies"
+
 # Farm
 
 msgid "farm.shop"

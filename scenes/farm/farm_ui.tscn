@@ -70,9 +70,9 @@ size_flags_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_kb85a")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jf2x4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_uhalc")
-text = "BTN_EXIT_THE_GAME"
+text = "farm.exit_game"
 script = ExtResource("6_sxr4b")
-text_key = "BTN_EXIT_THE_GAME"
+text_key = "farm.exit_game"
 metadata/_custom_type_script = "uid://cc0vj1unjojuj"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=872713628]
@@ -87,10 +87,10 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_hus6s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sxr4b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_fc0dh")
-text = "BTN_TO_DEFENSE"
+text = "farm.defense"
 expand_icon = true
 script = ExtResource("6_sxr4b")
-text_key = "BTN_TO_DEFENSE"
+text_key = "farm.defense"
 metadata/_custom_type_script = "uid://cc0vj1unjojuj"
 
 [node name="ToShopButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1585260624]
@@ -99,9 +99,9 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_llpy2")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2ldhw")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6ne2h")
-text = "BTN_TO_SHOP"
+text = "farm.shop"
 script = ExtResource("6_sxr4b")
-text_key = "BTN_TO_SHOP"
+text_key = "farm.shop"
 metadata/_custom_type_script = "uid://cc0vj1unjojuj"
 
 [node name="PigeonInspector" parent="MarginContainer/VBoxContainer" unique_id=1190866342 instance=ExtResource("2_47p7y")]
