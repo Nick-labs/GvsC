@@ -53,6 +53,25 @@ msgstr "Sell"
 msgid "defense.back"
 msgstr "Back"
 
+# Shop scene
+
+msgid "shop.back"
+msgstr "Back"
+
+msgid "shop.sell"
+msgstr "Sell"
+
+# Shop dialogue
+
+msgid "shop_dialog.yes"
+msgstr "Yes"
+
+msgid "shop_dialog.no"
+msgstr "No"
+
+msgid "shop_dialog.question"
+msgstr "Do you want to buy %s for %d pennies?"
+
 # Eggs
 
 msgid "egg.white.name"

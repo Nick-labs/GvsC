@@ -17,7 +17,7 @@ func show_offer(
 	
 	current_offer = offer
 	
-	question_label.text = "Do you want to buy " + offer.title + " for " + str(offer.get_price()) + " pennies?"
+	question_label.text = tr("shop_dialog.question") % [offer.title, offer.get_price()]
 	
 	show()
 	
