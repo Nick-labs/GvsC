@@ -47,8 +47,10 @@ TODO на 11.07:
 	[ ] Добавить рюкзак:
 
 TODO на 15.07:
-	[ ] To localize Farm scene
-	[ ] To localize Shop scene
-	[ ] To localize Defense scene
-	[ ] To localize Intro scene
+	[x] Localize Farm scene
+	[x] Localize Shop scene
+	[x] Localize Defense scene
+	[ ] Localize Intro scene
+	[x] Localize eggs
+	[x] Localize pigeons
 	[ ] Translate en to ru

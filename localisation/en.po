@@ -76,3 +76,56 @@ msgstr "Do you want to buy %s for %d pennies?"
 
 msgid "egg.white.name"
 msgstr "White egg"
+
+msgid "egg.green_easter.name"
+msgstr "Green easter egg"
+
+msgid "egg.golden.name"
+msgstr "Golden egg"
+
+msgid "egg.informal.name"
+msgstr "Informal egg"
+
+msgid "egg.crew.name"
+msgstr "Crew egg"
+
+msgid "egg.cursed.name"
+msgstr "Cursed egg"
+
+# Pigeons
+
+msgid "breed.grey.name"
+msgstr "Grey pigeon"
+
+msgid "breed.white.name"
+msgstr "White pigeon"
+
+msgid "breed.black_patsan.name"
+msgstr "Black patsan"
+
+msgid "breed.grey_patsan.name"
+msgstr "Grey patsan"
+
+msgid "breed.white_patsan.name"
+msgstr "White patsan"
+
+msgid "breed.creepy.name"
+msgstr "Creepy pigeon"
+
+msgid "breed.ios.name"
+msgstr "IOS pigeon"
+
+msgid "breed.dsbm.name"
+msgstr "DSBM pigeon"
+
+msgid "breed.emo.name"
+msgstr "Emo pigeon"
+
+msgid "breed.reimu.name"
+msgstr "Reimu pigeon"
+
+msgid "breed.skebob.name"
+msgstr "Skebob"
+
+msgid "breed.tijoe.name"
+msgstr "Tijoe"

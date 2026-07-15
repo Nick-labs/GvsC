@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_6ug18")
-breed_name = "Grey pigeon"
+breed_name_key = "breed.grey.name"
 sprite = ExtResource("3_yf1wn")
 price = 5
 egg_interval_minutes = 20

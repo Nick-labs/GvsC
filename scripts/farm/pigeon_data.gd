@@ -2,7 +2,7 @@ class_name PigeonData
 extends Resource
 
 @export_group("Breed")
-@export var breed_name: String
+@export var breed_name_key: String
 @export var sprite: Texture2D
 @export var price: int
 @export var egg_interval_minutes: int

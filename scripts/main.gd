@@ -11,7 +11,7 @@ extends Node2D
 
 
 func _ready():
-	set_language("en")
+	set_language()
 	_start_game()
 
 

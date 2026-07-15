@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://qaw1oeacb4qf"
 
 [resource]
 script = ExtResource("2_7g7fx")
-name = "Informal egg"
+name_key = "egg.informal.name"
 price = 5
 texture = ExtResource("3_3q23r")
 hatch_time_minutes = 60.0

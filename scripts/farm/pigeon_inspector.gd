@@ -54,7 +54,7 @@ func update_labels(data: PigeonData):
 	if data == null:
 		return
 	
-	breed_label.text = tr("pigeon_inspector.breed") % data.breed_name
+	breed_label.text = tr("pigeon_inspector.breed") % data.breed_name_key
 
 	price_label.text = tr("pigeon_inspector.price") % data.price
 
