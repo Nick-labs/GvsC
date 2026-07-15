@@ -11,7 +11,7 @@ msgstr "Day %d"
 msgid "clock.money"
 msgstr "%d pennies"
 
-# Farm
+# Farm scene
 
 msgid "farm.shop"
 msgstr "Shop"
@@ -47,6 +47,11 @@ msgstr "Egg produced: %d"
 
 msgid "pigeon_inspector.sell"
 msgstr "Sell"
+
+# Defense scene
+
+msgid "defense.back"
+msgstr "Back"
 
 # Eggs
 

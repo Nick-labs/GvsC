@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7vscbxrou7bs"]
 
-[ext_resource type="Script" uid="uid://b1tf0jdykw5ah" path="res://scenes/defense/base_destroyed.gd" id="1_3a5j2"]
+[ext_resource type="Script" uid="uid://b1tf0jdykw5ah" path="res://scripts/defense/base_destroyed.gd" id="1_3a5j2"]
 [ext_resource type="Texture2D" uid="uid://fvm6nvtv16vt" path="res://assets/sprites/ui/cg-lose.png" id="1_nb3iq"]
 
 [node name="BaseDestroyed" type="CanvasLayer" unique_id=1524688112]
